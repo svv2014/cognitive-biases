@@ -30,6 +30,115 @@ export default {
     politics: 'Política',
   },
 
+  quiz: {
+    cta: 'Ponte a prueba',
+    title: '¿Qué sesgos son los tuyos?',
+    intro: 'Ocho situaciones rápidas. Elige la reacción que sinceramente se parece más a ti: no hay respuesta correcta.',
+    disclaimer: 'Por curiosidad y diversión: esto no es una evaluación psicológica.',
+    start: 'Empezar',
+    progress: 'Pregunta {n} de {total}',
+    close: 'Cerrar',
+    resultTitle: 'Tu resultado',
+    resultLead: 'Caíste en {count} de {total}.',
+    resultNone: 'Los esquivaste los ocho. Lo cual quizá diga algo sobre el punto ciego del sesgo.',
+    resultAll: 'Pleno: todos y cada uno. Reconfortantemente humano.',
+    resultHint: 'Estos son los sesgos que señalaron tus respuestas:',
+    seeCard: 'Leer sobre él',
+    again: 'Jugar otra vez',
+    questions: {
+      'fundamental-attribution-error': {
+        prompt: 'Un compañero incumple un plazo. Tu primer pensamiento:',
+        biased: 'Es un desorganizado.',
+        fair: 'Algo le habrá surgido.',
+      },
+      'self-serving-bias': {
+        prompt: 'Un proyecto que dirigiste salió estupendamente. ¿Por qué?',
+        biased: 'Tomaste las decisiones acertadas.',
+        fair: 'El momento y el equipo acompañaron.',
+      },
+      'in-group-favoritism': {
+        prompt: 'Dos desconocidos te piden un pequeño favor. Uno estudió en tu colegio.',
+        biased: 'A ese le ayudarías primero.',
+        fair: 'A ti te da igual.',
+      },
+      'bandwagon-effect': {
+        prompt: 'Todos tus conocidos han empezado a usar una aplicación nueva.',
+        biased: 'Te pica la curiosidad y la instalas.',
+        fair: 'Que sea popular no es razón por sí sola.',
+      },
+      'halo-effect': {
+        prompt: 'Alguien habla bien y viste impecable en una entrevista.',
+        biased: 'Das por hecho que además es competente.',
+        fair: 'Todavía no sabes nada de su trabajo.',
+      },
+      'curse-of-knowledge': {
+        prompt: 'Le explicas tu trabajo a alguien ajeno a tu campo.',
+        biased: 'Te sorprende que se pierda.',
+        fair: 'Cuentas con empezar desde lo más básico.',
+      },
+      'spotlight-effect': {
+        prompt: 'Te manchas la camisa de café justo antes de una reunión.',
+        biased: 'Estás seguro de que todos lo han visto.',
+        fair: 'En realidad nadie estaba mirando.',
+      },
+      'availability-heuristic': {
+        prompt: 'Lees sobre un accidente aéreo la semana antes de volar.',
+        biased: 'Volar te parece ahora más peligroso.',
+        fair: 'Las probabilidades no han cambiado en nada.',
+      },
+      'just-world-hypothesis': {
+        prompt: 'A alguien que apenas conoces le viene una racha pésima.',
+        biased: 'Por dentro te preguntas qué hizo para merecerlo.',
+        fair: 'La mala suerte le cae a la gente al azar.',
+      },
+      'dunning-kruger-effect': {
+        prompt: 'Lees un artículo largo sobre un tema nuevo para ti.',
+        biased: 'Te sientes con criterio para opinar.',
+        fair: 'Te das cuenta de todo lo que aún ignoras.',
+      },
+      anchoring: {
+        prompt: 'Una chaqueta rebajada de 200 a 90.',
+        biased: 'Noventa te parece buen precio.',
+        fair: 'Te preguntas cuánto vale la chaqueta en realidad.',
+      },
+      'google-effect': {
+        prompt: 'Te preguntan un dato que buscaste la semana pasada.',
+        biased: 'Recuerdas haberlo buscado, no la respuesta.',
+        fair: 'Lo recuerdas sin ayuda.',
+      },
+      reactance: {
+        prompt: 'Ibas a hacer una tarea y alguien te dice que la hagas.',
+        biased: 'De pronto te apetece menos.',
+        fair: 'No cambia nada: ibas a hacerla igual.',
+      },
+      'confirmation-bias': {
+        prompt: 'Estás leyendo sobre algo que ya creías.',
+        biased: 'Se te quedan los datos que te dan la razón.',
+        fair: 'Vas a buscar el contraargumento más fuerte.',
+      },
+      'sunk-cost-fallacy': {
+        prompt: 'Llevas dos horas de una película que no te gusta.',
+        biased: 'La terminas: ya has llegado hasta aquí.',
+        fair: 'La dejas y recuperas la noche.',
+      },
+      'gamblers-fallacy': {
+        prompt: 'Una moneda sale cara seis veces seguidas.',
+        biased: 'Cruz parece que ya toca.',
+        fair: 'La siguiente tirada sigue siendo mitad y mitad.',
+      },
+      'status-quo-bias': {
+        prompt: 'Tu compañía es mediocre y hay una oferta mejor.',
+        biased: 'Te quedas: cambiar es un engorro.',
+        fair: 'Te cambias.',
+      },
+      'survivorship-bias': {
+        prompt: 'Oyes que varios fundadores famosos dejaron la universidad.',
+        biased: 'Parece que dejarla puede ser una ventaja.',
+        fair: 'Piensas en cuántos la dejaron y nunca oíste hablar de ellos.',
+      },
+    },
+  },
+
   biases: {
     'fundamental-attribution-error': {
       name: 'Error fundamental de atribución',

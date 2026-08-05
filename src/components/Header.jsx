@@ -1,4 +1,4 @@
-import { t } from '../locales/index.js';
+import { t, tq } from '../locales/index.js';
 
 function SunIcon() {
   return (
@@ -28,6 +28,7 @@ export default function Header({
   count,
   total,
   isFiltered,
+  onStartQuiz,
 }) {
   const counter = isFiltered
     ? t(locale, 'counterFiltered', { count, total })
@@ -79,6 +80,14 @@ export default function Header({
         <p className="header__count" aria-live="polite">
           {counter}
         </p>
+
+        <button type="button" className="header__quiz" onClick={onStartQuiz}>
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M7.3 7.3a2.8 2.8 0 1 1 3.6 3.4c-.6.2-.9.8-.9 1.4v.4" strokeLinecap="round" />
+            <circle cx="10" cy="15.6" r="0.4" />
+          </svg>
+          {tq(locale, 'cta')}
+        </button>
       </div>
     </header>
   );

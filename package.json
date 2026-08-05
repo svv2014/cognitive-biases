@@ -16,7 +16,7 @@
     "preview": "vite preview",
     "check": "node scripts/check-locales.mjs",
     "smoke": "node scripts/smoke.mjs",
-    "test": "npm run check && node --test scripts/test-search.mjs && npm run smoke"
+    "test": "npm run check && node --test scripts/test-search.mjs scripts/test-quiz.mjs && npm run smoke"
   },
   "dependencies": {
     "react": "^18.3.1",

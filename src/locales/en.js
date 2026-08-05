@@ -30,6 +30,115 @@ export default {
     politics: 'Politics',
   },
 
+  quiz: {
+    cta: 'Test yourself',
+    title: 'Which biases are yours?',
+    intro: 'Eight quick situations. Pick whichever reaction is honestly more like you — there is no right answer.',
+    disclaimer: 'For fun and curiosity — this is not a psychological assessment.',
+    start: 'Start',
+    progress: 'Question {n} of {total}',
+    close: 'Close',
+    resultTitle: 'Your results',
+    resultLead: 'You leaned into {count} of {total}.',
+    resultNone: 'You dodged all eight. Which may say something about the blind spot bias.',
+    resultAll: 'A clean sweep — every single one. Comfortingly human.',
+    resultHint: 'These are the biases your answers pointed at:',
+    seeCard: 'Read about it',
+    again: 'Play again',
+    questions: {
+      'fundamental-attribution-error': {
+        prompt: 'A colleague misses a deadline. Your first thought is:',
+        biased: 'They are disorganised.',
+        fair: 'Something must have come up.',
+      },
+      'self-serving-bias': {
+        prompt: 'A project you led went brilliantly. Why?',
+        biased: 'You made the right calls.',
+        fair: 'The timing and the team were good.',
+      },
+      'in-group-favoritism': {
+        prompt: 'Two strangers ask you for a small favour. One went to your school.',
+        biased: 'You would help that one first.',
+        fair: 'It makes no difference to you.',
+      },
+      'bandwagon-effect': {
+        prompt: 'Everyone you know has started using a new app.',
+        biased: 'You get curious and install it.',
+        fair: 'Popularity is not a reason on its own.',
+      },
+      'halo-effect': {
+        prompt: 'Someone speaks well and dresses sharply at an interview.',
+        biased: 'You assume they are competent, too.',
+        fair: 'You have learned nothing about their work yet.',
+      },
+      'curse-of-knowledge': {
+        prompt: 'You explain your job to someone outside your field.',
+        biased: 'You are surprised when they look lost.',
+        fair: 'You expect to start from the very beginning.',
+      },
+      'spotlight-effect': {
+        prompt: 'You spill coffee down your shirt before a meeting.',
+        biased: 'You are sure everyone noticed.',
+        fair: 'Nobody was really looking.',
+      },
+      'availability-heuristic': {
+        prompt: 'You read about a plane crash the week before you fly.',
+        biased: 'Flying feels more dangerous than it did.',
+        fair: 'Nothing about the odds has changed.',
+      },
+      'just-world-hypothesis': {
+        prompt: 'Someone you barely know has a run of terrible luck.',
+        biased: 'You quietly wonder what they did to invite it.',
+        fair: 'Bad luck lands on people at random.',
+      },
+      'dunning-kruger-effect': {
+        prompt: 'You read a long article about a subject that is new to you.',
+        biased: 'You feel ready to hold an opinion on it.',
+        fair: 'You realise how much you still do not know.',
+      },
+      anchoring: {
+        prompt: 'A jacket is marked down from 200 to 90.',
+        biased: 'Ninety feels like a good price.',
+        fair: 'You ask what the jacket is actually worth.',
+      },
+      'google-effect': {
+        prompt: 'Someone asks you a fact you looked up last week.',
+        biased: 'You remember searching, not the answer.',
+        fair: 'You can recall it without help.',
+      },
+      reactance: {
+        prompt: 'You were about to do a chore and someone tells you to do it.',
+        biased: 'You suddenly want to do it less.',
+        fair: 'It changes nothing — you were doing it anyway.',
+      },
+      'confirmation-bias': {
+        prompt: 'You are reading up on something you already believe.',
+        biased: 'The pieces that agree stay with you.',
+        fair: 'You go looking for the strongest counter-argument.',
+      },
+      'sunk-cost-fallacy': {
+        prompt: 'You are two hours into a film you are not enjoying.',
+        biased: 'You finish it — you are this far in.',
+        fair: 'You stop and get your evening back.',
+      },
+      'gamblers-fallacy': {
+        prompt: 'A tossed coin lands on heads six times running.',
+        biased: 'Tails feels overdue.',
+        fair: 'The next toss is still an even split.',
+      },
+      'status-quo-bias': {
+        prompt: 'Your provider is mediocre and a better deal exists.',
+        biased: 'You stay put — switching is a hassle.',
+        fair: 'You move.',
+      },
+      'survivorship-bias': {
+        prompt: 'You hear that several famous founders dropped out of university.',
+        biased: 'It seems like dropping out might be an advantage.',
+        fair: 'You wonder how many dropouts you never hear about.',
+      },
+    },
+  },
+
   biases: {
     'fundamental-attribution-error': {
       name: 'Fundamental Attribution Error',

@@ -51,3 +51,16 @@ export function t(code, key, vars) {
 export function getCategoryName(code, id) {
   return locales[code]?.categories?.[id] ?? locales[DEFAULT_LOCALE].categories[id] ?? id;
 }
+
+const dig = (root, path) => path.split('.').reduce((acc, key) => acc?.[key], root);
+
+/**
+ * Reads a quiz string by dotted path, e.g. `questions.anchoring.prompt`.
+ * Falls back to English so a locale missing a question still renders.
+ */
+export function tq(code, path, vars) {
+  const raw =
+    dig(locales[code]?.quiz, path) ?? dig(locales[DEFAULT_LOCALE].quiz, path) ?? path;
+  if (!vars || typeof raw !== 'string') return raw;
+  return raw.replace(/\{(\w+)\}/g, (m, name) => (name in vars ? String(vars[name]) : m));
+}

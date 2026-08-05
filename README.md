@@ -12,6 +12,9 @@ Link straight to a language with `?lang=uk` (`en`, `uk`, `ru`, `pl`, `es`, `fr`)
 
 - Search across names, descriptions and examples — accent-insensitive, so
   `klatwa` finds *Klątwa wiedzy* and `maldicion` finds *Maldición del conocimiento*
+- A short **self-test**: eight randomised situations, pick whichever reaction is
+  more like you, and see which biases your answers pointed at — framed as a bit
+  of fun, not a psychological assessment
 - Filter by any combination of the six categories
 - Light and dark themes, remembered between visits
 - Language auto-detected from the browser, overridable and remembered
@@ -42,12 +45,14 @@ src/
   data/
     biases.js       50 biases: id, categories (language-independent)
     categories.js   category ids, colours and contrast-safe text colours
+    quiz.js         which biases the self-test draws from, and run length
   locales/
     en.js ru.js …   UI strings, category names and all 50 biases per language
     index.js        locale registry, lookup and English fallback
-  components/       Header, Toolbar, BiasCard, EmptyState, Footer
+  components/       Header, Toolbar, BiasCard, Quiz, EmptyState, Footer
   hooks/            useDebounced, usePersistentState
   lib/search.js     normalisation and filtering
+  lib/quiz.js       question shuffling and scoring
   styles/global.css design tokens and all styling
 public/icons/       one PNG per bias, named after its id
 scripts/            data validation, tests and one-off migrations
@@ -62,7 +67,8 @@ across all languages instead of being duplicated per translation.
 ## Adding a language
 
 1. Copy `src/locales/en.js` to `src/locales/<code>.js` and translate the
-   `ui`, `categories` and `biases` values. Leave every key exactly as it is.
+   `ui`, `categories`, `quiz` and `biases` values. Leave every key exactly as
+   it is.
 2. Register it in `src/locales/index.js` — add the import and an entry in
    `locales`. Its position there is its position in the language picker.
 3. Run `npm test`. It fails if any string is missing or empty, and the smoke
@@ -70,6 +76,17 @@ across all languages instead of being duplicated per translation.
 
 A language that is only partly translated still works: missing biases fall back
 to English and the card shows a short note saying so.
+
+## Adding a quiz question
+
+1. Add the bias id to `quizBiasIds` in `src/data/quiz.js`.
+2. Add a `prompt` / `biased` / `fair` entry under `quiz.questions.<id>` in every
+   locale file. `biased` is the answer that reveals the bias; the two are shown
+   in a random order, so neither should read as the obvious "correct" one.
+3. Run `npm test`.
+
+The pool must stay larger than `QUIZ_LENGTH` so repeat runs differ — the
+validator enforces this.
 
 ## Adding a bias
 

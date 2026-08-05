@@ -30,6 +30,115 @@ export default {
     politics: 'Politique',
   },
 
+  quiz: {
+    cta: 'Testez-vous',
+    title: 'Quels biais sont les vôtres ?',
+    intro: 'Huit situations rapides. Choisissez la réaction qui vous ressemble honnêtement le plus — il n’y a pas de bonne réponse.',
+    disclaimer: 'Par curiosité et pour le plaisir — ceci n’est pas une évaluation psychologique.',
+    start: 'Commencer',
+    progress: 'Question {n} sur {total}',
+    close: 'Fermer',
+    resultTitle: 'Votre résultat',
+    resultLead: 'Vous avez cédé à {count} sur {total}.',
+    resultNone: 'Vous les avez tous esquivés. Ce qui en dit peut-être long sur l’angle mort des biais.',
+    resultAll: 'Carton plein — absolument tous. Rassurant d’humanité.',
+    resultHint: 'Voici les biais que vos réponses ont désignés :',
+    seeCard: 'En savoir plus',
+    again: 'Rejouer',
+    questions: {
+      'fundamental-attribution-error': {
+        prompt: 'Un collègue rate une échéance. Votre première pensée :',
+        biased: 'Il est désorganisé.',
+        fair: 'Il a dû lui arriver quelque chose.',
+      },
+      'self-serving-bias': {
+        prompt: 'Un projet que vous avez mené s’est très bien passé. Pourquoi ?',
+        biased: 'Vous avez fait les bons choix.',
+        fair: 'Le moment et l’équipe s’y prêtaient.',
+      },
+      'in-group-favoritism': {
+        prompt: 'Deux inconnus vous demandent un petit service. L’un a fait votre école.',
+        biased: 'C’est celui-là que vous aideriez d’abord.',
+        fair: 'Cela ne change rien pour vous.',
+      },
+      'bandwagon-effect': {
+        prompt: 'Tout votre entourage s’est mis à une nouvelle application.',
+        biased: 'La curiosité l’emporte et vous l’installez.',
+        fair: 'La popularité n’est pas une raison en soi.',
+      },
+      'halo-effect': {
+        prompt: 'Quelqu’un s’exprime bien et est tiré à quatre épingles en entretien.',
+        biased: 'Vous le supposez compétent par la même occasion.',
+        fair: 'Vous ne savez encore rien de son travail.',
+      },
+      'curse-of-knowledge': {
+        prompt: 'Vous expliquez votre métier à quelqu’un d’un autre domaine.',
+        biased: 'Vous vous étonnez qu’il décroche.',
+        fair: 'Vous prévoyez de partir vraiment de zéro.',
+      },
+      'spotlight-effect': {
+        prompt: 'Vous renversez du café sur votre chemise avant une réunion.',
+        biased: 'Vous êtes certain que tout le monde l’a vu.',
+        fair: 'Personne ne regardait vraiment.',
+      },
+      'availability-heuristic': {
+        prompt: 'Vous lisez un article sur un crash aérien la semaine avant de prendre l’avion.',
+        biased: 'Voler vous semble plus dangereux qu’avant.',
+        fair: 'Les probabilités n’ont pas bougé d’un cheveu.',
+      },
+      'just-world-hypothesis': {
+        prompt: 'Une personne que vous connaissez à peine enchaîne les malheurs.',
+        biased: 'Vous vous demandez tout bas ce qu’elle a fait pour ça.',
+        fair: 'La malchance frappe au hasard.',
+      },
+      'dunning-kruger-effect': {
+        prompt: 'Vous lisez un long article sur un sujet nouveau pour vous.',
+        biased: 'Vous vous sentez prêt à avoir un avis dessus.',
+        fair: 'Vous mesurez tout ce que vous ignorez encore.',
+      },
+      anchoring: {
+        prompt: 'Une veste passe de 200 à 90.',
+        biased: 'Quatre-vingt-dix paraît une bonne affaire.',
+        fair: 'Vous cherchez ce que vaut réellement la veste.',
+      },
+      'google-effect': {
+        prompt: 'On vous demande un fait que vous aviez cherché la semaine dernière.',
+        biased: 'Vous vous souvenez de la recherche, pas de la réponse.',
+        fair: 'Vous la retrouvez sans aide.',
+      },
+      reactance: {
+        prompt: 'Vous alliez faire une corvée et on vous dit de la faire.',
+        biased: 'L’envie retombe aussitôt.',
+        fair: 'Cela ne change rien — vous alliez la faire.',
+      },
+      'confirmation-bias': {
+        prompt: 'Vous vous documentez sur une chose que vous croyez déjà.',
+        biased: 'Ce qui vous donne raison est ce qui reste.',
+        fair: 'Vous partez chercher le meilleur contre-argument.',
+      },
+      'sunk-cost-fallacy': {
+        prompt: 'Vous en êtes à deux heures d’un film qui ne vous plaît pas.',
+        biased: 'Vous le finissez — vous êtes déjà si loin.',
+        fair: 'Vous arrêtez et récupérez votre soirée.',
+      },
+      'gamblers-fallacy': {
+        prompt: 'Une pièce tombe six fois de suite sur face.',
+        biased: 'Pile semble dû.',
+        fair: 'Le prochain lancer reste à cinquante-cinquante.',
+      },
+      'status-quo-bias': {
+        prompt: 'Votre opérateur est moyen et une meilleure offre existe.',
+        biased: 'Vous restez — changer est une corvée.',
+        fair: 'Vous changez.',
+      },
+      'survivorship-bias': {
+        prompt: 'Vous entendez que plusieurs fondateurs célèbres ont quitté la fac.',
+        biased: 'On dirait qu’abandonner peut être un atout.',
+        fair: 'Vous songez à tous ceux dont on n’entend jamais parler.',
+      },
+    },
+  },
+
   biases: {
     'fundamental-attribution-error': {
       name: 'Erreur fondamentale d’attribution',

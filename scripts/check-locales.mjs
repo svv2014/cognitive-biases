@@ -2,6 +2,7 @@
 // category, and that no entry has an empty string. Run via `npm run check`.
 import { biases, biasIds } from '../src/data/biases.js';
 import { locales, DEFAULT_LOCALE } from '../src/locales/index.js';
+import { quizBiasIds, QUIZ_LENGTH } from '../src/data/quiz.js';
 import { readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -12,6 +13,7 @@ const problems = [];
 
 const uiKeys = Object.keys(base.ui);
 const catKeys = Object.keys(base.categories);
+const quizUiKeys = Object.keys(base.quiz).filter((k) => k !== 'questions');
 
 for (const [code, loc] of Object.entries(locales)) {
   const where = (msg) => problems.push(`[${code}] ${msg}`);
@@ -41,6 +43,24 @@ for (const [code, loc] of Object.entries(locales)) {
   const names = Object.values(loc.biases ?? {}).map((b) => b.name);
   const dupes = names.filter((n, i) => names.indexOf(n) !== i);
   if (dupes.length) where(`duplicate bias names: ${[...new Set(dupes)].join(', ')}`);
+
+  // --- quiz ---
+  for (const k of quizUiKeys) if (!loc.quiz?.[k]?.trim()) where(`missing quiz.${k}`);
+
+  for (const id of quizBiasIds) {
+    const q = loc.quiz?.questions?.[id];
+    if (!q) {
+      where(`missing quiz question "${id}"`);
+      continue;
+    }
+    for (const f of ['prompt', 'biased', 'fair']) {
+      if (!q[f]?.trim()) where(`quiz question "${id}" is missing ${f}`);
+    }
+    if (q.biased?.trim() === q.fair?.trim()) where(`quiz question "${id}" has identical options`);
+  }
+  for (const id of Object.keys(loc.quiz?.questions ?? {})) {
+    if (!quizBiasIds.includes(id)) where(`quiz question "${id}" is not in the pool`);
+  }
 }
 
 // Every bias must have an icon on disk, and no icon may be orphaned.
@@ -51,6 +71,15 @@ for (const id of biasIds) {
 }
 for (const f of files) {
   if (!biasIds.includes(f.replace(/\.png$/, ''))) problems.push(`[icons] orphaned ${f}`);
+}
+
+// The quiz pool must reference real biases and be larger than a single run.
+for (const id of quizBiasIds) {
+  if (!biasIds.includes(id)) problems.push(`[quiz] pooled id "${id}" is not a bias`);
+}
+if (new Set(quizBiasIds).size !== quizBiasIds.length) problems.push('[quiz] duplicate ids in pool');
+if (quizBiasIds.length <= QUIZ_LENGTH) {
+  problems.push(`[quiz] pool (${quizBiasIds.length}) must exceed QUIZ_LENGTH (${QUIZ_LENGTH})`);
 }
 
 // Categories referenced by the manifest must exist in the locale files.
@@ -68,5 +97,6 @@ if (problems.length) {
 
 console.log(
   `OK — ${biasIds.length} biases × ${Object.keys(locales).length} locales ` +
-    `(${Object.keys(locales).join(', ')}), ${files.size} icons.`
+    `(${Object.keys(locales).join(', ')}), ${files.size} icons, ` +
+    `${quizBiasIds.length} quiz questions x ${Object.keys(locales).length}.`
 );

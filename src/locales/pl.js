@@ -30,6 +30,115 @@ export default {
     politics: 'Polityka',
   },
 
+  quiz: {
+    cta: 'Sprawdź siebie',
+    title: 'Które błędy są twoje?',
+    intro: 'Osiem krótkich sytuacji. Wybieraj to, co szczerze bardziej do ciebie pasuje — nie ma dobrych odpowiedzi.',
+    disclaimer: 'Dla zabawy i ciekawości — to nie jest test psychologiczny.',
+    start: 'Zaczynamy',
+    progress: 'Pytanie {n} z {total}',
+    close: 'Zamknij',
+    resultTitle: 'Twój wynik',
+    resultLead: 'Uległeś {count} z {total}.',
+    resultNone: 'Ominąłeś wszystkie osiem. Co samo w sobie sugeruje martwy punkt uprzedzeń.',
+    resultAll: 'Komplet — co do jednego. Pocieszająco po ludzku.',
+    resultHint: 'Oto błędy, na które wskazały twoje odpowiedzi:',
+    seeCard: 'Przeczytaj o tym',
+    again: 'Jeszcze raz',
+    questions: {
+      'fundamental-attribution-error': {
+        prompt: 'Współpracownik nie dotrzymał terminu. Pierwsza myśl:',
+        biased: 'Jest niezorganizowany.',
+        fair: 'Pewnie coś mu wypadło.',
+      },
+      'self-serving-bias': {
+        prompt: 'Projekt, który prowadziłeś, wyszedł świetnie. Dlaczego?',
+        biased: 'Podjąłeś właściwe decyzje.',
+        fair: 'Dobrze zagrały moment i zespół.',
+      },
+      'in-group-favoritism': {
+        prompt: 'Dwoje nieznajomych prosi cię o drobną przysługę. Jedno chodziło do twojej szkoły.',
+        biased: 'Temu pomożesz najpierw.',
+        fair: 'Dla ciebie to bez różnicy.',
+      },
+      'bandwagon-effect': {
+        prompt: 'Wszyscy twoi znajomi zaczęli korzystać z nowej aplikacji.',
+        biased: 'Robi się ciekawie i ją instalujesz.',
+        fair: 'Popularność sama w sobie nie jest argumentem.',
+      },
+      'halo-effect': {
+        prompt: 'Ktoś na rozmowie dobrze mówi i jest starannie ubrany.',
+        biased: 'Przy okazji uznajesz go za kompetentnego.',
+        fair: 'O jego pracy nie dowiedziałeś się jeszcze nic.',
+      },
+      'curse-of-knowledge': {
+        prompt: 'Tłumaczysz swoją pracę komuś spoza twojej branży.',
+        biased: 'Dziwi cię, że nie nadąża.',
+        fair: 'Z góry zakładasz, że zaczynasz od zupełnych podstaw.',
+      },
+      'spotlight-effect': {
+        prompt: 'Przed spotkaniem wylewasz kawę na koszulę.',
+        biased: 'Jesteś pewien, że wszyscy to zauważyli.',
+        fair: 'Nikt tak naprawdę nie patrzył.',
+      },
+      'availability-heuristic': {
+        prompt: 'Tydzień przed lotem czytasz o katastrofie lotniczej.',
+        biased: 'Latanie wydaje się teraz groźniejsze.',
+        fair: 'Prawdopodobieństwo się przez to nie zmieniło.',
+      },
+      'just-world-hypothesis': {
+        prompt: 'Ledwo znajomą osobę spotyka seria nieszczęść.',
+        biased: 'Po cichu zastanawiasz się, czym sobie na to zasłużyła.',
+        fair: 'Pech spada na ludzi przypadkiem.',
+      },
+      'dunning-kruger-effect': {
+        prompt: 'Czytasz długi artykuł o temacie, który jest dla ciebie nowy.',
+        biased: 'Czujesz się gotów mieć na ten temat zdanie.',
+        fair: 'Uświadamiasz sobie, jak wiele jeszcze nie wiesz.',
+      },
+      anchoring: {
+        prompt: 'Kurtka przeceniona z 200 na 90.',
+        biased: 'Dziewięćdziesiąt brzmi jak dobra cena.',
+        fair: 'Pytasz, ile ta kurtka jest naprawdę warta.',
+      },
+      'google-effect': {
+        prompt: 'Ktoś pyta cię o fakt, który sprawdzałeś w zeszłym tygodniu.',
+        biased: 'Pamiętasz, że szukałeś, ale nie odpowiedź.',
+        fair: 'Przypominasz ją sobie bez pomocy.',
+      },
+      reactance: {
+        prompt: 'Właśnie miałeś zrobić obowiązek i ktoś ci każe go zrobić.',
+        biased: 'Nagle chce ci się mniej.',
+        fair: 'Nic to nie zmienia — i tak miałeś to zrobić.',
+      },
+      'confirmation-bias': {
+        prompt: 'Doczytujesz o czymś, w co już wierzysz.',
+        biased: 'Zostaje w głowie to, co się zgadza.',
+        fair: 'Szukasz najmocniejszego kontrargumentu.',
+      },
+      'sunk-cost-fallacy': {
+        prompt: 'Jesteś dwie godziny w filmie, który ci się nie podoba.',
+        biased: 'Dooglądasz — tyle już w to włożyłeś.',
+        fair: 'Wyłączasz i odzyskujesz wieczór.',
+      },
+      'gamblers-fallacy': {
+        prompt: 'Moneta sześć razy z rzędu spadła orłem.',
+        biased: 'Reszka wydaje się już należna.',
+        fair: 'Następny rzut to wciąż pół na pół.',
+      },
+      'status-quo-bias': {
+        prompt: 'Twój operator jest przeciętny, a jest lepsza oferta.',
+        biased: 'Zostajesz — zmiana to kłopot.',
+        fair: 'Przenosisz się.',
+      },
+      'survivorship-bias': {
+        prompt: 'Słyszysz, że kilku znanych założycieli rzuciło studia.',
+        biased: 'Wygląda, że rzucenie studiów bywa atutem.',
+        fair: 'Zastanawiasz się, o ilu takich nigdy nie usłyszałeś.',
+      },
+    },
+  },
+
   biases: {
     'fundamental-attribution-error': {
       name: 'Podstawowy błąd atrybucji',

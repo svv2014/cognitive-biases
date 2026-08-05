@@ -10,6 +10,7 @@ import BiasCard from './components/BiasCard.jsx';
 import EmptyState from './components/EmptyState.jsx';
 import Footer from './components/Footer.jsx';
 import { filterBiases, normalize } from './lib/search.js';
+import Quiz from './components/Quiz.jsx';
 
 /**
  * `?lang=uk` makes a language link shareable and takes precedence over both the
@@ -30,6 +31,7 @@ export default function App() {
   );
   const [query, setQuery] = useState('');
   const [activeCategories, setActiveCategories] = useState([]);
+  const [quizOpen, setQuizOpen] = useState(false);
 
   const debouncedQuery = useDebounced(query, 200);
 
@@ -96,6 +98,7 @@ export default function App() {
         count={visible.length}
         total={entries.length}
         isFiltered={isFiltered}
+        onStartQuiz={() => setQuizOpen(true)}
       />
 
       <main className="app__main">
@@ -122,6 +125,21 @@ export default function App() {
       </main>
 
       <Footer locale={locale} />
+
+      {quizOpen && (
+        <Quiz
+          locale={locale}
+          onClose={() => setQuizOpen(false)}
+          onOpenBias={(name) => {
+            setQuizOpen(false);
+            setActiveCategories([]);
+            setQuery(name);
+            requestAnimationFrame(() =>
+              document.getElementById('biases')?.scrollIntoView({ behavior: 'smooth' })
+            );
+          }}
+        />
+      )}
     </div>
   );
 }
