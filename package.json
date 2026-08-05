@@ -1,36 +1,29 @@
 {
   "name": "cognitive-biases",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+  "version": "2.0.0",
+  "private": true,
+  "description": "A searchable, multilingual reference of 50 cognitive biases.",
+  "type": "module",
+  "license": "GPL-3.0",
+  "homepage": "https://tetyanaking.github.io/cognitive-biases/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tetyanaking/cognitive-biases.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "GNU",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "node scripts/check-locales.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "test": "npm run check && node --test scripts/test-search.mjs && npm run smoke"
+  },
   "dependencies": {
-    "@babel/core": "^7.16.5",
-    "@babel/preset-env": "^7.16.5",
-    "copy-webpack-plugin": "^5.1.1",
-    "favicons-webpack-plugin": "^3.0.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-cookie": "^4.1.1",
-    "react-dom": "^16.13.1",
-    "react-ga": "^3.3.0",
-    "react-hot-loader": "^4.12.21",
-    "react-localization": "^1.0.15",
-    "react-router-dom": "^5.2.0",
-    "webpack-merge": "^4.2.2"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@neutrinojs/react": "^9.1.0",
-    "neutrino": "^9.1.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
   }
 }

@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - run: npm ci
+
+      # Validates that every locale covers every bias, runs the search unit
+      # tests and server-renders the app in all six languages.
+      - run: npm test
+
+      - run: npm run build
+
+      - name: Fail if docs/ is out of date
+        run: |
+          if [ -n "$(git status --porcelain docs)" ]; then
+            echo "::error::docs/ does not match the committed source."
+            echo "Run 'npm run build' and commit the result."
+            git status --porcelain docs
+            exit 1
+          fi
