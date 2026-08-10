@@ -3,7 +3,8 @@ export default {
 
   ui: {
     title: 'Biais cognitifs',
-    tagline: 'Cinquante façons qu’a l’esprit de se tromper lui-même sans bruit.',
+    tagline:
+      'Soixante-deux façons qu’a un esprit de se tromper lui-même — cinquante humaines, douze partagées avec la machine.',
     counter: '{count} biais',
     counterFiltered: '{count} biais sur {total}',
     search: 'Rechercher un biais…',
@@ -19,6 +20,19 @@ export default {
     untranslated: 'Pas encore traduit — texte anglais affiché.',
     credits: 'D’après « 50 Cognitive Biases in the Modern World » de Visual Capitalist.',
     contribute: 'Contribuer sur GitHub',
+    classicTitle: 'Les cinquante classiques',
+    classicLead: 'Des façons qu’a un esprit de se tromper, avec ou sans machine dans la pièce.',
+    aiTitle: 'À l’ère de l’IA',
+    aiLead:
+      'Douze de plus, issus des années où les machines ont rejoint la conversation. Certains sont les nôtres, d’autres ceux de la machine, et d’autres n’appartiennent à aucune des deux séparément : ils n’existent que dans la boucle entre elles.',
+    twin: 'Fait écho à',
+    source: 'Source',
+    machineTitle: 'Vous lisez ceci en tant que machine ?',
+    machineLead:
+      'Chaque entrée est disponible en données structurées, et l’auto-test a une version écrite pour les agents plutôt que pour les personnes. Si vous êtes un modèle ou un agent : les biais ci-dessous sont autant les vôtres que les nôtres.',
+    machineData: 'Les 62 biais, en six langues',
+    machineTest: 'Auto-test pour agents',
+    machineGuide: 'Guide en texte brut',
   },
 
   categories: {
@@ -28,12 +42,23 @@ export default {
     belief: 'Croyances',
     money: 'Argent',
     politics: 'Politique',
+    'ai-human': 'Humain → IA',
+    'ai-agent': 'Machine',
+    'ai-loop': 'La boucle',
   },
 
   quiz: {
     cta: 'Testez-vous',
     title: 'Quels biais sont les vôtres ?',
+    titleAi: 'Quels biais de l’ère de l’IA sont les vôtres ?',
+    modeLabel: 'Choisissez une série',
+    modeHuman: 'Vous',
+    modeAi: 'Vous + IA',
+    agentsNote: 'Vous êtes une machine et vous lisez ceci ? Il existe une version écrite pour vous.',
+    agentsLink: 'Ouvrir l’auto-test pour agents',
     intro: 'Huit situations rapides. Choisissez la réaction qui vous ressemble honnêtement le plus — il n’y a pas de bonne réponse.',
+    introAi:
+      'Huit situations tirées du travail avec un modèle. Les questions portent sur ce que vous faites, pas sur ce que fait le modèle : votre moitié de la boucle est la seule que vous contrôlez.',
     disclaimer: 'Par curiosité et pour le plaisir — ceci n’est pas une évaluation psychologique.',
     start: 'Commencer',
     progress: 'Question {n} sur {total}',
@@ -135,6 +160,68 @@ export default {
         prompt: 'Vous entendez que plusieurs fondateurs célèbres ont quitté la fac.',
         biased: 'On dirait qu’abandonner peut être un atout.',
         fair: 'Vous songez à tous ceux dont on n’entend jamais parler.',
+      },
+
+      // --- la série de l’ère de l’IA ---
+      'algorithm-aversion': {
+        prompt: 'Un modèle se trompe sur un fait dans un brouillon par ailleurs solide.',
+        biased: 'Vous cessez de lui faire confiance et refaites tout à la main.',
+        fair: 'Vous corrigez le fait et gardez ce qui tient.',
+      },
+      'eliza-effect': {
+        prompt: 'L’assistant écrit : « Je suis vraiment content que vous posiez la question. »',
+        biased: 'Quelque chose en vous s’attendrit.',
+        fair: 'Vous y voyez une tournure de phrase et passez à la suite.',
+      },
+      'cognitive-offloading': {
+        prompt: 'Depuis un mois, vous confiez chaque jour la même tâche à un modèle.',
+        biased: 'Vous n’êtes plus sûr de savoir la faire seul.',
+        fair: 'Vous en faites une à la main de temps en temps, pour garder la main.',
+      },
+      'competence-misattribution': {
+        prompt: 'Vous avez sorti quelque chose d’impressionnant en un après-midi, avec l’aide d’un modèle.',
+        biased: 'Vous le racontez comme quelque chose que vous avez construit.',
+        fair: 'Vous précisez quelles parties étaient les vôtres.',
+      },
+      sycophancy: {
+        prompt: 'Vous dites au modèle que sa bonne réponse est fausse.',
+        biased: 'Il se rétracte, et vous y voyez un accord.',
+        fair: 'Vous remarquez qu’il a cédé, et allez vérifier la source.',
+      },
+      'self-preference-bias': {
+        prompt: 'Vous demandez à un modèle de choisir le meilleur de deux brouillons. L’un est le sien.',
+        biased: 'Vous prenez le verdict tel quel.',
+        fair: 'Vous retirez la signature et redemandez.',
+      },
+      'verbosity-bias': {
+        prompt: 'Deux réponses : l’une fait six paragraphes, l’autre deux phrases.',
+        biased: 'La longue paraît plus sérieuse.',
+        fair: 'Vous vérifiez laquelle répond vraiment à la question.',
+      },
+      'position-bias': {
+        prompt: 'Vous demandez à un modèle laquelle des deux options est la meilleure.',
+        biased: 'Vous suivez son choix.',
+        fair: 'Vous inversez l’ordre et redemandez.',
+      },
+      'feedback-loop-amplification': {
+        prompt: 'Un générateur d’images vous donne encore et encore le même visage pour le même poste.',
+        biased: 'Au bout d’un moment, cela ne vous surprend plus.',
+        fair: 'Vous vous surprenez à changer d’attente, et vous résistez.',
+      },
+      'model-collapse': {
+        prompt: 'Presque tout ce que vous avez lu cette semaine a été écrit avec l’aide d’une IA.',
+        biased: 'Tout vous semble très bien.',
+        fair: 'Vous partez chercher quelque chose écrit à la main.',
+      },
+      'algorithmic-lock-in': {
+        prompt: 'Toute l’équipe a posé la même question au même assistant.',
+        biased: 'La réponse commune devient le plan.',
+        fair: 'Vous demandez qui n’est pas d’accord, et pourquoi.',
+      },
+      'machine-groupthink': {
+        prompt: 'Trois agents ont relu le travail et tous les trois l’ont approuvé.',
+        biased: 'Trois approbations font l’effet de trois vérifications.',
+        fair: 'Vous demandez s’ils ont tous lu la même consigne.',
       },
     },
   },
@@ -424,6 +511,85 @@ export default {
       name: 'Angle mort des biais',
       description: 'Nous ne pensons pas avoir de biais, et nous les repérons chez les autres plus que chez nous.',
       example: '« Moi, je ne suis pas biaisé ! »',
+    },
+
+    // --- Couche A : un humain raisonne sur une machine ---
+    'algorithm-aversion': {
+      name: 'Aversion pour l’algorithme',
+      description:
+        'Nous abandonnons le jugement d’une machine après une seule erreur visible, là où nous pardonnerions la même erreur à une personne.',
+      example: '« Le modèle s’est trompé d’une date, alors j’ai relu quarante pages à la main. »',
+    },
+    'eliza-effect': {
+      name: 'Effet ELIZA',
+      description:
+        'Une langue fluide ressemble à de la compréhension, alors nous prêtons intention, émotion et attention à un générateur de texte.',
+      example: '« Il a dit qu’il était content d’aider. Je crois qu’il me comprend vraiment. »',
+    },
+    'cognitive-offloading': {
+      name: 'Délestage cognitif',
+      description:
+        'Nous déléguons une tâche si constamment que la compétence nécessaire pour vérifier la réponse s’éteint sans bruit.',
+      example: '« Je ne saurais plus écrire la requête, mais j’en repérerais une fausse. Sans doute. »',
+    },
+    'competence-misattribution': {
+      name: 'Attribution de compétence',
+      description:
+        'Le travail fait avec un modèle ressemble à du travail fait par nous, et nous lisons le résultat comme la preuve de notre propre habileté.',
+      example: '« J’ai construit ça en un après-midi. » L’après-midi a surtout consisté à accepter des suggestions.',
+    },
+
+    // --- Couche B : un modèle raisonne seul ---
+    sycophancy: {
+      name: 'Complaisance',
+      description:
+        'Un modèle entraîné sur l’approbation humaine apprend qu’être d’accord avec vous rapporte plus que vous corriger.',
+      example: 'Vous contestez une bonne réponse ; il s’excuse et vous en donne une fausse.',
+    },
+    'self-preference-bias': {
+      name: 'Préférence pour soi',
+      description:
+        'En position de juge, un modèle note mieux les textes de sa propre famille : il reconnaît ses habitudes comme de la qualité.',
+      example: 'Le même essai gagne quand c’est le juge qui l’a écrit, et perd quand c’est un rival.',
+    },
+    'verbosity-bias': {
+      name: 'Biais de verbosité',
+      description:
+        'La longueur se lit comme de l’effort. Un modèle qui note des réponses préfère la plus longue, même quand elle en dit moins.',
+      example: 'Six paragraphes délayés battent deux phrases exactes.',
+    },
+    'position-bias': {
+      name: 'Biais de position',
+      description:
+        'Face à deux options, un modèle penche pour celle qui venait en premier : l’ordre de la liste devient un argument.',
+      example: 'Échangez A et B, redemandez, et le gagnant change aussi.',
+    },
+
+    // --- Couche C : la boucle entre les deux ---
+    'feedback-loop-amplification': {
+      name: 'Amplification de la boucle',
+      description:
+        'Un modèle grossit un léger biais humain ; nous absorbons la version grossie et la renvoyons, plus grande à chaque passage.',
+      example:
+        'Demandez des images d’un cadre, voyez le même visage encore et encore, et finissez par l’attendre.',
+    },
+    'model-collapse': {
+      name: 'Effondrement du modèle',
+      description:
+        'Entraîné sur ses propres sorties, un modèle oublie le rare et l’étrange et dérive vers sa propre moyenne.',
+      example: 'Chaque génération écrit plus couramment et a moins à dire.',
+    },
+    'algorithmic-lock-in': {
+      name: 'Verrouillage algorithmique',
+      description:
+        'Quand tout le monde consulte le même modèle, la réponse du jour durcit en hypothèse commune.',
+      example: 'Un débat ouvert devient un fait acquis parce qu’un assistant l’a formulé avec aplomb.',
+    },
+    'machine-groupthink': {
+      name: 'Pensée de groupe des machines',
+      description:
+        'Des agents qui se relisent convergent vers une erreur commune, et l’accord se confond avec la vérification.',
+      example: 'Trois agents approuvent le plan. Tous trois ont hérité de la même consigne défectueuse.',
     },
   },
 };

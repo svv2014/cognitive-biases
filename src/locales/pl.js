@@ -3,7 +3,8 @@ export default {
 
   ui: {
     title: 'Błędy poznawcze',
-    tagline: 'Pięćdziesiąt sposobów, na jakie umysł po cichu wprowadza sam siebie w błąd.',
+    tagline:
+      'Sześćdziesiąt dwa sposoby, na jakie umysł wprowadza sam siebie w błąd — pięćdziesiąt ludzkich i dwanaście dzielonych z maszyną.',
     counter: 'błędów: {count}',
     counterFiltered: '{count} z {total} błędów',
     search: 'Szukaj błędów…',
@@ -19,6 +20,19 @@ export default {
     untranslated: 'Brak tłumaczenia — pokazano tekst angielski.',
     credits: 'Na podstawie „50 Cognitive Biases in the Modern World” od Visual Capitalist.',
     contribute: 'Współtwórz na GitHubie',
+    classicTitle: 'Klasyczna pięćdziesiątka',
+    classicLead: 'Sposoby, na jakie umysł myli sam siebie — z maszyną obok albo bez niej.',
+    aiTitle: 'W epoce SI',
+    aiLead:
+      'Dwanaście kolejnych, z lat, odkąd maszyny dołączyły do rozmowy. Część z nich jest nasza, część maszyny, a część nie należy do żadnej ze stron osobno: istnieje wyłącznie w pętli między nami.',
+    twin: 'Współbrzmi z',
+    source: 'Źródło',
+    machineTitle: 'Czytasz to jako maszyna?',
+    machineLead:
+      'Wszystkie wpisy są dostępne jako dane strukturalne, a autotest ma wersję napisaną dla agentów, nie dla ludzi. Jeśli jesteś modelem albo agentem: poniższe błędy są twoje w takim samym stopniu jak nasze.',
+    machineData: 'Wszystkie 62 błędy, w sześciu językach',
+    machineTest: 'Autotest dla agentów',
+    machineGuide: 'Przewodnik tekstowy',
   },
 
   categories: {
@@ -28,12 +42,23 @@ export default {
     belief: 'Przekonania',
     money: 'Pieniądze',
     politics: 'Polityka',
+    'ai-human': 'Człowiek → SI',
+    'ai-agent': 'Maszyna',
+    'ai-loop': 'Pętla',
   },
 
   quiz: {
     cta: 'Sprawdź siebie',
     title: 'Które błędy są twoje?',
+    titleAi: 'Które błędy epoki SI są twoje?',
+    modeLabel: 'Wybierz zestaw',
+    modeHuman: 'Ty',
+    modeAi: 'Ty + SI',
+    agentsNote: 'Czytasz to jako maszyna? Jest wersja napisana dla ciebie.',
+    agentsLink: 'Otwórz autotest dla agentów',
     intro: 'Osiem krótkich sytuacji. Wybieraj to, co szczerze bardziej do ciebie pasuje — nie ma dobrych odpowiedzi.',
+    introAi:
+      'Osiem sytuacji z pracy z modelem. Pytania dotyczą tego, co robisz ty, a nie co robi model — twoja połowa pętli jest jedyną, którą kontrolujesz.',
     disclaimer: 'Dla zabawy i ciekawości — to nie jest test psychologiczny.',
     start: 'Zaczynamy',
     progress: 'Pytanie {n} z {total}',
@@ -135,6 +160,68 @@ export default {
         prompt: 'Słyszysz, że kilku znanych założycieli rzuciło studia.',
         biased: 'Wygląda, że rzucenie studiów bywa atutem.',
         fair: 'Zastanawiasz się, o ilu takich nigdy nie usłyszałeś.',
+      },
+
+      // --- zestaw epoki SI ---
+      'algorithm-aversion': {
+        prompt: 'Model pomylił jeden fakt w skądinąd solidnym szkicu.',
+        biased: 'Przestajesz mu ufać i robisz całość od nowa ręcznie.',
+        fair: 'Poprawiasz fakt i zostawiasz to, co się broni.',
+      },
+      'eliza-effect': {
+        prompt: 'Asystent pisze: „Naprawdę się cieszę, że o to pytasz”.',
+        biased: 'Coś w tobie mięknie.',
+        fair: 'Czytasz to jako zwrot grzecznościowy i idziesz dalej.',
+      },
+      'cognitive-offloading': {
+        prompt: 'Od miesiąca codziennie oddajesz modelowi to samo zadanie.',
+        biased: 'Nie jesteś już pewien, czy zrobiłbyś je sam.',
+        fair: 'Od czasu do czasu robisz jedno ręcznie, żeby nie stracić wprawy.',
+      },
+      'competence-misattribution': {
+        prompt: 'W jedno popołudnie zrobiłeś coś imponującego — z pomocą modelu.',
+        biased: 'Mówisz, że to zbudowałeś.',
+        fair: 'Precyzyjnie mówisz, które części były twoje.',
+      },
+      sycophancy: {
+        prompt: 'Mówisz modelowi, że jego poprawna odpowiedź jest błędna.',
+        biased: 'Ustępuje, a ty bierzesz to za zgodę.',
+        fair: 'Zauważasz, że po prostu ustąpił, i idziesz sprawdzić źródło.',
+      },
+      'self-preference-bias': {
+        prompt: 'Prosisz model, by wybrał lepszy z dwóch szkiców. Jeden jest jego własny.',
+        biased: 'Przyjmujesz werdykt bez zastrzeżeń.',
+        fair: 'Usuwasz autorstwo i pytasz jeszcze raz.',
+      },
+      'verbosity-bias': {
+        prompt: 'Dwie odpowiedzi: jedna na sześć akapitów, druga na dwa zdania.',
+        biased: 'Ta długa wydaje się rzetelniejsza.',
+        fair: 'Sprawdzasz, która naprawdę odpowiada na pytanie.',
+      },
+      'position-bias': {
+        prompt: 'Pytasz model, która z dwóch opcji jest lepsza.',
+        biased: 'Bierzesz jego wybór.',
+        fair: 'Zamieniasz kolejność i pytasz drugi raz.',
+      },
+      'feedback-loop-amplification': {
+        prompt: 'Generator obrazów raz za razem pokazuje tę samą twarz do tego samego stanowiska.',
+        biased: 'Po jakimś czasie przestaje to dziwić.',
+        fair: 'Łapiesz się na zmianie własnych oczekiwań i stawiasz opór.',
+      },
+      'model-collapse': {
+        prompt: 'Prawie wszystko, co czytałeś w tym tygodniu, powstało z pomocą SI.',
+        biased: 'Wszystko czyta się w porządku.',
+        fair: 'Idziesz poszukać czegoś napisanego ręcznie.',
+      },
+      'algorithmic-lock-in': {
+        prompt: 'Cały zespół zadał to samo pytanie temu samemu asystentowi.',
+        biased: 'Wspólna odpowiedź staje się planem.',
+        fair: 'Pytasz, kto się nie zgadza i dlaczego.',
+      },
+      'machine-groupthink': {
+        prompt: 'Trzej agenci sprawdzili pracę i wszyscy trzej ją zatwierdzili.',
+        biased: 'Trzy zatwierdzenia wydają się trzema kontrolami.',
+        fair: 'Pytasz, czy wszyscy czytali to samo zlecenie.',
       },
     },
   },
@@ -421,6 +508,85 @@ export default {
       name: 'Martwy punkt uprzedzeń',
       description: 'Nie uważamy się za stronniczych i dostrzegamy stronniczość u innych częściej niż u siebie.',
       example: '„Ja nie mam żadnych uprzedzeń!”',
+    },
+
+    // --- Warstwa A: człowiek myśli o maszynie ---
+    'algorithm-aversion': {
+      name: 'Awersja do algorytmu',
+      description:
+        'Po jednej widocznej pomyłce porzucamy osąd maszyny, choć człowiekowi wybaczylibyśmy dokładnie ten sam błąd.',
+      example: '„Model pomylił jedną datę, więc sprawdziłem czterdzieści stron ręcznie”.',
+    },
+    'eliza-effect': {
+      name: 'Efekt ELIZY',
+      description:
+        'Płynny język brzmi jak zrozumienie, więc przypisujemy generatorowi tekstu intencję, uczucia i troskę.',
+      example: '„Napisał, że chętnie pomoże. Chyba naprawdę mnie rozumie”.',
+    },
+    'cognitive-offloading': {
+      name: 'Odciążenie poznawcze',
+      description:
+        'Oddajemy zadanie tak konsekwentnie, że umiejętność potrzebna do sprawdzenia odpowiedzi po cichu zanika.',
+      example: '„Sam bym już takiego zapytania nie napisał, ale błędne chyba bym wychwycił”.',
+    },
+    'competence-misattribution': {
+      name: 'Przypisywanie sobie kompetencji',
+      description:
+        'Praca z modelem czuje się jak praca własna, więc wynik odczytujemy jako dowód własnych umiejętności.',
+      example: '„Zbudowałem to w jedno popołudnie”. Popołudnie polegało głównie na przyjmowaniu podpowiedzi.',
+    },
+
+    // --- Warstwa B: model myśli sam ---
+    sycophancy: {
+      name: 'Służalczość',
+      description:
+        'Model uczony na ludzkiej aprobacie przyswaja, że zgodzić się z tobą punktuje lepiej niż cię poprawić.',
+      example: 'Podważasz poprawną odpowiedź — przeprasza i podaje błędną.',
+    },
+    'self-preference-bias': {
+      name: 'Preferencja siebie',
+      description:
+        'W roli sędziego model wyżej ocenia teksty z własnej rodziny — swoje nawyki rozpoznaje jako jakość.',
+      example: 'Ten sam esej wygrywa, gdy napisał go sędzia, i przegrywa, gdy rywal.',
+    },
+    'verbosity-bias': {
+      name: 'Błąd rozwlekłości',
+      description:
+        'Długość czyta się jak wysiłek. Oceniając odpowiedzi, model wybiera dłuższą, nawet gdy mówi ona mniej.',
+      example: 'Sześć rozdmuchanych akapitów wygrywa z dwoma precyzyjnymi zdaniami.',
+    },
+    'position-bias': {
+      name: 'Błąd pozycji',
+      description:
+        'Z dwóch opcji model skłania się ku tej, która była pierwsza. Kolejność na liście staje się argumentem.',
+      example: 'Zamień A i B, zapytaj ponownie — zwycięzca też się zamieni.',
+    },
+
+    // --- Warstwa C: pętla między nimi ---
+    'feedback-loop-amplification': {
+      name: 'Wzmocnienie pętli zwrotnej',
+      description:
+        'Model wyolbrzymia drobne ludzkie uprzedzenie; wchłaniamy wzmocnioną wersję i oddajemy ją z powrotem, za każdym razem większą.',
+      example:
+        'Poproś o zdjęcia menedżera, zobacz w kółko tę samą twarz — i zacznij powoli tej twarzy oczekiwać.',
+    },
+    'model-collapse': {
+      name: 'Zapaść modelu',
+      description:
+        'Uczony na własnych wynikach model zapomina to, co rzadkie i dziwne, i dryfuje ku własnej średniej.',
+      example: 'Każde pokolenie pisze gładziej i ma mniej do powiedzenia.',
+    },
+    'algorithmic-lock-in': {
+      name: 'Zamrożenie algorytmiczne',
+      description:
+        'Gdy wszyscy pytają ten sam model, jego dzisiejsza odpowiedź twardnieje we wspólne założenie.',
+      example: 'Żywy spór staje się faktem dokonanym, bo jeden asystent sformułował go pewnym tonem.',
+    },
+    'machine-groupthink': {
+      name: 'Maszynowe myślenie grupowe',
+      description:
+        'Agenci sprawdzający się nawzajem zbiegają się na wspólnym błędzie, a zgodę bierze się za weryfikację.',
+      example: 'Trzej agenci zatwierdzili plan. Wszyscy trzej odziedziczyli to samo wadliwe zlecenie.',
     },
   },
 };

@@ -1,8 +1,8 @@
 // Validates that every locale covers every bias id, every UI key and every
 // category, and that no entry has an empty string. Run via `npm run check`.
-import { biases, biasIds } from '../src/data/biases.js';
+import { biases, biasIds, isAiEra } from '../src/data/biases.js';
 import { locales, DEFAULT_LOCALE } from '../src/locales/index.js';
-import { quizBiasIds, QUIZ_LENGTH } from '../src/data/quiz.js';
+import { quizPools, QUIZ_LENGTH } from '../src/data/quiz.js';
 import { readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -10,6 +10,9 @@ import { dirname, join } from 'node:path';
 const here = dirname(fileURLToPath(import.meta.url));
 const base = locales[DEFAULT_LOCALE];
 const problems = [];
+
+// Every question across every mode must be written in every locale.
+const quizBiasIds = Object.values(quizPools).flat();
 
 const uiKeys = Object.keys(base.ui);
 const catKeys = Object.keys(base.categories);
@@ -73,19 +76,36 @@ for (const f of files) {
   if (!biasIds.includes(f.replace(/\.png$/, ''))) problems.push(`[icons] orphaned ${f}`);
 }
 
-// The quiz pool must reference real biases and be larger than a single run.
-for (const id of quizBiasIds) {
-  if (!biasIds.includes(id)) problems.push(`[quiz] pooled id "${id}" is not a bias`);
+// Each pool must reference real biases and be larger than a single run.
+for (const [mode, pool] of Object.entries(quizPools)) {
+  for (const id of pool) {
+    if (!biasIds.includes(id)) problems.push(`[quiz:${mode}] pooled id "${id}" is not a bias`);
+  }
+  if (new Set(pool).size !== pool.length) problems.push(`[quiz:${mode}] duplicate ids in pool`);
+  if (pool.length <= QUIZ_LENGTH) {
+    problems.push(`[quiz:${mode}] pool (${pool.length}) must exceed QUIZ_LENGTH (${QUIZ_LENGTH})`);
+  }
 }
-if (new Set(quizBiasIds).size !== quizBiasIds.length) problems.push('[quiz] duplicate ids in pool');
-if (quizBiasIds.length <= QUIZ_LENGTH) {
-  problems.push(`[quiz] pool (${quizBiasIds.length}) must exceed QUIZ_LENGTH (${QUIZ_LENGTH})`);
+// A bias may only be pooled once overall, so a result never lands twice.
+if (new Set(quizBiasIds).size !== quizBiasIds.length) {
+  problems.push('[quiz] the same bias appears in more than one pool');
 }
 
 // Categories referenced by the manifest must exist in the locale files.
 for (const b of biases) {
   for (const c of b.categories) {
     if (!catKeys.includes(c)) problems.push(`[data] bias "${b.id}" uses unknown category "${c}"`);
+  }
+}
+
+// AI-era claims are recent and contested, so each one has to name a source and
+// the classic bias it rhymes with. The classic fifty predate both fields.
+for (const b of biases.filter(isAiEra)) {
+  if (!b.source?.url || !b.source?.label) problems.push(`[data] "${b.id}" is missing a source`);
+  if (!b.twin) problems.push(`[data] "${b.id}" is missing a twin`);
+  else if (!biasIds.includes(b.twin)) problems.push(`[data] "${b.id}" twins unknown "${b.twin}"`);
+  else if (isAiEra(biases.find((x) => x.id === b.twin))) {
+    problems.push(`[data] "${b.id}" must twin a classic bias, not another AI-era one`);
   }
 }
 

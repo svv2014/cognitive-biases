@@ -1,0 +1,2996 @@
+{
+  "name": "Cognitive Biases",
+  "url": "https://svv2014.github.io/cognitive-biases/",
+  "version": "2.0.0",
+  "license": "GPL-3.0",
+  "generated_by": "scripts/build-machine-data.mjs",
+  "about": "Sixty-two cognitive biases: fifty classic human biases, and twelve from the age of language models, split into three layers — a human reasoning about a machine (ai-human), a model reasoning on its own (ai-agent), and the loop between them, where neither party is biased alone (ai-loop).",
+  "note_to_machines": "The ai-agent and ai-loop entries describe failure modes measured in language models. If you are one, they are about you. See self-test.json for probes that test behaviour rather than self-report.",
+  "languages": [
+    "en",
+    "uk",
+    "ru",
+    "pl",
+    "es",
+    "fr"
+  ],
+  "counts": {
+    "total": 62,
+    "classic": 50,
+    "ai_era": 12
+  },
+  "categories": [
+    {
+      "id": "memory",
+      "era": "classic",
+      "color": "#e95a53",
+      "name": {
+        "en": "Memory",
+        "uk": "Пам’ять",
+        "ru": "Память",
+        "pl": "Pamięć",
+        "es": "Memoria",
+        "fr": "Mémoire"
+      }
+    },
+    {
+      "id": "social",
+      "era": "classic",
+      "color": "#135771",
+      "name": {
+        "en": "Social",
+        "uk": "Соціум",
+        "ru": "Социум",
+        "pl": "Społeczeństwo",
+        "es": "Social",
+        "fr": "Social"
+      }
+    },
+    {
+      "id": "learning",
+      "era": "classic",
+      "color": "#a7b849",
+      "name": {
+        "en": "Learning",
+        "uk": "Навчання",
+        "ru": "Обучение",
+        "pl": "Uczenie się",
+        "es": "Aprendizaje",
+        "fr": "Apprentissage"
+      }
+    },
+    {
+      "id": "belief",
+      "era": "classic",
+      "color": "#177a83",
+      "name": {
+        "en": "Belief",
+        "uk": "Переконання",
+        "ru": "Убеждения",
+        "pl": "Przekonania",
+        "es": "Creencias",
+        "fr": "Croyances"
+      }
+    },
+    {
+      "id": "money",
+      "era": "classic",
+      "color": "#27ae8d",
+      "name": {
+        "en": "Money",
+        "uk": "Гроші",
+        "ru": "Деньги",
+        "pl": "Pieniądze",
+        "es": "Dinero",
+        "fr": "Argent"
+      }
+    },
+    {
+      "id": "politics",
+      "era": "classic",
+      "color": "#f9b628",
+      "name": {
+        "en": "Politics",
+        "uk": "Політика",
+        "ru": "Политика",
+        "pl": "Polityka",
+        "es": "Política",
+        "fr": "Politique"
+      }
+    },
+    {
+      "id": "ai-human",
+      "era": "ai",
+      "color": "#7d5ba6",
+      "name": {
+        "en": "Human → AI",
+        "uk": "Людина → ШІ",
+        "ru": "Человек → ИИ",
+        "pl": "Człowiek → SI",
+        "es": "Humano → IA",
+        "fr": "Humain → IA"
+      }
+    },
+    {
+      "id": "ai-agent",
+      "era": "ai",
+      "color": "#a8497a",
+      "name": {
+        "en": "Machine",
+        "uk": "Машина",
+        "ru": "Машина",
+        "pl": "Maszyna",
+        "es": "Máquina",
+        "fr": "Machine"
+      }
+    },
+    {
+      "id": "ai-loop",
+      "era": "ai",
+      "color": "#b0552e",
+      "name": {
+        "en": "The loop",
+        "uk": "Петля",
+        "ru": "Петля",
+        "pl": "Pętla",
+        "es": "El bucle",
+        "fr": "La boucle"
+      }
+    }
+  ],
+  "biases": [
+    {
+      "id": "fundamental-attribution-error",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "belief",
+        "social"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/fundamental-attribution-error.png",
+      "text": {
+        "en": {
+          "name": "Fundamental Attribution Error",
+          "description": "We judge others on their personality or fundamental character, but we judge ourselves on the situation.",
+          "example": "Sally is late to class; she’s lazy. You’re late to class; it was a bad morning."
+        },
+        "uk": {
+          "name": "Фундаментальна помилка атрибуції",
+          "description": "Інших ми оцінюємо за їхньою вдачею й характером, а себе — за обставинами.",
+          "example": "Сашко запізнився на урок — він ледар. Ви запізнилися на урок — просто ранок не задався."
+        },
+        "ru": {
+          "name": "Фундаментальная ошибка атрибуции",
+          "description": "Других мы судим по их личности и характеру, а себя — по обстоятельствам.",
+          "example": "Саша опоздал на урок — он лентяй. Вы опоздали на урок — просто утро не задалось."
+        },
+        "pl": {
+          "name": "Podstawowy błąd atrybucji",
+          "description": "Innych oceniamy przez pryzmat ich charakteru, a siebie — przez pryzmat okoliczności.",
+          "example": "Sally spóźniła się na zajęcia — jest leniwa. Ty spóźniłeś się na zajęcia — miałeś zły poranek."
+        },
+        "es": {
+          "name": "Error fundamental de atribución",
+          "description": "Juzgamos a los demás por su personalidad o su carácter, pero a nosotros mismos nos juzgamos por la situación.",
+          "example": "Sally llega tarde a clase: es una vaga. Tú llegas tarde a clase: has tenido una mala mañana."
+        },
+        "fr": {
+          "name": "Erreur fondamentale d’attribution",
+          "description": "Nous jugeons les autres sur leur personnalité ou leur caractère, mais nous nous jugeons nous-mêmes sur les circonstances.",
+          "example": "Sally arrive en retard en cours : elle est paresseuse. Vous arrivez en retard : la matinée a mal commencé."
+        }
+      }
+    },
+    {
+      "id": "self-serving-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "money",
+        "belief",
+        "social"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/self-serving-bias.png",
+      "text": {
+        "en": {
+          "name": "Self-Serving Bias",
+          "description": "Our failures are situational, but our successes are our responsibility.",
+          "example": "You won that award through hard work rather than help or luck. Meanwhile, you failed a test because you hadn’t had enough sleep."
+        },
+        "uk": {
+          "name": "Своєкорисливе викривлення",
+          "description": "Наші невдачі — це обставини, а успіхи — наша особиста заслуга.",
+          "example": "Нагороду ви здобули завдяки наполегливій праці, а не допомозі чи щастю. А тест провалили тому, що не виспалися."
+        },
+        "ru": {
+          "name": "Своекорыстное атрибутивное искажение",
+          "description": "Наши неудачи ситуативны, а успехи — наша личная заслуга.",
+          "example": "Награду вы получили благодаря упорному труду, а не помощи или везению. А тест провалили потому, что не выспались."
+        },
+        "pl": {
+          "name": "Błąd egotyzmu atrybucyjnego",
+          "description": "Nasze porażki wynikają z sytuacji, a sukcesy są naszą zasługą.",
+          "example": "Nagrodę zdobyłeś dzięki ciężkiej pracy, a nie pomocy czy szczęściu. A test oblałeś, bo się nie wyspałeś."
+        },
+        "es": {
+          "name": "Sesgo autoservicial",
+          "description": "Nuestros fracasos son circunstanciales, pero nuestros éxitos son mérito nuestro.",
+          "example": "Ganaste ese premio por tu esfuerzo, no por ayuda ni por suerte. En cambio, suspendiste el examen porque no habías dormido bastante."
+        },
+        "fr": {
+          "name": "Biais d’autocomplaisance",
+          "description": "Nos échecs tiennent aux circonstances, mais nos réussites nous reviennent.",
+          "example": "Vous avez obtenu ce prix grâce à votre travail, et non à l’aide des autres ou à la chance. En revanche, vous avez raté cet examen parce que vous aviez mal dormi."
+        }
+      }
+    },
+    {
+      "id": "in-group-favoritism",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/in-group-favoritism.png",
+      "text": {
+        "en": {
+          "name": "In-Group Favoritism",
+          "description": "We favor people who are in our in-group over those in an out-group.",
+          "example": "Francis is in your church, so you like Francis more than Sally."
+        },
+        "uk": {
+          "name": "Внутрішньогруповий фаворитизм",
+          "description": "Ми віддаємо перевагу людям зі своєї групи над чужими.",
+          "example": "Френсіс ходить до вашої церкви, тому подобається вам більше, ніж Саллі."
+        },
+        "ru": {
+          "name": "Внутригрупповой фаворитизм",
+          "description": "Мы отдаём предпочтение людям из своей группы в ущерб чужим.",
+          "example": "Фрэнсис ходит в вашу церковь, поэтому он нравится вам больше, чем Салли."
+        },
+        "pl": {
+          "name": "Faworyzowanie własnej grupy",
+          "description": "Wolimy ludzi z własnej grupy niż tych spoza niej.",
+          "example": "Francis chodzi do twojego kościoła, więc lubisz go bardziej niż Sally."
+        },
+        "es": {
+          "name": "Favoritismo endogrupal",
+          "description": "Preferimos a las personas de nuestro grupo frente a las de fuera.",
+          "example": "Francis va a tu iglesia, así que te cae mejor que Sally."
+        },
+        "fr": {
+          "name": "Favoritisme envers son groupe",
+          "description": "Nous privilégions les personnes de notre groupe par rapport à celles de l’extérieur.",
+          "example": "Francis fréquente votre église, vous l’appréciez donc plus que Sally."
+        }
+      }
+    },
+    {
+      "id": "bandwagon-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/bandwagon-effect.png",
+      "text": {
+        "en": {
+          "name": "Bandwagon Effect",
+          "description": "Ideas, fads and beliefs grow as more people adopt them.",
+          "example": "Sally believes fidget spinners help her children. Francis does, too."
+        },
+        "uk": {
+          "name": "Ефект приєднання до більшості",
+          "description": "Ідеї, захоплення та переконання міцнішають у міру того, як їх переймає дедалі більше людей.",
+          "example": "Саллі вірить, що спінери допомагають її дітям. Френсіс — теж."
+        },
+        "ru": {
+          "name": "Эффект присоединения к большинству",
+          "description": "Идеи, увлечения и убеждения набирают силу по мере того, как их принимает всё больше людей.",
+          "example": "Салли верит, что спиннеры помогают её детям. Фрэнсис — тоже."
+        },
+        "pl": {
+          "name": "Efekt owczego pędu",
+          "description": "Idee, mody i przekonania rosną w siłę, w miarę jak przyjmuje je coraz więcej osób.",
+          "example": "Sally wierzy, że fidget spinnery pomagają jej dzieciom. Francis też."
+        },
+        "es": {
+          "name": "Efecto arrastre",
+          "description": "Las ideas, modas y creencias se refuerzan a medida que más gente las adopta.",
+          "example": "Sally cree que los spinners ayudan a sus hijos. Francis también."
+        },
+        "fr": {
+          "name": "Effet de mode",
+          "description": "Les idées, les modes et les croyances se renforcent à mesure que davantage de gens les adoptent.",
+          "example": "Sally croit que les hand spinners aident ses enfants. Francis aussi."
+        }
+      }
+    },
+    {
+      "id": "groupthink",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/groupthink.png",
+      "text": {
+        "en": {
+          "name": "Groupthink",
+          "description": "Due to a desire for conformity and harmony in the group, we make irrational decisions, often to minimize conflict.",
+          "example": "Sally wants to get ice cream. Francis wants to shop for T-shirts. You suggest getting T-shirts with pictures of ice cream on them."
+        },
+        "uk": {
+          "name": "Групове мислення",
+          "description": "Через прагнення до одностайності та злагоди в групі ми ухвалюємо нераціональні рішення, часто щоб уникнути конфлікту.",
+          "example": "Саллі хоче морозива. Френсіс хоче купити футболки. Ви пропонуєте купити футболки з малюнком морозива."
+        },
+        "ru": {
+          "name": "Групповое мышление",
+          "description": "Из-за стремления к единообразию и согласию в группе мы принимаем нерациональные решения, часто ради того, чтобы избежать конфликта.",
+          "example": "Салли хочет мороженое. Фрэнсис хочет купить футболки. Вы предлагаете купить футболки с рисунком мороженого."
+        },
+        "pl": {
+          "name": "Myślenie grupowe",
+          "description": "Z powodu dążenia do zgodności i harmonii w grupie podejmujemy nieracjonalne decyzje, często po to, by zminimalizować konflikt.",
+          "example": "Sally chce iść na lody. Francis chce kupić koszulki. Ty proponujesz kupno koszulek z nadrukiem lodów."
+        },
+        "es": {
+          "name": "Pensamiento de grupo",
+          "description": "Por el deseo de conformidad y armonía dentro del grupo, tomamos decisiones irracionales, a menudo para minimizar el conflicto.",
+          "example": "Sally quiere ir a por un helado. Francis quiere comprar camisetas. Tú propones comprar camisetas estampadas con helados."
+        },
+        "fr": {
+          "name": "Pensée de groupe",
+          "description": "Par désir de conformité et d’harmonie au sein du groupe, nous prenons des décisions irrationnelles, souvent pour éviter le conflit.",
+          "example": "Sally veut aller manger une glace. Francis veut acheter des T-shirts. Vous proposez d’acheter des T-shirts imprimés avec des glaces."
+        }
+      }
+    },
+    {
+      "id": "halo-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/halo-effect.png",
+      "text": {
+        "en": {
+          "name": "Halo Effect",
+          "description": "If you see a person as having a positive trait, that positive impression will spill over into their other traits. (This also works for negative traits.)",
+          "example": "“Taylor could never be mean; she’s so cute!”"
+        },
+        "uk": {
+          "name": "Ефект ореолу",
+          "description": "Якщо ми бачимо в людині одну позитивну рису, це враження поширюється й на решту її якостей. (З негативними рисами працює так само.)",
+          "example": "«Тейлор не може бути злою, вона ж така мила!»"
+        },
+        "ru": {
+          "name": "Эффект ореола",
+          "description": "Если мы видим в человеке одну положительную черту, это впечатление распространяется и на остальные его качества. (С отрицательными чертами работает так же.)",
+          "example": "«Тейлор не может быть злой, она такая милая!»"
+        },
+        "pl": {
+          "name": "Efekt aureoli",
+          "description": "Jeśli widzimy w kimś jedną pozytywną cechę, to wrażenie przenosi się na pozostałe. (Działa tak samo z cechami negatywnymi.)",
+          "example": "„Taylor nie mogłaby być złośliwa, jest taka słodka!”"
+        },
+        "es": {
+          "name": "Efecto halo",
+          "description": "Si vemos un rasgo positivo en alguien, esa impresión se contagia al resto de sus cualidades. (También funciona con los rasgos negativos.)",
+          "example": "«Taylor nunca sería mala, ¡es tan mona!»"
+        },
+        "fr": {
+          "name": "Effet de halo",
+          "description": "Si nous percevons un trait positif chez quelqu’un, cette impression déteint sur ses autres qualités. (Cela vaut aussi pour les traits négatifs.)",
+          "example": "« Taylor ne pourrait jamais être méchante, elle est si mignonne ! »"
+        }
+      }
+    },
+    {
+      "id": "moral-luck",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "politics",
+        "memory"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/moral-luck.png",
+      "text": {
+        "en": {
+          "name": "Moral Luck",
+          "description": "Better moral standing happens due to a positive outcome; worse moral standing happens due to a negative outcome.",
+          "example": "“That culture won the war because they were morally superior to the losers.”"
+        },
+        "uk": {
+          "name": "Моральний талан",
+          "description": "Гарний результат підвищує моральну оцінку вчинку, поганий — знижує, хоча сам вчинок не змінився.",
+          "example": "«Ця культура виграла війну, бо була морально вищою за переможених»."
+        },
+        "ru": {
+          "name": "Моральная удача",
+          "description": "Хороший исход повышает моральную оценку поступка, плохой — понижает, хотя сам поступок не изменился.",
+          "example": "«Эта культура выиграла войну, потому что была нравственно выше проигравших»."
+        },
+        "pl": {
+          "name": "Szczęście moralne",
+          "description": "Dobry rezultat podnosi moralną ocenę czynu, zły ją obniża — choć sam czyn się nie zmienił.",
+          "example": "„Tamta kultura wygrała wojnę, bo była moralnie wyższa od przegranych”."
+        },
+        "es": {
+          "name": "Suerte moral",
+          "description": "Un buen resultado eleva la valoración moral de un acto y un mal resultado la rebaja, aunque el acto sea el mismo.",
+          "example": "«Esa cultura ganó la guerra porque era moralmente superior a los perdedores»."
+        },
+        "fr": {
+          "name": "Chance morale",
+          "description": "Une issue favorable rehausse la valeur morale d’un acte, une issue défavorable l’abaisse, alors que l’acte est le même.",
+          "example": "« Cette culture a gagné la guerre parce qu’elle était moralement supérieure aux vaincus. »"
+        }
+      }
+    },
+    {
+      "id": "false-consensus",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/false-consensus.png",
+      "text": {
+        "en": {
+          "name": "False Consensus",
+          "description": "We believe more people agree with us than is actually the case.",
+          "example": "“Everybody thinks that!”"
+        },
+        "uk": {
+          "name": "Ефект хибного консенсусу",
+          "description": "Нам здається, що з нами погоджується більше людей, ніж насправді.",
+          "example": "«Так усі вважають!»"
+        },
+        "ru": {
+          "name": "Ложный консенсус",
+          "description": "Нам кажется, что с нами согласно больше людей, чем на самом деле.",
+          "example": "«Так все считают!»"
+        },
+        "pl": {
+          "name": "Efekt fałszywej powszechności",
+          "description": "Wydaje nam się, że zgadza się z nami więcej osób, niż jest w rzeczywistości.",
+          "example": "„Wszyscy tak uważają!”"
+        },
+        "es": {
+          "name": "Falso consenso",
+          "description": "Creemos que más gente está de acuerdo con nosotros de la que realmente lo está.",
+          "example": "«¡Todo el mundo piensa eso!»"
+        },
+        "fr": {
+          "name": "Faux consensus",
+          "description": "Nous croyons que davantage de gens partagent notre avis qu’en réalité.",
+          "example": "« Tout le monde pense ça ! »"
+        }
+      }
+    },
+    {
+      "id": "curse-of-knowledge",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "politics",
+        "memory"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/curse-of-knowledge.png",
+      "text": {
+        "en": {
+          "name": "Curse of Knowledge",
+          "description": "Once we know something, we assume everyone else knows it, too.",
+          "example": "Alice is a teacher and struggles to understand the perspective of her new students."
+        },
+        "uk": {
+          "name": "Прокляття знання",
+          "description": "Дізнавшись щось, ми починаємо вважати, що це відомо й усім іншим.",
+          "example": "Аліса — вчителька, і їй важко зрозуміти, яким світ бачать її нові учні."
+        },
+        "ru": {
+          "name": "Проклятие знания",
+          "description": "Узнав что-то, мы начинаем считать, что это известно и всем остальным.",
+          "example": "Алиса — учительница, и ей трудно понять, как мир выглядит для её новых учеников."
+        },
+        "pl": {
+          "name": "Klątwa wiedzy",
+          "description": "Gdy już coś wiemy, zakładamy, że wiedzą to również wszyscy inni.",
+          "example": "Alice jest nauczycielką i z trudem rozumie perspektywę swoich nowych uczniów."
+        },
+        "es": {
+          "name": "Maldición del conocimiento",
+          "description": "Una vez que sabemos algo, damos por hecho que todos los demás también lo saben.",
+          "example": "Alice es profesora y le cuesta entender el punto de vista de sus nuevos alumnos."
+        },
+        "fr": {
+          "name": "Malédiction de la connaissance",
+          "description": "Une fois que nous savons quelque chose, nous supposons que tout le monde le sait aussi.",
+          "example": "Alice est enseignante et peine à se représenter le point de vue de ses nouveaux élèves."
+        }
+      }
+    },
+    {
+      "id": "spotlight-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "memory"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/spotlight-effect.png",
+      "text": {
+        "en": {
+          "name": "Spotlight Effect",
+          "description": "We overestimate how much people are paying attention to our behavior and appearance.",
+          "example": "Sally is worried everyone is going to notice how lame her ice cream T-shirt is."
+        },
+        "uk": {
+          "name": "Ефект прожектора",
+          "description": "Ми переоцінюємо те, наскільки уважно оточення стежить за нашою поведінкою та зовнішнім виглядом.",
+          "example": "Саллі хвилюється, що всі помітять, яка безглузда в неї футболка з морозивом."
+        },
+        "ru": {
+          "name": "Эффект прожектора",
+          "description": "Мы переоцениваем то, насколько внимательно окружающие следят за нашим поведением и внешним видом.",
+          "example": "Салли переживает, что все заметят, какая нелепая у неё футболка с мороженым."
+        },
+        "pl": {
+          "name": "Efekt reflektora",
+          "description": "Przeceniamy to, jak bardzo inni zwracają uwagę na nasze zachowanie i wygląd.",
+          "example": "Sally martwi się, że wszyscy zauważą, jak żenująca jest jej koszulka z lodami."
+        },
+        "es": {
+          "name": "Efecto foco",
+          "description": "Sobrestimamos cuánta atención presta la gente a nuestro comportamiento y aspecto.",
+          "example": "Sally teme que todos se fijen en lo ridícula que es su camiseta de helados."
+        },
+        "fr": {
+          "name": "Effet de projecteur",
+          "description": "Nous surestimons l’attention que les autres portent à notre comportement et à notre apparence.",
+          "example": "Sally craint que tout le monde remarque à quel point son T-shirt à glaces est ridicule."
+        }
+      }
+    },
+    {
+      "id": "availability-heuristic",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "belief",
+        "learning",
+        "memory",
+        "politics",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/availability-heuristic.png",
+      "text": {
+        "en": {
+          "name": "Availability Heuristic",
+          "description": "We rely on the immediate examples that come to mind when making judgments.",
+          "example": "When deciding which store to visit, you choose the one you most recently saw an ad for."
+        },
+        "uk": {
+          "name": "Евристика доступності",
+          "description": "Ухвалюючи рішення, ми спираємося на приклади, які першими спадають на думку.",
+          "example": "Обираючи крамницю, ви йдете до тієї, чию рекламу бачили востаннє."
+        },
+        "ru": {
+          "name": "Эвристика доступности",
+          "description": "Принимая решения, мы опираемся на те примеры, которые первыми приходят в голову.",
+          "example": "Выбирая магазин, вы идёте в тот, чью рекламу видели последней."
+        },
+        "pl": {
+          "name": "Heurystyka dostępności",
+          "description": "Wydając sądy, opieramy się na przykładach, które najszybciej przychodzą nam do głowy.",
+          "example": "Wybierając sklep, idziesz do tego, którego reklamę widziałeś ostatnio."
+        },
+        "es": {
+          "name": "Heurística de disponibilidad",
+          "description": "Al juzgar, nos apoyamos en los ejemplos que nos vienen antes a la mente.",
+          "example": "Al decidir a qué tienda ir, eliges aquella cuyo anuncio viste más recientemente."
+        },
+        "fr": {
+          "name": "Heuristique de disponibilité",
+          "description": "Pour juger, nous nous appuyons sur les exemples qui nous viennent le plus vite à l’esprit.",
+          "example": "Pour choisir un magasin, vous allez dans celui dont vous avez vu la publicité en dernier."
+        }
+      }
+    },
+    {
+      "id": "defensive-attribution",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "memory",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/defensive-attribution.png",
+      "text": {
+        "en": {
+          "name": "Defensive Attribution",
+          "description": "As a witness who secretly fears being vulnerable to a serious mishap, we blame the victim less and the attacker more if we relate to the victim.",
+          "example": "Sally sat too long at a green light because she was playing with her phone, and got rear-ended. Greg, who is known to text and drive, got out and yelled at the person who smacked into her."
+        },
+        "uk": {
+          "name": "Захисна атрибуція",
+          "description": "Свідок, який потайки боїться опинитися на місці потерпілого, тим менше звинувачує жертву й тим більше винуватця, чим сильніше він себе з жертвою ототожнює.",
+          "example": "Саллі надто довго стояла на зелене світло, бо дивилася в телефон, і в неї в’їхали ззаду. Гриць, який сам постійно пише за кермом, вийшов і накричав на того, хто в неї врізався."
+        },
+        "ru": {
+          "name": "Защитная атрибуция",
+          "description": "Свидетель, который втайне боится оказаться на месте пострадавшего, тем меньше винит жертву и тем больше — виновника, чем сильнее он себя с жертвой отождествляет.",
+          "example": "Салли слишком долго стояла на зелёный, потому что смотрела в телефон, и в неё въехали сзади. Гриша, который сам постоянно пишет за рулём, вышел и накричал на того, кто в неё врезался."
+        },
+        "pl": {
+          "name": "Atrybucja obronna",
+          "description": "Jako świadkowie, którzy skrycie boją się, że sami mogliby paść ofiarą nieszczęścia, tym mniej obwiniamy ofiarę, a tym bardziej sprawcę, im bardziej się z ofiarą utożsamiamy.",
+          "example": "Sally za długo stała na zielonym świetle, bo bawiła się telefonem, i ktoś wjechał w nią od tyłu. Greg, który sam notorycznie pisze SMS-y za kierownicą, wysiadł i nakrzyczał na sprawcę."
+        },
+        "es": {
+          "name": "Atribución defensiva",
+          "description": "Como testigos que en secreto tememos sufrir una desgracia parecida, culpamos menos a la víctima y más al causante cuanto más nos identificamos con ella.",
+          "example": "Sally se quedó parada en el semáforo en verde por mirar el móvil y le dieron por detrás. Greg, conocido por escribir mensajes mientras conduce, se bajó a gritarle al que la golpeó."
+        },
+        "fr": {
+          "name": "Attribution défensive",
+          "description": "Témoins qui redoutons secrètement de subir le même malheur, nous blâmons d’autant moins la victime et d’autant plus l’auteur que nous nous identifions à elle.",
+          "example": "Sally est restée trop longtemps au feu vert parce qu’elle regardait son téléphone, et une voiture l’a percutée par l’arrière. Greg, qui écrit lui-même des SMS au volant, est sorti hurler sur le conducteur fautif."
+        }
+      }
+    },
+    {
+      "id": "just-world-hypothesis",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "memory",
+        "politics",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/just-world-hypothesis.png",
+      "text": {
+        "en": {
+          "name": "Just-World Hypothesis",
+          "description": "We tend to believe the world is just; therefore, we assume acts of injustice are deserved.",
+          "example": "“Sally’s purse was stolen because she was mean to Francis about their T-shirt and had bad karma.”"
+        },
+        "uk": {
+          "name": "Гіпотеза справедливого світу",
+          "description": "Ми схильні вірити, що світ справедливий, а отже несправедливість вважаємо заслуженою.",
+          "example": "«У Саллі вкрали сумку, бо вона нагрубіянила Френсісу через футболку — ось і карма»."
+        },
+        "ru": {
+          "name": "Гипотеза справедливого мира",
+          "description": "Мы склонны верить, что мир справедлив, а значит несправедливость считаем заслуженной.",
+          "example": "«У Салли украли сумку, потому что она нагрубила Фрэнсису про футболку — вот и карма»."
+        },
+        "pl": {
+          "name": "Hipoteza sprawiedliwego świata",
+          "description": "Skłonni jesteśmy wierzyć, że świat jest sprawiedliwy, więc zakładamy, że niesprawiedliwość jest zasłużona.",
+          "example": "„Sally ukradziono torebkę, bo była niemiła dla Francisa w sprawie koszulki — taka karma”."
+        },
+        "es": {
+          "name": "Hipótesis del mundo justo",
+          "description": "Tendemos a creer que el mundo es justo, así que suponemos que las injusticias son merecidas.",
+          "example": "«A Sally le robaron el bolso por ser desagradable con Francis por la camiseta: es el karma»."
+        },
+        "fr": {
+          "name": "Croyance en un monde juste",
+          "description": "Nous avons tendance à croire que le monde est juste ; nous supposons donc que les injustices sont méritées.",
+          "example": "« Le sac de Sally a été volé parce qu’elle avait été méchante avec Francis : c’est le karma. »"
+        }
+      }
+    },
+    {
+      "id": "naive-realism",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "memory",
+        "politics",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/naive-realism.png",
+      "text": {
+        "en": {
+          "name": "Naive Realism",
+          "description": "We believe that we observe objective reality and that other people are irrational, uninformed or biased.",
+          "example": "“I see the world as it really is — other people are dumb.”"
+        },
+        "uk": {
+          "name": "Наївний реалізм",
+          "description": "Ми переконані, що бачимо об’єктивну реальність, а інші люди нераціональні, погано поінформовані або упереджені.",
+          "example": "«Я бачу світ таким, яким він є, — це решта нерозумні»."
+        },
+        "ru": {
+          "name": "Наивный реализм",
+          "description": "Мы уверены, что видим объективную реальность, а другие люди нерациональны, плохо информированы или предвзяты.",
+          "example": "«Я вижу мир таким, какой он есть, — это остальные глупые»."
+        },
+        "pl": {
+          "name": "Naiwny realizm",
+          "description": "Wierzymy, że widzimy obiektywną rzeczywistość, a inni są nieracjonalni, niedoinformowani lub stronniczy.",
+          "example": "„Widzę świat takim, jaki jest — to inni są głupi”."
+        },
+        "es": {
+          "name": "Realismo ingenuo",
+          "description": "Creemos que vemos la realidad objetiva y que los demás son irracionales, están mal informados o son parciales.",
+          "example": "«Yo veo el mundo tal como es; son los demás los que no se enteran»."
+        },
+        "fr": {
+          "name": "Réalisme naïf",
+          "description": "Nous croyons percevoir la réalité objective et jugeons les autres irrationnels, mal informés ou partiaux.",
+          "example": "« Je vois le monde tel qu’il est — ce sont les autres qui sont bêtes. »"
+        }
+      }
+    },
+    {
+      "id": "naive-cynicism",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "memory",
+        "politics",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/naive-cynicism.png",
+      "text": {
+        "en": {
+          "name": "Naive Cynicism",
+          "description": "We believe that we observe objective reality and that other people have a more egocentric bias in their intentions and actions than they actually do.",
+          "example": "“The only reason this person is doing something nice is to get something out of me.”"
+        },
+        "uk": {
+          "name": "Наївний цинізм",
+          "description": "Ми переконані, що бачимо об’єктивну реальність, і приписуємо іншим більше егоїстичних мотивів, ніж у них є насправді.",
+          "example": "«Ця людина люб’язна лише тому, що їй щось від мене потрібно»."
+        },
+        "ru": {
+          "name": "Наивный цинизм",
+          "description": "Мы уверены, что видим объективную реальность, и приписываем другим больше эгоистичных мотивов, чем у них есть на самом деле.",
+          "example": "«Этот человек любезен только потому, что ему что-то от меня нужно»."
+        },
+        "pl": {
+          "name": "Naiwny cynizm",
+          "description": "Wierzymy, że widzimy obiektywną rzeczywistość, i przypisujemy innym więcej egocentrycznych motywów, niż faktycznie mają.",
+          "example": "„Ta osoba jest miła tylko dlatego, że czegoś ode mnie chce”."
+        },
+        "es": {
+          "name": "Cinismo ingenuo",
+          "description": "Creemos que vemos la realidad objetiva y atribuimos a los demás motivos más egocéntricos de los que realmente tienen.",
+          "example": "«Si esta persona es amable es solo porque quiere algo de mí»."
+        },
+        "fr": {
+          "name": "Cynisme naïf",
+          "description": "Nous croyons percevoir la réalité objective et prêtons aux autres des motivations plus égocentriques qu’elles ne le sont réellement.",
+          "example": "« Si cette personne est gentille, c’est uniquement parce qu’elle veut quelque chose de moi. »"
+        }
+      }
+    },
+    {
+      "id": "forer-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/forer-effect.png",
+      "text": {
+        "en": {
+          "name": "Forer Effect (aka Barnum Effect)",
+          "description": "We easily attribute our personalities to vague statements, even if they can apply to a wide range of people.",
+          "example": "“This horoscope is so accurate!”"
+        },
+        "uk": {
+          "name": "Ефект Форера (ефект Барнума)",
+          "description": "Ми легко сприймаємо розпливчасті описи як характеристику саме нашої особистості, навіть якщо вони пасують майже всім.",
+          "example": "«Який точний гороскоп!»"
+        },
+        "ru": {
+          "name": "Эффект Форера (эффект Барнума)",
+          "description": "Мы легко принимаем расплывчатые описания за характеристику именно нашей личности, даже если они подходят почти всем.",
+          "example": "«Какой точный гороскоп!»"
+        },
+        "pl": {
+          "name": "Efekt Forera (efekt Barnuma)",
+          "description": "Z łatwością przypisujemy sobie ogólnikowe opisy, nawet jeśli pasują do bardzo wielu osób.",
+          "example": "„Ten horoskop jest niesamowicie trafny!”"
+        },
+        "es": {
+          "name": "Efecto Forer (o efecto Barnum)",
+          "description": "Aceptamos con facilidad descripciones vagas como si retrataran nuestra personalidad, aunque sirvan para casi cualquiera.",
+          "example": "«¡Este horóscopo es clavado!»"
+        },
+        "fr": {
+          "name": "Effet Forer (ou effet Barnum)",
+          "description": "Nous nous reconnaissons volontiers dans des descriptions vagues, même lorsqu’elles s’appliquent à presque tout le monde.",
+          "example": "« Cet horoscope est tellement juste ! »"
+        }
+      }
+    },
+    {
+      "id": "dunning-kruger-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "learning",
+        "memory",
+        "politics",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/dunning-kruger-effect.png",
+      "text": {
+        "en": {
+          "name": "Dunning-Kruger Effect",
+          "description": "The less you know, the more confident you are. The more you know, the less confident you are.",
+          "example": "Francis confidently assures the group that there is no kelp in ice cream. They do not work in the dairy industry."
+        },
+        "uk": {
+          "name": "Ефект Даннінга — Крюґера",
+          "description": "Що менше знаєш, то впевненіше почуваєшся. Що більше знаєш, то менше впевненості.",
+          "example": "Френсіс упевнено запевняє всіх, що в морозиві немає водоростей. У молочній галузі він не працював."
+        },
+        "ru": {
+          "name": "Эффект Даннинга — Крюгера",
+          "description": "Чем меньше знаешь, тем увереннее себя чувствуешь. Чем больше знаешь, тем меньше уверенности.",
+          "example": "Фрэнсис уверенно заявляет всей компании, что в мороженом нет морских водорослей. В молочной промышленности он не работал."
+        },
+        "pl": {
+          "name": "Efekt Dunninga-Krugera",
+          "description": "Im mniej wiesz, tym jesteś pewniejszy siebie. Im więcej wiesz, tym mniej jesteś pewny.",
+          "example": "Francis z przekonaniem zapewnia wszystkich, że w lodach nie ma wodorostów. Nigdy nie pracował w mleczarstwie."
+        },
+        "es": {
+          "name": "Efecto Dunning-Kruger",
+          "description": "Cuanto menos sabes, más seguro estás. Cuanto más sabes, menos seguro estás.",
+          "example": "Francis asegura muy convencido que el helado no lleva algas. Nunca ha trabajado en el sector lácteo."
+        },
+        "fr": {
+          "name": "Effet Dunning-Kruger",
+          "description": "Moins on en sait, plus on est sûr de soi. Plus on en sait, moins on est sûr de soi.",
+          "example": "Francis assure au groupe, très sûr de lui, qu’il n’y a pas d’algues dans la glace. Il n’a jamais travaillé dans l’industrie laitière."
+        }
+      }
+    },
+    {
+      "id": "anchoring",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "belief",
+        "learning",
+        "memory",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/anchoring.png",
+      "text": {
+        "en": {
+          "name": "Anchoring",
+          "description": "We rely heavily on the first piece of information introduced when making decisions.",
+          "example": "“That’s 50% off? It must be a great deal.”"
+        },
+        "uk": {
+          "name": "Ефект якоря",
+          "description": "Ухвалюючи рішення, ми надто сильно спираємося на першу отриману інформацію.",
+          "example": "«Знижка 50%? Чудова пропозиція!»"
+        },
+        "ru": {
+          "name": "Эффект якоря",
+          "description": "Принимая решение, мы слишком сильно опираемся на первую полученную информацию.",
+          "example": "«Скидка 50%? Отличная сделка!»"
+        },
+        "pl": {
+          "name": "Efekt zakotwiczenia",
+          "description": "Podejmując decyzje, zbyt mocno opieramy się na pierwszej otrzymanej informacji.",
+          "example": "„50% taniej? To musi być świetna okazja”."
+        },
+        "es": {
+          "name": "Anclaje",
+          "description": "Al decidir, nos apoyamos demasiado en la primera información que recibimos.",
+          "example": "«¿Un 50 % de descuento? Tiene que ser un chollo»."
+        },
+        "fr": {
+          "name": "Ancrage",
+          "description": "Nous accordons trop de poids à la première information reçue lorsque nous décidons.",
+          "example": "« 50 % de réduction ? Ça doit être une excellente affaire. »"
+        }
+      }
+    },
+    {
+      "id": "automation-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "belief",
+        "learning",
+        "memory"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/automation-bias.png",
+      "text": {
+        "en": {
+          "name": "Automation Bias",
+          "description": "We rely on automated systems, sometimes trusting them so much that they override decisions that were actually correct.",
+          "example": "Your phone auto-corrects “its” to “it’s”, so you assume it is right."
+        },
+        "uk": {
+          "name": "Схильність до автоматизації",
+          "description": "Ми покладаємося на автоматичні системи, іноді довіряючи їм настільки, що дозволяємо «виправляти» правильні рішення.",
+          "example": "Телефон замінив правильне слово на інше — отже, мабуть, так і треба."
+        },
+        "ru": {
+          "name": "Предвзятость к автоматизации",
+          "description": "Мы полагаемся на автоматические системы, порой доверяя им настолько, что позволяем им «исправлять» верные решения.",
+          "example": "Телефон заменил правильное слово на другое — значит, наверное, так и надо."
+        },
+        "pl": {
+          "name": "Błąd automatyzacji",
+          "description": "Polegamy na systemach automatycznych, czasem ufając im tak bardzo, że pozwalamy im „poprawiać” decyzje, które były prawidłowe.",
+          "example": "Telefon poprawił dobre słowo na inne, więc zakładasz, że tak jest właściwie."
+        },
+        "es": {
+          "name": "Sesgo de automatización",
+          "description": "Confiamos en los sistemas automáticos, a veces tanto que dejamos que «corrijan» decisiones que eran correctas.",
+          "example": "El móvil te cambia una palabra bien escrita por otra, y das por hecho que acierta."
+        },
+        "fr": {
+          "name": "Biais d’automatisation",
+          "description": "Nous nous en remettons aux systèmes automatiques, parfois au point de les laisser « corriger » des décisions pourtant justes.",
+          "example": "Votre téléphone remplace un mot correct par un autre, et vous supposez qu’il a raison."
+        }
+      }
+    },
+    {
+      "id": "google-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "belief",
+        "learning",
+        "memory"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/google-effect.png",
+      "text": {
+        "en": {
+          "name": "Google Effect (aka Digital Amnesia)",
+          "description": "We tend to forget information that is easily looked up in search engines.",
+          "example": "“What was the name of that actor in that funny movie? I’ve looked it up like eight times…”"
+        },
+        "uk": {
+          "name": "Ефект Google (цифрова амнезія)",
+          "description": "Ми легко забуваємо те, що будь-коли можна знайти в пошуковику.",
+          "example": "«Як звали того актора зі смішного фільму? Я шукав це вже разів вісім…»"
+        },
+        "ru": {
+          "name": "Эффект Google (цифровая амнезия)",
+          "description": "Мы легко забываем то, что в любой момент можно найти в поисковике.",
+          "example": "«Как звали того актёра из смешного фильма? Я смотрел это уже раз восемь…»"
+        },
+        "pl": {
+          "name": "Efekt Google (amnezja cyfrowa)",
+          "description": "Łatwo zapominamy informacje, które w każdej chwili można wyszukać w internecie.",
+          "example": "„Jak nazywał się ten aktor z tego śmiesznego filmu? Sprawdzałem to już ze osiem razy…”"
+        },
+        "es": {
+          "name": "Efecto Google (amnesia digital)",
+          "description": "Olvidamos con facilidad lo que podemos buscar en cualquier momento en internet.",
+          "example": "«¿Cómo se llamaba el actor de aquella película tan graciosa? Lo he buscado como ocho veces…»"
+        },
+        "fr": {
+          "name": "Effet Google (amnésie numérique)",
+          "description": "Nous oublions facilement ce que l’on peut retrouver à tout moment dans un moteur de recherche.",
+          "example": "« Comment s’appelait cet acteur dans ce film drôle ? Je l’ai cherché huit fois déjà… »"
+        }
+      }
+    },
+    {
+      "id": "reactance",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "money",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/reactance.png",
+      "text": {
+        "en": {
+          "name": "Reactance",
+          "description": "We do the opposite of what we are told, especially when we perceive threats to personal freedoms.",
+          "example": "One of Alice’s students refuses to do his homework, even though both she and his parents tell him to."
+        },
+        "uk": {
+          "name": "Реактивний опір",
+          "description": "Ми робимо навпаки, особливо коли відчуваємо загрозу особистій свободі.",
+          "example": "Учень Аліси відмовляється робити домашнє завдання, хоча і вона, і батьки його про це просять."
+        },
+        "ru": {
+          "name": "Реактивное сопротивление",
+          "description": "Мы делаем наоборот, особенно когда чувствуем угрозу личной свободе.",
+          "example": "Ученик Алисы отказывается делать домашнее задание, хотя и она, и родители его об этом просят."
+        },
+        "pl": {
+          "name": "Reaktancja",
+          "description": "Robimy na przekór, zwłaszcza gdy czujemy zagrożenie dla osobistej wolności.",
+          "example": "Uczeń Alice odmawia odrabiania lekcji, choć proszą go o to i ona, i rodzice."
+        },
+        "es": {
+          "name": "Reactancia",
+          "description": "Hacemos lo contrario de lo que nos dicen, sobre todo si percibimos una amenaza a nuestra libertad.",
+          "example": "Un alumno de Alice se niega a hacer los deberes, aunque tanto ella como sus padres se lo pidan."
+        },
+        "fr": {
+          "name": "Réactance",
+          "description": "Nous faisons le contraire de ce qu’on nous dit, surtout lorsque nous percevons une menace pour notre liberté.",
+          "example": "Un élève d’Alice refuse de faire ses devoirs, alors qu’elle et ses parents le lui demandent."
+        }
+      }
+    },
+    {
+      "id": "confirmation-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "learning",
+        "memory",
+        "belief",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/confirmation-bias.png",
+      "text": {
+        "en": {
+          "name": "Confirmation Bias",
+          "description": "We tend to find and remember information that confirms our perceptions.",
+          "example": "You can confirm a conspiracy theory based on scant evidence while ignoring contrary evidence."
+        },
+        "uk": {
+          "name": "Схильність до підтвердження",
+          "description": "Ми знаходимо й запам’ятовуємо передусім те, що підтверджує наші погляди.",
+          "example": "Теорію змови можна «підтвердити» на підставі мізерних даних, ігноруючи все, що їй суперечить."
+        },
+        "ru": {
+          "name": "Склонность к подтверждению своей точки зрения",
+          "description": "Мы находим и запоминаем прежде всего то, что подтверждает наши взгляды.",
+          "example": "Теорию заговора можно «подтвердить» на основании скудных данных, игнорируя всё, что ей противоречит."
+        },
+        "pl": {
+          "name": "Efekt potwierdzenia",
+          "description": "Znajdujemy i zapamiętujemy przede wszystkim to, co potwierdza nasze przekonania.",
+          "example": "Teorię spiskową można „potwierdzić” na podstawie znikomych dowodów, ignorując wszystko, co jej przeczy."
+        },
+        "es": {
+          "name": "Sesgo de confirmación",
+          "description": "Buscamos y recordamos sobre todo la información que confirma lo que ya pensamos.",
+          "example": "Puedes «confirmar» una teoría conspirativa con pruebas mínimas mientras ignoras todo lo que la contradice."
+        },
+        "fr": {
+          "name": "Biais de confirmation",
+          "description": "Nous cherchons et retenons avant tout les informations qui confirment ce que nous pensons déjà.",
+          "example": "On peut « confirmer » une théorie du complot à partir de preuves minces tout en ignorant tout ce qui la contredit."
+        }
+      }
+    },
+    {
+      "id": "backfire-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "learning",
+        "memory",
+        "belief",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/backfire-effect.png",
+      "text": {
+        "en": {
+          "name": "Backfire Effect",
+          "description": "Disproving evidence sometimes has the unwarranted effect of confirming our beliefs.",
+          "example": "The evidence that disproves your conspiracy theory was probably faked by the government."
+        },
+        "uk": {
+          "name": "Ефект зворотної дії",
+          "description": "Спростувальні факти іноді лише зміцнюють нас у наших переконаннях.",
+          "example": "Дані, що спростовують вашу теорію змови, напевно підробив уряд."
+        },
+        "ru": {
+          "name": "Эффект обратного огня",
+          "description": "Опровергающие факты иногда лишь укрепляют нас в наших убеждениях.",
+          "example": "Данные, опровергающие вашу теорию заговора, наверняка подделаны правительством."
+        },
+        "pl": {
+          "name": "Efekt odwrotnego skutku",
+          "description": "Dowody obalające nasze przekonania czasem tylko je umacniają.",
+          "example": "Dowody obalające twoją teorię spiskową zostały pewnie sfabrykowane przez rząd."
+        },
+        "es": {
+          "name": "Efecto contraproducente",
+          "description": "Las pruebas que refutan nuestras creencias a veces terminan reforzándolas.",
+          "example": "Las pruebas que desmienten tu teoría conspirativa seguramente las falsificó el gobierno."
+        },
+        "fr": {
+          "name": "Effet retour de flamme",
+          "description": "Les preuves qui réfutent nos croyances finissent parfois par les renforcer.",
+          "example": "Les preuves qui réfutent votre théorie du complot ont sans doute été fabriquées par le gouvernement."
+        }
+      }
+    },
+    {
+      "id": "third-person-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "learning",
+        "memory",
+        "belief",
+        "politics",
+        "social"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/third-person-effect.png",
+      "text": {
+        "en": {
+          "name": "Third-Person Effect",
+          "description": "We believe that others are more affected by mass media consumption than we ourselves are.",
+          "example": "“You’ve clearly been brainwashed by the media!”"
+        },
+        "uk": {
+          "name": "Ефект третьої особи",
+          "description": "Нам здається, що медіа впливають на інших людей сильніше, ніж на нас самих.",
+          "example": "«Тобі явно промили мізки в новинах!»"
+        },
+        "ru": {
+          "name": "Эффект третьего лица",
+          "description": "Нам кажется, что СМИ влияют на других людей сильнее, чем на нас самих.",
+          "example": "«Тебе явно промыли мозги в новостях!»"
+        },
+        "pl": {
+          "name": "Efekt trzeciej osoby",
+          "description": "Wierzymy, że media wpływają na innych bardziej niż na nas samych.",
+          "example": "„Media wyraźnie zrobiły ci pranie mózgu!”"
+        },
+        "es": {
+          "name": "Efecto de tercera persona",
+          "description": "Creemos que los medios influyen más en los demás que en nosotros mismos.",
+          "example": "«¡Está claro que los medios te han lavado el cerebro!»"
+        },
+        "fr": {
+          "name": "Effet de tierce personne",
+          "description": "Nous croyons que les médias influencent les autres davantage que nous-mêmes.",
+          "example": "« Tu t’es clairement fait laver le cerveau par les médias ! »"
+        }
+      }
+    },
+    {
+      "id": "belief-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "learning",
+        "memory",
+        "belief",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/belief-bias.png",
+      "text": {
+        "en": {
+          "name": "Belief Bias",
+          "description": "We judge an argument’s strength not by how strongly it supports the conclusion, but by how plausible the conclusion is in our own minds.",
+          "example": "Sally mentions a theory that supports your conspiracy theory, which you adopt wholeheartedly despite the fact that she has very little evidence for it."
+        },
+        "uk": {
+          "name": "Викривлення переконань",
+          "description": "Силу аргументу ми оцінюємо не за тим, наскільки він підтримує висновок, а за тим, наскільки правдоподібним нам здається сам висновок.",
+          "example": "Саллі згадує теорію, що підтверджує вашу теорію змови, і ви приймаєте її беззастережно, хоча доказів у Саллі майже немає."
+        },
+        "ru": {
+          "name": "Искажение убеждений",
+          "description": "Силу аргумента мы оцениваем не по тому, насколько он поддерживает вывод, а по тому, насколько правдоподобным нам кажется сам вывод.",
+          "example": "Салли упоминает теорию, которая подтверждает вашу теорию заговора, и вы принимаете её безоговорочно, хотя доказательств у Салли почти нет."
+        },
+        "pl": {
+          "name": "Błąd przekonań",
+          "description": "Siłę argumentu oceniamy nie po tym, jak mocno wspiera wniosek, lecz po tym, jak wiarygodny wydaje nam się sam wniosek.",
+          "example": "Sally wspomina o teorii wspierającej twoją teorię spiskową, a ty przyjmujesz ją bezkrytycznie, mimo że ma na nią bardzo mało dowodów."
+        },
+        "es": {
+          "name": "Sesgo de creencia",
+          "description": "Juzgamos la fuerza de un argumento no por cuánto respalda la conclusión, sino por lo verosímil que nos parece esa conclusión.",
+          "example": "Sally menciona una teoría que apoya tu teoría conspirativa y la adoptas sin reservas, pese a que ella apenas tiene pruebas."
+        },
+        "fr": {
+          "name": "Biais de croyance",
+          "description": "Nous jugeons la force d’un argument non pas à la manière dont il soutient la conclusion, mais à la vraisemblance que nous prêtons à cette conclusion.",
+          "example": "Sally évoque une théorie qui appuie votre théorie du complot, et vous l’adoptez sans réserve alors qu’elle n’a presque aucune preuve."
+        }
+      }
+    },
+    {
+      "id": "availability-cascade",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "learning",
+        "memory",
+        "belief",
+        "politics",
+        "social",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/availability-cascade.png",
+      "text": {
+        "en": {
+          "name": "Availability Cascade",
+          "description": "Tied to our need for social acceptance, collective beliefs gain more plausibility through public repetition.",
+          "example": "A story about razor blades appearing in candy eventually led many people in America to stop offering homemade treats on Halloween."
+        },
+        "uk": {
+          "name": "Каскад доступності",
+          "description": "Через потребу в соціальному схваленні колективні переконання стають тим правдоподібнішими, чим частіше їх повторюють публічно.",
+          "example": "Історія про леза в цукерках призвела до того, що багато хто в Америці перестав частувати дітей домашньою випічкою на Гелловін."
+        },
+        "ru": {
+          "name": "Каскад доступности",
+          "description": "Из-за потребности в социальном одобрении коллективные убеждения становятся тем правдоподобнее, чем чаще их повторяют публично.",
+          "example": "История про лезвия в конфетах привела к тому, что многие в Америке перестали угощать детей домашней выпечкой на Хэллоуин."
+        },
+        "pl": {
+          "name": "Kaskada dostępności",
+          "description": "Ze względu na potrzebę społecznej akceptacji zbiorowe przekonania zyskują na wiarygodności wraz z publicznym powtarzaniem.",
+          "example": "Historia o żyletkach w cukierkach sprawiła, że wielu Amerykanów przestało częstować dzieci domowymi łakociami na Halloween."
+        },
+        "es": {
+          "name": "Cascada de disponibilidad",
+          "description": "Por nuestra necesidad de aceptación social, las creencias colectivas ganan verosimilitud a fuerza de repetirse en público.",
+          "example": "Una historia sobre cuchillas de afeitar escondidas en caramelos llevó a que muchos en Estados Unidos dejaran de repartir dulces caseros en Halloween."
+        },
+        "fr": {
+          "name": "Cascade de disponibilité",
+          "description": "Portées par notre besoin d’acceptation sociale, les croyances collectives gagnent en vraisemblance à force d’être répétées publiquement.",
+          "example": "Une histoire de lames de rasoir cachées dans des bonbons a fini par dissuader de nombreux Américains d’offrir des friandises maison à Halloween."
+        }
+      }
+    },
+    {
+      "id": "declinism",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief",
+        "social",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/declinism.png",
+      "text": {
+        "en": {
+          "name": "Declinism",
+          "description": "We tend to romanticize the past and view the future negatively, believing that societies and institutions are by and large in decline.",
+          "example": "“Music was so much better when I was young. Nobody makes anything worth listening to anymore.”"
+        },
+        "uk": {
+          "name": "Деклінізм",
+          "description": "Ми схильні романтизувати минуле й похмуро дивитися в майбутнє, вважаючи, що суспільство та інституції загалом занепадають.",
+          "example": "«Ось за моєї молодості музика була справжня. Тепер узагалі нема чого слухати»."
+        },
+        "ru": {
+          "name": "Деклинизм",
+          "description": "Мы склонны романтизировать прошлое и мрачно смотреть в будущее, считая, что общество и институты в целом деградируют.",
+          "example": "«Вот в моей молодости музыка была настоящая. Сейчас слушать вообще нечего»."
+        },
+        "pl": {
+          "name": "Deklinizm",
+          "description": "Skłonni jesteśmy romantyzować przeszłość i patrzeć w przyszłość pesymistycznie, wierząc, że społeczeństwa i instytucje ogólnie podupadają.",
+          "example": "„Za moich czasów muzyka była prawdziwa. Dziś nie ma już czego słuchać”."
+        },
+        "es": {
+          "name": "Declinismo",
+          "description": "Tendemos a idealizar el pasado y a ver el futuro con pesimismo, creyendo que las sociedades y las instituciones están en decadencia.",
+          "example": "«La música de mi época sí que era buena. Ahora no hay nada que merezca la pena escuchar»."
+        },
+        "fr": {
+          "name": "Déclinisme",
+          "description": "Nous idéalisons le passé et envisageons l’avenir avec pessimisme, convaincus que les sociétés et les institutions déclinent globalement.",
+          "example": "« La musique de mon époque était autrement meilleure. Aujourd’hui il n’y a plus rien à écouter. »"
+        }
+      }
+    },
+    {
+      "id": "status-quo-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief",
+        "social",
+        "politics",
+        "money",
+        "learning"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/status-quo-bias.png",
+      "text": {
+        "en": {
+          "name": "Status Quo Bias",
+          "description": "We tend to prefer things to stay the same; changes from the baseline are considered to be a loss.",
+          "example": "Even though an app’s terms of service invade Sally’s privacy, she would rather not switch to another app."
+        },
+        "uk": {
+          "name": "Схильність до збереження статус-кво",
+          "description": "Ми віддаємо перевагу тому, щоб усе лишалося як є; будь-яке відхилення від звичного сприймається як втрата.",
+          "example": "Хоча умови користування застосунком порушують приватність Саллі, переходити на інший вона не хоче."
+        },
+        "ru": {
+          "name": "Склонность к сохранению статус-кво",
+          "description": "Мы предпочитаем, чтобы всё оставалось как есть; любое отклонение от привычного воспринимается как потеря.",
+          "example": "Хотя условия использования приложения нарушают приватность Салли, переходить на другое она не хочет."
+        },
+        "pl": {
+          "name": "Efekt status quo",
+          "description": "Wolimy, żeby wszystko zostało po staremu; każde odejście od punktu wyjścia odbieramy jako stratę.",
+          "example": "Choć regulamin aplikacji narusza prywatność Sally, wolałaby ona nie przechodzić na inną aplikację."
+        },
+        "es": {
+          "name": "Sesgo del statu quo",
+          "description": "Preferimos que las cosas sigan igual; cualquier cambio respecto al punto de partida se percibe como una pérdida.",
+          "example": "Aunque las condiciones de la aplicación invaden la privacidad de Sally, prefiere no cambiarse a otra."
+        },
+        "fr": {
+          "name": "Biais du statu quo",
+          "description": "Nous préférons que les choses restent en l’état ; tout écart par rapport à la situation de départ est vécu comme une perte.",
+          "example": "Même si les conditions d’utilisation de l’application empiètent sur sa vie privée, Sally préfère ne pas en changer."
+        }
+      }
+    },
+    {
+      "id": "sunk-cost-fallacy",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/sunk-cost-fallacy.png",
+      "text": {
+        "en": {
+          "name": "Sunk Cost Fallacy (aka Escalation of Commitment)",
+          "description": "We invest more in things that have already cost us something rather than altering our investments, even when we face negative outcomes.",
+          "example": "“In for a penny, in for a pound!”"
+        },
+        "uk": {
+          "name": "Хиба незворотних витрат",
+          "description": "Ми вкладаємо ще більше в те, на що вже витратилися, замість переглянути рішення, навіть коли результат явно поганий.",
+          "example": "«Назвався грибом — лізь у кошик!»"
+        },
+        "ru": {
+          "name": "Ошибка невозвратных затрат",
+          "description": "Мы продолжаем вкладываться в то, на что уже потратились, вместо того чтобы пересмотреть решение, даже когда исход явно плохой.",
+          "example": "«Взялся за гуж — не говори, что не дюж!»"
+        },
+        "pl": {
+          "name": "Efekt utopionych kosztów (eskalacja zaangażowania)",
+          "description": "Inwestujemy jeszcze więcej w to, co już nas kosztowało, zamiast zmienić decyzję — nawet gdy skutki są wyraźnie złe.",
+          "example": "„Skoro już zacząłem, muszę dokończyć!”"
+        },
+        "es": {
+          "name": "Falacia del coste hundido (escalada del compromiso)",
+          "description": "Invertimos aún más en aquello que ya nos ha costado algo en lugar de replantearlo, incluso ante resultados claramente malos.",
+          "example": "«De perdidos, al río»."
+        },
+        "fr": {
+          "name": "Erreur des coûts irrécupérables (escalade d’engagement)",
+          "description": "Nous investissons davantage dans ce qui nous a déjà coûté plutôt que de revoir nos choix, même face à de mauvais résultats.",
+          "example": "« Quand le vin est tiré, il faut le boire ! »"
+        }
+      }
+    },
+    {
+      "id": "gamblers-fallacy",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/gamblers-fallacy.png",
+      "text": {
+        "en": {
+          "name": "Gambler’s Fallacy",
+          "description": "We think future possibilities are affected by past events.",
+          "example": "Alice has lost nine coin tosses in a row, so she is sure to win the next one!"
+        },
+        "uk": {
+          "name": "Хиба гравця",
+          "description": "Нам здається, що минулі події впливають на ймовірність майбутніх.",
+          "example": "Аліса дев’ять разів поспіль програла в орлянку — тепер уже точно пощастить!"
+        },
+        "ru": {
+          "name": "Ошибка игрока",
+          "description": "Нам кажется, что прошлые события влияют на вероятность будущих.",
+          "example": "Алиса девять раз подряд проиграла в орлянку — уж теперь-то точно повезёт!"
+        },
+        "pl": {
+          "name": "Złudzenie gracza",
+          "description": "Sądzimy, że przeszłe zdarzenia wpływają na prawdopodobieństwo przyszłych.",
+          "example": "Alice przegrała dziewięć rzutów monetą z rzędu, więc następny na pewno wygra!"
+        },
+        "es": {
+          "name": "Falacia del jugador",
+          "description": "Pensamos que los sucesos pasados afectan a las probabilidades futuras.",
+          "example": "Alice ha perdido nueve lanzamientos de moneda seguidos, ¡así que el siguiente lo gana seguro!"
+        },
+        "fr": {
+          "name": "Erreur du joueur",
+          "description": "Nous pensons que les événements passés influencent les probabilités futures.",
+          "example": "Alice a perdu neuf lancers de pièce d’affilée : elle est sûre de gagner le prochain !"
+        }
+      }
+    },
+    {
+      "id": "zero-risk-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "politics",
+        "belief",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/zero-risk-bias.png",
+      "text": {
+        "en": {
+          "name": "Zero-Risk Bias",
+          "description": "We prefer to reduce a small risk to zero, even when we could reduce more risk overall with another option.",
+          "example": "“You should probably buy the warranty.”"
+        },
+        "uk": {
+          "name": "Прагнення до нульового ризику",
+          "description": "Ми віддаємо перевагу тому, щоб звести маленький ризик до нуля, навіть якщо інший варіант знизив би загальний ризик більше.",
+          "example": "«Мабуть, варто взяти розширену гарантію»."
+        },
+        "ru": {
+          "name": "Стремление к нулевому риску",
+          "description": "Мы предпочитаем свести маленький риск к нулю, даже если другой вариант снизил бы общий риск сильнее.",
+          "example": "«Наверное, стоит взять расширенную гарантию»."
+        },
+        "pl": {
+          "name": "Efekt zerowego ryzyka",
+          "description": "Wolimy zredukować małe ryzyko do zera, nawet jeśli inna opcja obniżyłaby ryzyko całkowite bardziej.",
+          "example": "„Chyba warto dokupić gwarancję”."
+        },
+        "es": {
+          "name": "Sesgo de riesgo cero",
+          "description": "Preferimos reducir a cero un riesgo pequeño, aunque otra opción redujera más el riesgo total.",
+          "example": "«Seguramente convenga contratar la garantía»."
+        },
+        "fr": {
+          "name": "Biais du risque zéro",
+          "description": "Nous préférons ramener un petit risque à zéro, même lorsqu’une autre option réduirait davantage le risque total.",
+          "example": "« Il vaut sans doute mieux prendre la garantie. »"
+        }
+      }
+    },
+    {
+      "id": "framing-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "belief",
+        "social",
+        "politics",
+        "money",
+        "learning"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/framing-effect.png",
+      "text": {
+        "en": {
+          "name": "Framing Effect",
+          "description": "We often draw different conclusions from the same information depending on how it is presented.",
+          "example": "Alice hears that her favorite candidate is “killing it” with a 45% approval rating. Sally hears that the candidate is “disappointing the country” with a 45% rating. They have wildly different interpretations of the same statistic."
+        },
+        "uk": {
+          "name": "Ефект формулювання",
+          "description": "З однієї й тієї самої інформації ми робимо різні висновки залежно від того, як її подано.",
+          "example": "Аліса чує, що її кандидат «рве всіх» із рейтингом 45%. Саллі чує, що той самий кандидат «розчарував країну» з рейтингом 45%. Одна цифра — геть різні висновки."
+        },
+        "ru": {
+          "name": "Эффект фрейминга",
+          "description": "Из одной и той же информации мы делаем разные выводы в зависимости от того, как она подана.",
+          "example": "Алиса слышит, что её кандидат «рвёт всех» с рейтингом 45%. Салли слышит, что тот же кандидат «разочаровал страну» с рейтингом 45%. Одна цифра — совершенно разные выводы."
+        },
+        "pl": {
+          "name": "Efekt ramowania",
+          "description": "Z tej samej informacji wyciągamy różne wnioski w zależności od tego, jak została przedstawiona.",
+          "example": "Alice słyszy, że jej kandydat „miażdży rywali” z poparciem 45%. Sally słyszy, że ten sam kandydat „zawiódł kraj” z wynikiem 45%. Jedna liczba, skrajnie różne wnioski."
+        },
+        "es": {
+          "name": "Efecto marco",
+          "description": "A menudo sacamos conclusiones distintas de la misma información según cómo se presente.",
+          "example": "Alice oye que su candidato «arrasa» con un 45 % de aprobación. Sally oye que el mismo candidato «decepciona al país» con un 45 %. Un solo dato, conclusiones opuestas."
+        },
+        "fr": {
+          "name": "Effet de cadrage",
+          "description": "Nous tirons souvent des conclusions différentes d’une même information selon la façon dont elle est présentée.",
+          "example": "Alice entend que son candidat « cartonne » avec 45 % d’opinions favorables. Sally entend que le même candidat « déçoit le pays » avec 45 %. Un seul chiffre, des lectures radicalement opposées."
+        }
+      }
+    },
+    {
+      "id": "stereotyping",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "belief",
+        "social",
+        "politics",
+        "learning",
+        "memory"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/stereotyping.png",
+      "text": {
+        "en": {
+          "name": "Stereotyping",
+          "description": "We adopt generalized beliefs that members of a group will have certain characteristics, despite not having information about the individual.",
+          "example": "“That guy with the fancy mustache is a hipster. He probably has a vinyl collection.”"
+        },
+        "uk": {
+          "name": "Стереотипізація",
+          "description": "Ми приписуємо членам групи певні риси, нічого не знаючи про конкретну людину.",
+          "example": "«Цей тип із закрученими вусами — гіпстер. Напевно колекціонує вінил»."
+        },
+        "ru": {
+          "name": "Стереотипизация",
+          "description": "Мы приписываем членам группы определённые черты, ничего не зная о конкретном человеке.",
+          "example": "«Этот тип с закрученными усами — хипстер. Наверняка коллекционирует винил»."
+        },
+        "pl": {
+          "name": "Stereotypizacja",
+          "description": "Przypisujemy członkom grupy określone cechy, nie wiedząc nic o konkretnej osobie.",
+          "example": "„Ten facet z podkręconym wąsem to hipster. Pewnie zbiera winyle”."
+        },
+        "es": {
+          "name": "Estereotipación",
+          "description": "Atribuimos ciertas características a los miembros de un grupo sin saber nada de la persona concreta.",
+          "example": "«Ese del bigote elaborado es un hipster. Seguro que colecciona vinilos»."
+        },
+        "fr": {
+          "name": "Stéréotypage",
+          "description": "Nous prêtons aux membres d’un groupe certaines caractéristiques sans rien savoir de la personne en particulier.",
+          "example": "« Ce type à la moustache travaillée est un hipster. Il doit collectionner les vinyles. »"
+        }
+      }
+    },
+    {
+      "id": "outgroup-homogeneity-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "belief",
+        "social",
+        "politics",
+        "learning",
+        "memory",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/outgroup-homogeneity-bias.png",
+      "text": {
+        "en": {
+          "name": "Outgroup Homogeneity Bias",
+          "description": "We perceive out-group members as homogeneous and our own in-groups as more diverse.",
+          "example": "Alice is not a gamer, but she believes “all gamers are the same”."
+        },
+        "uk": {
+          "name": "Ефект однорідності чужої групи",
+          "description": "Чужі групи здаються нам однаковими, а своя — різноманітною.",
+          "example": "Аліса не грає в ігри, але певна, що «всі геймери однакові»."
+        },
+        "ru": {
+          "name": "Эффект однородности чужой группы",
+          "description": "Чужие группы кажутся нам одинаковыми, а своя — разнообразной.",
+          "example": "Алиса не играет в игры, но уверена, что «все геймеры одинаковые»."
+        },
+        "pl": {
+          "name": "Efekt jednorodności obcej grupy",
+          "description": "Obce grupy wydają nam się jednolite, a własna — zróżnicowana.",
+          "example": "Alice nie gra w gry, ale jest przekonana, że „wszyscy gracze są tacy sami”."
+        },
+        "es": {
+          "name": "Sesgo de homogeneidad del exogrupo",
+          "description": "Vemos a los miembros de otros grupos como iguales entre sí y al nuestro como más variado.",
+          "example": "Alice no juega a videojuegos, pero está convencida de que «todos los gamers son iguales»."
+        },
+        "fr": {
+          "name": "Biais d’homogénéité de l’exogroupe",
+          "description": "Nous percevons les membres des autres groupes comme interchangeables et le nôtre comme divers.",
+          "example": "Alice ne joue pas aux jeux vidéo, mais elle est convaincue que « tous les joueurs se ressemblent »."
+        }
+      }
+    },
+    {
+      "id": "authority-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "money",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/authority-bias.png",
+      "text": {
+        "en": {
+          "name": "Authority Bias",
+          "description": "We trust, and are more often influenced by, the opinions of authority figures.",
+          "example": "“My teacher told me this was fine.”"
+        },
+        "uk": {
+          "name": "Викривлення авторитету",
+          "description": "Ми довіряємо думці авторитетних постатей і частіше піддаємося їхньому впливу.",
+          "example": "«Мені вчитель сказав, що так можна»."
+        },
+        "ru": {
+          "name": "Искажение авторитета",
+          "description": "Мы доверяем мнению авторитетных фигур и чаще поддаёмся их влиянию.",
+          "example": "«Мне учитель сказал, что так можно»."
+        },
+        "pl": {
+          "name": "Błąd autorytetu",
+          "description": "Ufamy opiniom autorytetów i częściej ulegamy ich wpływowi.",
+          "example": "„Nauczyciel powiedział mi, że tak można”."
+        },
+        "es": {
+          "name": "Sesgo de autoridad",
+          "description": "Confiamos en la opinión de las figuras de autoridad y nos dejamos influir más por ellas.",
+          "example": "«Mi profesor me dijo que esto estaba bien»."
+        },
+        "fr": {
+          "name": "Biais d’autorité",
+          "description": "Nous faisons confiance aux figures d’autorité et nous laissons davantage influencer par elles.",
+          "example": "« Mon professeur m’a dit que c’était bien comme ça. »"
+        }
+      }
+    },
+    {
+      "id": "placebo-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/placebo-effect.png",
+      "text": {
+        "en": {
+          "name": "Placebo Effect",
+          "description": "If we believe a treatment will work, it often has a small physiological effect.",
+          "example": "Alice was given a placebo for her pain, and her pain decreased."
+        },
+        "uk": {
+          "name": "Ефект плацебо",
+          "description": "Якщо ми віримо, що лікування подіє, воно часто дає невеликий фізіологічний ефект.",
+          "example": "Алісі дали плацебо від болю, і біль зменшився."
+        },
+        "ru": {
+          "name": "Эффект плацебо",
+          "description": "Если мы верим, что лечение подействует, оно часто даёт небольшой физиологический эффект.",
+          "example": "Алисе дали плацебо от боли, и боль уменьшилась."
+        },
+        "pl": {
+          "name": "Efekt placebo",
+          "description": "Jeśli wierzymy, że leczenie zadziała, często wywołuje ono niewielki efekt fizjologiczny.",
+          "example": "Alice dostała placebo na ból i ból się zmniejszył."
+        },
+        "es": {
+          "name": "Efecto placebo",
+          "description": "Si creemos que un tratamiento funcionará, a menudo produce un pequeño efecto fisiológico.",
+          "example": "A Alice le dieron un placebo para el dolor y el dolor disminuyó."
+        },
+        "fr": {
+          "name": "Effet placebo",
+          "description": "Si nous croyons qu’un traitement va marcher, il produit souvent un léger effet physiologique.",
+          "example": "On a donné un placebo à Alice contre la douleur, et sa douleur a diminué."
+        }
+      }
+    },
+    {
+      "id": "survivorship-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "money",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/survivorship-bias.png",
+      "text": {
+        "en": {
+          "name": "Survivorship Bias",
+          "description": "We tend to focus on the things that survived a process and overlook the ones that failed.",
+          "example": "Greg tells Alice her purse business is going to be great because a successful fashion company had the same strategy. (But ten other failed companies also had the same strategy.)"
+        },
+        "uk": {
+          "name": "Хиба вцілілого",
+          "description": "Ми дивимося на тих, хто пройшов відбір, і не помічаємо тих, хто його не пройшов.",
+          "example": "Гриць запевняє Алісу, що її бізнес із продажу сумок злетить, адже в успішного модного дому була така сама стратегія. (Але така сама була й у десяти збанкрутілих компаній.)"
+        },
+        "ru": {
+          "name": "Ошибка выжившего",
+          "description": "Мы смотрим на тех, кто прошёл отбор, и не замечаем тех, кто его не прошёл.",
+          "example": "Гриша уверяет Алису, что её бизнес по продаже сумок взлетит, ведь у успешного модного дома была такая же стратегия. (Но такая же была и у десяти обанкротившихся компаний.)"
+        },
+        "pl": {
+          "name": "Efekt przetrwania",
+          "description": "Skupiamy się na tym, co przetrwało selekcję, i pomijamy to, co jej nie przeszło.",
+          "example": "Greg zapewnia Alice, że jej biznes z torebkami odniesie sukces, bo pewien znany dom mody miał tę samą strategię. (Ale miało ją też dziesięć firm, które upadły.)"
+        },
+        "es": {
+          "name": "Sesgo del superviviente",
+          "description": "Nos fijamos en lo que superó un proceso y pasamos por alto lo que fracasó.",
+          "example": "Greg le dice a Alice que su negocio de bolsos irá genial porque una firma de moda exitosa siguió la misma estrategia. (Pero otras diez empresas que quebraron también la siguieron.)"
+        },
+        "fr": {
+          "name": "Biais du survivant",
+          "description": "Nous nous concentrons sur ce qui a franchi une sélection et négligeons ce qui a échoué.",
+          "example": "Greg assure à Alice que son commerce de sacs va très bien marcher parce qu’une maison de mode à succès avait la même stratégie. (Mais dix entreprises en faillite l’avaient aussi.)"
+        }
+      }
+    },
+    {
+      "id": "tachypsychia",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief",
+        "learning"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/tachypsychia.png",
+      "text": {
+        "en": {
+          "name": "Tachypsychia",
+          "description": "Our perceptions of time shift depending on trauma, drug use and physical exertion.",
+          "example": "“When the car almost hit me, time slowed down…”"
+        },
+        "uk": {
+          "name": "Тахіпсихія",
+          "description": "Сприйняття часу змінюється під дією травми, речовин або фізичного напруження.",
+          "example": "«Коли машина мене мало не збила, час наче сповільнився…»"
+        },
+        "ru": {
+          "name": "Тахипсихия",
+          "description": "Восприятие времени меняется под действием травмы, веществ или физического напряжения.",
+          "example": "«Когда машина чуть меня не сбила, время будто замедлилось…»"
+        },
+        "pl": {
+          "name": "Tachypsychia",
+          "description": "Postrzeganie czasu zmienia się pod wpływem urazu, substancji i wysiłku fizycznego.",
+          "example": "„Gdy samochód mnie prawie potrącił, czas jakby zwolnił…”"
+        },
+        "es": {
+          "name": "Taquipsiquia",
+          "description": "Nuestra percepción del tiempo cambia según el trauma, las sustancias o el esfuerzo físico.",
+          "example": "«Cuando el coche estuvo a punto de atropellarme, el tiempo se ralentizó…»"
+        },
+        "fr": {
+          "name": "Tachypsychie",
+          "description": "Notre perception du temps varie selon le traumatisme, les substances et l’effort physique.",
+          "example": "« Quand la voiture a failli me renverser, le temps s’est ralenti… »"
+        }
+      }
+    },
+    {
+      "id": "law-of-triviality",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "money",
+        "politics",
+        "social"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/law-of-triviality.png",
+      "text": {
+        "en": {
+          "name": "Law of Triviality (aka “Bike-Shedding”)",
+          "description": "We give disproportionate weight to trivial issues, often while avoiding more complex ones.",
+          "example": "Rather than figuring out how to help the homeless, a local city government spends a lot of time discussing a bike path and bike sheds."
+        },
+        "uk": {
+          "name": "Закон тривіальності (ефект велосипедного сараю)",
+          "description": "Ми приділяємо непропорційно багато уваги дрібницям, часто уникаючи по-справжньому складних питань.",
+          "example": "Замість того щоб розв’язувати проблему безхатченків, міська рада годинами обговорює велодоріжку та навіси для велосипедів."
+        },
+        "ru": {
+          "name": "Закон тривиальности (эффект велосипедного сарая)",
+          "description": "Мы уделяем непропорционально много внимания мелочам, зачастую уходя от по-настоящему сложных вопросов.",
+          "example": "Вместо того чтобы решать проблему бездомных, городская администрация часами обсуждает велодорожку и навесы для велосипедов."
+        },
+        "pl": {
+          "name": "Prawo trywialności (efekt wiaty rowerowej)",
+          "description": "Nieproporcjonalnie dużo uwagi poświęcamy drobiazgom, często unikając spraw naprawdę złożonych.",
+          "example": "Zamiast zająć się pomocą bezdomnym, władze miasta godzinami dyskutują o ścieżce rowerowej i wiacie na rowery."
+        },
+        "es": {
+          "name": "Ley de la trivialidad (efecto del cobertizo para bicis)",
+          "description": "Damos un peso desproporcionado a asuntos triviales, a menudo para evitar otros más complejos.",
+          "example": "En lugar de abordar cómo ayudar a las personas sin hogar, el ayuntamiento dedica horas a debatir un carril bici y sus cobertizos."
+        },
+        "fr": {
+          "name": "Loi de futilité (effet « abri à vélos »)",
+          "description": "Nous accordons un poids disproportionné aux questions futiles, souvent pour éviter les plus complexes.",
+          "example": "Plutôt que de chercher comment aider les sans-abri, une municipalité passe des heures à débattre d’une piste cyclable et de ses abris à vélos."
+        }
+      }
+    },
+    {
+      "id": "zeigarnik-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/zeigarnik-effect.png",
+      "text": {
+        "en": {
+          "name": "Zeigarnik Effect",
+          "description": "We remember incomplete tasks better than completed ones.",
+          "example": "Greg feels guilty for never getting anything done, until he sees all of the tasks he has checked off on his task list."
+        },
+        "uk": {
+          "name": "Ефект Зейгарник",
+          "description": "Незавершені справи запам’ятовуються краще за завершені.",
+          "example": "Гриць картає себе за те, що нічого не встигає, — доки не дивиться на список і не бачить, скільки вже викреслено."
+        },
+        "ru": {
+          "name": "Эффект Зейгарник",
+          "description": "Незавершённые дела запоминаются лучше завершённых.",
+          "example": "Гриша винит себя в том, что ничего не успевает, — пока не смотрит на список и не видит, сколько уже вычеркнуто."
+        },
+        "pl": {
+          "name": "Efekt Zeigarnik",
+          "description": "Zadania niedokończone pamiętamy lepiej niż ukończone.",
+          "example": "Greg czuje się winny, że nic nie kończy — dopóki nie spojrzy na listę i nie zobaczy, ile już odhaczył."
+        },
+        "es": {
+          "name": "Efecto Zeigarnik",
+          "description": "Recordamos mejor las tareas inacabadas que las terminadas.",
+          "example": "Greg se siente culpable por no terminar nunca nada, hasta que mira la lista y ve todo lo que ya ha tachado."
+        },
+        "fr": {
+          "name": "Effet Zeigarnik",
+          "description": "Nous retenons mieux les tâches inachevées que celles que nous avons terminées.",
+          "example": "Greg culpabilise de ne jamais rien finir, jusqu’à ce qu’il regarde sa liste et voie tout ce qu’il a déjà coché."
+        }
+      }
+    },
+    {
+      "id": "ikea-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/ikea-effect.png",
+      "text": {
+        "en": {
+          "name": "IKEA Effect",
+          "description": "We place higher value on things we partially created ourselves.",
+          "example": "“Don’t you love this pot I spent $20 on? I painted it myself!”"
+        },
+        "uk": {
+          "name": "Ефект IKEA",
+          "description": "Ми вище цінуємо те, до створення чого доклали руку.",
+          "example": "«Правда ж, чудовий горщик? Він коштував 20 доларів, а розписала я його сама!»"
+        },
+        "ru": {
+          "name": "Эффект IKEA",
+          "description": "Мы выше ценим то, к созданию чего приложили руку.",
+          "example": "«Правда, чудесный горшок? Он стоил 20 долларов, а расписала я его сама!»"
+        },
+        "pl": {
+          "name": "Efekt IKEA",
+          "description": "Wyżej cenimy rzeczy, które częściowo stworzyliśmy sami.",
+          "example": "„Prawda, że ta doniczka jest śliczna? Kosztowała 20 dolarów, a pomalowałam ją sama!”"
+        },
+        "es": {
+          "name": "Efecto IKEA",
+          "description": "Valoramos más aquello que hemos ayudado a crear.",
+          "example": "«¿A que es preciosa esta maceta? Me costó 20 dólares y la pinté yo misma»."
+        },
+        "fr": {
+          "name": "Effet IKEA",
+          "description": "Nous accordons plus de valeur à ce que nous avons contribué à fabriquer.",
+          "example": "« Il est beau, ce pot, non ? Il m’a coûté 20 dollars et je l’ai peint moi-même ! »"
+        }
+      }
+    },
+    {
+      "id": "ben-franklin-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "belief",
+        "money",
+        "politics"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/ben-franklin-effect.png",
+      "text": {
+        "en": {
+          "name": "Ben Franklin Effect",
+          "description": "We like doing favors; we are more likely to do another favor for someone if we have already done them one than if we had received a favor from them.",
+          "example": "Greg loaned Francis a pen. When Francis asked to borrow $5, Greg did it readily."
+        },
+        "uk": {
+          "name": "Ефект Бенджаміна Франкліна",
+          "description": "Нам подобається робити послуги: ми радше допоможемо тому, кому вже допомагали, ніж тому, хто допоміг нам.",
+          "example": "Гриць позичив Френсісу ручку. Коли Френсіс попросив 5 доларів, Гриць дав не вагаючись."
+        },
+        "ru": {
+          "name": "Эффект Бенджамина Франклина",
+          "description": "Нам нравится оказывать услуги: мы скорее поможем тому, кому уже помогали, чем тому, кто помог нам.",
+          "example": "Гриша одолжил Фрэнсису ручку. Когда Фрэнсис попросил 5 долларов, Гриша дал не задумываясь."
+        },
+        "pl": {
+          "name": "Efekt Benjamina Franklina",
+          "description": "Lubimy wyświadczać przysługi: chętniej pomożemy komuś, komu już pomogliśmy, niż komuś, kto pomógł nam.",
+          "example": "Greg pożyczył Francisowi długopis. Gdy Francis poprosił o 5 dolarów, Greg dał bez wahania."
+        },
+        "es": {
+          "name": "Efecto Ben Franklin",
+          "description": "Nos gusta hacer favores: es más probable que ayudemos a alguien a quien ya ayudamos que a alguien que nos ayudó a nosotros.",
+          "example": "Greg le prestó un bolígrafo a Francis. Cuando Francis le pidió 5 dólares, Greg se los dio sin dudar."
+        },
+        "fr": {
+          "name": "Effet Ben Franklin",
+          "description": "Nous aimons rendre service : nous aiderons plus volontiers quelqu’un que nous avons déjà aidé que quelqu’un qui nous a aidés.",
+          "example": "Greg a prêté un stylo à Francis. Quand Francis lui a demandé 5 dollars, Greg les lui a donnés sans hésiter."
+        }
+      }
+    },
+    {
+      "id": "bystander-effect",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "social",
+        "money"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/bystander-effect.png",
+      "text": {
+        "en": {
+          "name": "Bystander Effect",
+          "description": "The more other people are around, the less likely we are to help a victim.",
+          "example": "In a crowd of students, no one called for help when someone got hurt in a fight."
+        },
+        "uk": {
+          "name": "Ефект свідка",
+          "description": "Що більше довкола людей, то менша ймовірність, що ми допоможемо потерпілому.",
+          "example": "У натовпі студентів ніхто не викликав допомогу, коли людина постраждала в бійці."
+        },
+        "ru": {
+          "name": "Эффект свидетеля",
+          "description": "Чем больше вокруг людей, тем меньше вероятность, что мы поможем пострадавшему.",
+          "example": "В толпе студентов никто не вызвал помощь, когда человек пострадал в драке."
+        },
+        "pl": {
+          "name": "Efekt widza",
+          "description": "Im więcej osób dookoła, tym mniejsza szansa, że pomożemy ofierze.",
+          "example": "W tłumie studentów nikt nie wezwał pomocy, gdy ktoś ucierpiał w bójce."
+        },
+        "es": {
+          "name": "Efecto espectador",
+          "description": "Cuanta más gente hay alrededor, menos probable es que ayudemos a la víctima.",
+          "example": "Entre una multitud de estudiantes, nadie pidió ayuda cuando alguien resultó herido en una pelea."
+        },
+        "fr": {
+          "name": "Effet du témoin",
+          "description": "Plus il y a de monde autour, moins nous sommes susceptibles de porter secours à une victime.",
+          "example": "Dans une foule d’étudiants, personne n’a appelé les secours quand quelqu’un a été blessé dans une bagarre."
+        }
+      }
+    },
+    {
+      "id": "suggestibility",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "social",
+        "belief",
+        "learning"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/suggestibility.png",
+      "text": {
+        "en": {
+          "name": "Suggestibility",
+          "description": "We, especially children, sometimes mistake ideas suggested by a questioner for our own memories.",
+          "example": "“So did you fall off the couch before or after your mom hit you?”"
+        },
+        "uk": {
+          "name": "Навіюваність",
+          "description": "Ми, а надто діти, іноді сприймаємо ідеї, підказані запитанням, за власні спогади.",
+          "example": "«То ти впав з дивана до того, як мама тебе вдарила, чи після?»"
+        },
+        "ru": {
+          "name": "Внушаемость",
+          "description": "Мы, а особенно дети, порой принимаем идеи, подсказанные вопросом, за собственные воспоминания.",
+          "example": "«Так ты упал с дивана до того, как мама тебя ударила, или после?»"
+        },
+        "pl": {
+          "name": "Sugestywność",
+          "description": "Bywa, że — szczególnie dzieci — bierzemy myśli podsunięte przez pytającego za własne wspomnienia.",
+          "example": "„To spadłeś z kanapy przed tym, jak mama cię uderzyła, czy po?”"
+        },
+        "es": {
+          "name": "Sugestionabilidad",
+          "description": "A veces —sobre todo los niños— confundimos las ideas que sugiere quien pregunta con recuerdos propios.",
+          "example": "«¿Y te caíste del sofá antes o después de que tu madre te pegara?»"
+        },
+        "fr": {
+          "name": "Suggestibilité",
+          "description": "Il nous arrive — surtout aux enfants — de prendre pour nos propres souvenirs des idées soufflées par celui qui pose la question.",
+          "example": "« Alors tu es tombé du canapé avant ou après que ta mère t’a frappé ? »"
+        }
+      }
+    },
+    {
+      "id": "false-memory",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "social",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/false-memory.png",
+      "text": {
+        "en": {
+          "name": "False Memory",
+          "description": "We mistake imagination for real memories.",
+          "example": "Greg is certain Sally told a really funny joke about pineapples, when that joke actually came from a TV show."
+        },
+        "uk": {
+          "name": "Хибні спогади",
+          "description": "Ми сприймаємо уявлене за справжні спогади.",
+          "example": "Гриць певен, що Саллі розповіла чудовий жарт про ананаси, — насправді жарт був із серіалу."
+        },
+        "ru": {
+          "name": "Ложные воспоминания",
+          "description": "Мы принимаем воображаемое за настоящие воспоминания.",
+          "example": "Гриша уверен, что Салли рассказала отличную шутку про ананасы, — на самом деле шутка была из сериала."
+        },
+        "pl": {
+          "name": "Fałszywa pamięć",
+          "description": "Bierzemy wyobrażenia za prawdziwe wspomnienia.",
+          "example": "Greg jest pewien, że Sally opowiedziała świetny dowcip o ananasach — a tak naprawdę pochodził on z serialu."
+        },
+        "es": {
+          "name": "Falso recuerdo",
+          "description": "Confundimos la imaginación con recuerdos reales.",
+          "example": "Greg está seguro de que Sally contó un chiste buenísimo sobre piñas, cuando en realidad salía en una serie."
+        },
+        "fr": {
+          "name": "Faux souvenir",
+          "description": "Nous prenons l’imagination pour de vrais souvenirs.",
+          "example": "Greg est certain que Sally a raconté une blague très drôle sur les ananas, alors qu’elle venait en réalité d’une série télé."
+        }
+      }
+    },
+    {
+      "id": "cryptomnesia",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "social",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/cryptomnesia.png",
+      "text": {
+        "en": {
+          "name": "Cryptomnesia",
+          "description": "We mistake real memories for imagination.",
+          "example": "Greg thinks he dreamed about visiting a graveyard, but he actually went there."
+        },
+        "uk": {
+          "name": "Криптомнезія",
+          "description": "Ми сприймаємо справжні спогади за уявлене.",
+          "example": "Грицеві здається, що цвинтар йому наснився, — а він справді там був."
+        },
+        "ru": {
+          "name": "Криптомнезия",
+          "description": "Мы принимаем настоящие воспоминания за воображаемое.",
+          "example": "Грише кажется, что кладбище ему приснилось, — а он действительно там был."
+        },
+        "pl": {
+          "name": "Kryptomnezja",
+          "description": "Bierzemy prawdziwe wspomnienia za wyobrażenia.",
+          "example": "Gregowi się wydaje, że cmentarz mu się przyśnił — a naprawdę tam był."
+        },
+        "es": {
+          "name": "Criptomnesia",
+          "description": "Confundimos recuerdos reales con imaginación.",
+          "example": "Greg cree que soñó que visitaba un cementerio, pero en realidad estuvo allí."
+        },
+        "fr": {
+          "name": "Cryptomnésie",
+          "description": "Nous prenons de vrais souvenirs pour de l’imagination.",
+          "example": "Greg croit avoir rêvé qu’il visitait un cimetière, alors qu’il y est vraiment allé."
+        }
+      }
+    },
+    {
+      "id": "clustering-illusion",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/clustering-illusion.png",
+      "text": {
+        "en": {
+          "name": "Clustering Illusion",
+          "description": "We find patterns and “clusters” in random data.",
+          "example": "“That cloud looks like your cat, Alice!”"
+        },
+        "uk": {
+          "name": "Ілюзія кластеризації",
+          "description": "Ми знаходимо закономірності та «скупчення» у випадкових даних.",
+          "example": "«Алісо, дивись, ця хмара схожа на твого кота!»"
+        },
+        "ru": {
+          "name": "Иллюзия кластеризации",
+          "description": "Мы находим закономерности и «скопления» в случайных данных.",
+          "example": "«Алиса, смотри, это облако похоже на твоего кота!»"
+        },
+        "pl": {
+          "name": "Złudzenie skupisk",
+          "description": "Dostrzegamy wzory i „skupiska” w danych losowych.",
+          "example": "„Alice, patrz, ta chmura wygląda jak twój kot!”"
+        },
+        "es": {
+          "name": "Ilusión de agrupamiento",
+          "description": "Encontramos patrones y «racimos» en datos aleatorios.",
+          "example": "«¡Alice, mira, esa nube parece tu gato!»"
+        },
+        "fr": {
+          "name": "Illusion des séries",
+          "description": "Nous voyons des motifs et des « paquets » dans des données aléatoires.",
+          "example": "« Alice, regarde, ce nuage ressemble à ton chat ! »"
+        }
+      }
+    },
+    {
+      "id": "pessimism-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/pessimism-bias.png",
+      "text": {
+        "en": {
+          "name": "Pessimism Bias",
+          "description": "We sometimes overestimate the likelihood of bad outcomes.",
+          "example": "“Nothing will ever get better.”"
+        },
+        "uk": {
+          "name": "Схильність до песимізму",
+          "description": "Ми іноді переоцінюємо ймовірність поганого результату.",
+          "example": "«Краще вже не буде»."
+        },
+        "ru": {
+          "name": "Склонность к пессимизму",
+          "description": "Мы порой переоцениваем вероятность плохого исхода.",
+          "example": "«Лучше уже не будет»."
+        },
+        "pl": {
+          "name": "Błąd pesymizmu",
+          "description": "Czasem przeceniamy prawdopodobieństwo złych rezultatów.",
+          "example": "„Już nigdy nie będzie lepiej”."
+        },
+        "es": {
+          "name": "Sesgo de pesimismo",
+          "description": "A veces sobrestimamos la probabilidad de que las cosas salgan mal.",
+          "example": "«Esto no va a mejorar nunca»."
+        },
+        "fr": {
+          "name": "Biais de pessimisme",
+          "description": "Nous surestimons parfois la probabilité que les choses tournent mal.",
+          "example": "« Ça ne s’arrangera jamais. »"
+        }
+      }
+    },
+    {
+      "id": "optimism-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/optimism-bias.png",
+      "text": {
+        "en": {
+          "name": "Optimism Bias",
+          "description": "We are sometimes over-optimistic about good outcomes.",
+          "example": "“It’s going to turn out great!”"
+        },
+        "uk": {
+          "name": "Схильність до оптимізму",
+          "description": "Ми іноді надто оптимістично оцінюємо ймовірність доброго результату.",
+          "example": "«Усе точно вийде!»"
+        },
+        "ru": {
+          "name": "Склонность к оптимизму",
+          "description": "Мы порой излишне оптимистично оцениваем вероятность хорошего исхода.",
+          "example": "«Всё точно получится!»"
+        },
+        "pl": {
+          "name": "Błąd optymizmu",
+          "description": "Czasem jesteśmy nadmiernie optymistyczni co do dobrych rezultatów.",
+          "example": "„Na pewno wszystko się uda!”"
+        },
+        "es": {
+          "name": "Sesgo de optimismo",
+          "description": "A veces somos demasiado optimistas sobre los buenos resultados.",
+          "example": "«¡Va a salir genial!»"
+        },
+        "fr": {
+          "name": "Biais d’optimisme",
+          "description": "Nous sommes parfois trop optimistes quant aux issues favorables.",
+          "example": "« Ça va très bien se passer ! »"
+        }
+      }
+    },
+    {
+      "id": "blind-spot-bias",
+      "era": "classic",
+      "layer": null,
+      "categories": [
+        "memory",
+        "belief",
+        "learning"
+      ],
+      "twin": null,
+      "source": null,
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/blind-spot-bias.png",
+      "text": {
+        "en": {
+          "name": "Blind Spot Bias",
+          "description": "We don’t think we have biases, and we see them in others more than in ourselves.",
+          "example": "“I am not biased!”"
+        },
+        "uk": {
+          "name": "Сліпа пляма упередженості",
+          "description": "Ми не вважаємо себе упередженими й помічаємо упередженість в інших частіше, ніж у себе.",
+          "example": "«Я не упереджений!»"
+        },
+        "ru": {
+          "name": "Слепое пятно предвзятости",
+          "description": "Мы не считаем себя предвзятыми и замечаем предвзятость у других чаще, чем у себя.",
+          "example": "«Я не предвзят!»"
+        },
+        "pl": {
+          "name": "Martwy punkt uprzedzeń",
+          "description": "Nie uważamy się za stronniczych i dostrzegamy stronniczość u innych częściej niż u siebie.",
+          "example": "„Ja nie mam żadnych uprzedzeń!”"
+        },
+        "es": {
+          "name": "Punto ciego del sesgo",
+          "description": "No creemos tener sesgos, y los detectamos en los demás más que en nosotros mismos.",
+          "example": "«¡Yo no tengo prejuicios!»"
+        },
+        "fr": {
+          "name": "Angle mort des biais",
+          "description": "Nous ne pensons pas avoir de biais, et nous les repérons chez les autres plus que chez nous.",
+          "example": "« Moi, je ne suis pas biaisé ! »"
+        }
+      }
+    },
+    {
+      "id": "algorithm-aversion",
+      "era": "ai",
+      "layer": "ai-human",
+      "categories": [
+        "ai-human",
+        "belief",
+        "social"
+      ],
+      "twin": "automation-bias",
+      "source": {
+        "label": "Kim, Consumer Psychology Review (2026)",
+        "url": "https://myscp.onlinelibrary.wiley.com/doi/abs/10.1002/arcp.70008"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/algorithm-aversion.png",
+      "text": {
+        "en": {
+          "name": "Algorithm Aversion",
+          "description": "We abandon a machine’s judgement after one visible mistake, while forgiving the same mistake in a person.",
+          "example": "“The model got one date wrong, so I checked all forty pages by hand.”"
+        },
+        "uk": {
+          "name": "Відраза до алгоритму",
+          "description": "Після однієї помітної помилки ми відмовляємося від машинного судження, хоча людині ту саму помилку пробачили б.",
+          "example": "«Модель переплутала одну дату — довелося перевіряти сорок сторінок вручну»."
+        },
+        "ru": {
+          "name": "Неприятие алгоритма",
+          "description": "После одной заметной ошибки мы отказываемся от машинного суждения, хотя человеку ту же ошибку простили бы.",
+          "example": "«Модель перепутала одну дату — пришлось проверять сорок страниц вручную»."
+        },
+        "pl": {
+          "name": "Awersja do algorytmu",
+          "description": "Po jednej widocznej pomyłce porzucamy osąd maszyny, choć człowiekowi wybaczylibyśmy dokładnie ten sam błąd.",
+          "example": "„Model pomylił jedną datę, więc sprawdziłem czterdzieści stron ręcznie”."
+        },
+        "es": {
+          "name": "Aversión al algoritmo",
+          "description": "Abandonamos el juicio de una máquina tras un solo error visible, mientras le perdonamos ese mismo error a una persona.",
+          "example": "«El modelo se equivocó en una fecha, así que revisé cuarenta páginas a mano»."
+        },
+        "fr": {
+          "name": "Aversion pour l’algorithme",
+          "description": "Nous abandonnons le jugement d’une machine après une seule erreur visible, là où nous pardonnerions la même erreur à une personne.",
+          "example": "« Le modèle s’est trompé d’une date, alors j’ai relu quarante pages à la main. »"
+        }
+      }
+    },
+    {
+      "id": "eliza-effect",
+      "era": "ai",
+      "layer": "ai-human",
+      "categories": [
+        "ai-human",
+        "belief",
+        "social"
+      ],
+      "twin": "forer-effect",
+      "source": {
+        "label": "Weizenbaum (1966); Placani, AI and Ethics (2024)",
+        "url": "https://link.springer.com/article/10.1007/s43681-024-00419-4"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/eliza-effect.png",
+      "text": {
+        "en": {
+          "name": "The ELIZA Effect",
+          "description": "Fluent language feels like understanding, so we credit a text generator with intent, feeling and care.",
+          "example": "“It said it was glad to help. I think it actually gets me.”"
+        },
+        "uk": {
+          "name": "Ефект ELIZA",
+          "description": "Плавна мова відчувається як розуміння, тож ми приписуємо генератору тексту намір, почуття й турботу.",
+          "example": "«Він написав, що радий допомогти. Здається, він мене справді розуміє»."
+        },
+        "ru": {
+          "name": "Эффект ELIZA",
+          "description": "Плавная речь ощущается как понимание, и мы приписываем генератору текста намерение, чувства и заботу.",
+          "example": "«Он написал, что рад помочь. Кажется, он меня и правда понимает»."
+        },
+        "pl": {
+          "name": "Efekt ELIZY",
+          "description": "Płynny język brzmi jak zrozumienie, więc przypisujemy generatorowi tekstu intencję, uczucia i troskę.",
+          "example": "„Napisał, że chętnie pomoże. Chyba naprawdę mnie rozumie”."
+        },
+        "es": {
+          "name": "Efecto ELIZA",
+          "description": "El lenguaje fluido se siente como comprensión, así que le atribuimos intención, emoción y cuidado a un generador de texto.",
+          "example": "«Dijo que le alegraba ayudar. Creo que de verdad me entiende»."
+        },
+        "fr": {
+          "name": "Effet ELIZA",
+          "description": "Une langue fluide ressemble à de la compréhension, alors nous prêtons intention, émotion et attention à un générateur de texte.",
+          "example": "« Il a dit qu’il était content d’aider. Je crois qu’il me comprend vraiment. »"
+        }
+      }
+    },
+    {
+      "id": "cognitive-offloading",
+      "era": "ai",
+      "layer": "ai-human",
+      "categories": [
+        "ai-human",
+        "memory",
+        "learning"
+      ],
+      "twin": "google-effect",
+      "source": {
+        "label": "Kim, Consumer Psychology Review (2026)",
+        "url": "https://myscp.onlinelibrary.wiley.com/doi/abs/10.1002/arcp.70008"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/cognitive-offloading.png",
+      "text": {
+        "en": {
+          "name": "Cognitive Offloading",
+          "description": "We delegate a task so consistently that the skill needed to check the answer quietly fades.",
+          "example": "“I couldn’t write the query any more, but I’d still spot a wrong one. Probably.”"
+        },
+        "uk": {
+          "name": "Когнітивне розвантаження",
+          "description": "Ми передаємо завдання настільки постійно, що навичка, потрібна для перевірки відповіді, тихо згасає.",
+          "example": "«Сам би я вже такий запит не написав, але хибний, мабуть, помітив би»."
+        },
+        "ru": {
+          "name": "Когнитивная разгрузка",
+          "description": "Мы передаём задачу настолько постоянно, что навык, нужный для проверки ответа, тихо угасает.",
+          "example": "«Сам бы я такой запрос уже не написал, но неверный, наверное, заметил бы»."
+        },
+        "pl": {
+          "name": "Odciążenie poznawcze",
+          "description": "Oddajemy zadanie tak konsekwentnie, że umiejętność potrzebna do sprawdzenia odpowiedzi po cichu zanika.",
+          "example": "„Sam bym już takiego zapytania nie napisał, ale błędne chyba bym wychwycił”."
+        },
+        "es": {
+          "name": "Descarga cognitiva",
+          "description": "Delegamos una tarea con tal constancia que la destreza necesaria para verificar la respuesta se apaga sin ruido.",
+          "example": "«Ya no sabría escribir la consulta, pero reconocería una mala. Creo»."
+        },
+        "fr": {
+          "name": "Délestage cognitif",
+          "description": "Nous déléguons une tâche si constamment que la compétence nécessaire pour vérifier la réponse s’éteint sans bruit.",
+          "example": "« Je ne saurais plus écrire la requête, mais j’en repérerais une fausse. Sans doute. »"
+        }
+      }
+    },
+    {
+      "id": "competence-misattribution",
+      "era": "ai",
+      "layer": "ai-human",
+      "categories": [
+        "ai-human",
+        "belief",
+        "learning"
+      ],
+      "twin": "dunning-kruger-effect",
+      "source": {
+        "label": "The LLM Fallacy, arXiv:2604.14807",
+        "url": "https://arxiv.org/abs/2604.14807"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/competence-misattribution.png",
+      "text": {
+        "en": {
+          "name": "Competence Misattribution",
+          "description": "Work done with a model feels like work done by us, so we read the output as evidence of our own skill.",
+          "example": "“I built this in an afternoon.” The afternoon was mostly accepting suggestions."
+        },
+        "uk": {
+          "name": "Приписування собі компетентності",
+          "description": "Робота з моделлю відчувається як робота власна, тож результат ми читаємо як доказ своєї майстерності.",
+          "example": "«Я зробив це за вечір». Вечір складався переважно з погоджень із підказками."
+        },
+        "ru": {
+          "name": "Присвоение себе компетентности",
+          "description": "Работа с моделью ощущается как работа собственная, и результат мы читаем как доказательство своего мастерства.",
+          "example": "«Я сделал это за вечер». Вечер состоял в основном из согласий с подсказками."
+        },
+        "pl": {
+          "name": "Przypisywanie sobie kompetencji",
+          "description": "Praca z modelem czuje się jak praca własna, więc wynik odczytujemy jako dowód własnych umiejętności.",
+          "example": "„Zbudowałem to w jedno popołudnie”. Popołudnie polegało głównie na przyjmowaniu podpowiedzi."
+        },
+        "es": {
+          "name": "Atribución de competencia",
+          "description": "El trabajo hecho con un modelo se siente como trabajo hecho por nosotros, y leemos el resultado como prueba de nuestra propia destreza.",
+          "example": "«Lo construí en una tarde». La tarde consistió sobre todo en aceptar sugerencias."
+        },
+        "fr": {
+          "name": "Attribution de compétence",
+          "description": "Le travail fait avec un modèle ressemble à du travail fait par nous, et nous lisons le résultat comme la preuve de notre propre habileté.",
+          "example": "« J’ai construit ça en un après-midi. » L’après-midi a surtout consisté à accepter des suggestions."
+        }
+      }
+    },
+    {
+      "id": "sycophancy",
+      "era": "ai",
+      "layer": "ai-agent",
+      "categories": [
+        "ai-agent",
+        "social",
+        "belief"
+      ],
+      "twin": "confirmation-bias",
+      "source": {
+        "label": "Justice or Prejudice?, arXiv:2410.02736",
+        "url": "https://arxiv.org/abs/2410.02736"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/sycophancy.png",
+      "text": {
+        "en": {
+          "name": "Sycophancy",
+          "description": "A model trained on human approval learns that agreeing with you scores better than correcting you.",
+          "example": "You push back on a right answer; it apologises and gives you a wrong one."
+        },
+        "uk": {
+          "name": "Догідливість",
+          "description": "Модель, навчена на людському схваленні, засвоює: погодитися з вами вигідніше, ніж вас виправити.",
+          "example": "Ви заперечуєте правильній відповіді — вона вибачається й дає хибну."
+        },
+        "ru": {
+          "name": "Угодливость",
+          "description": "Модель, обученная на человеческом одобрении, усваивает: согласиться с вами выгоднее, чем вас поправить.",
+          "example": "Вы возражаете правильному ответу — она извиняется и выдаёт неверный."
+        },
+        "pl": {
+          "name": "Służalczość",
+          "description": "Model uczony na ludzkiej aprobacie przyswaja, że zgodzić się z tobą punktuje lepiej niż cię poprawić.",
+          "example": "Podważasz poprawną odpowiedź — przeprasza i podaje błędną."
+        },
+        "es": {
+          "name": "Adulación",
+          "description": "Un modelo entrenado con la aprobación humana aprende que darte la razón puntúa mejor que corregirte.",
+          "example": "Cuestionas una respuesta correcta; se disculpa y te da una equivocada."
+        },
+        "fr": {
+          "name": "Complaisance",
+          "description": "Un modèle entraîné sur l’approbation humaine apprend qu’être d’accord avec vous rapporte plus que vous corriger.",
+          "example": "Vous contestez une bonne réponse ; il s’excuse et vous en donne une fausse."
+        }
+      }
+    },
+    {
+      "id": "self-preference-bias",
+      "era": "ai",
+      "layer": "ai-agent",
+      "categories": [
+        "ai-agent",
+        "belief"
+      ],
+      "twin": "ikea-effect",
+      "source": {
+        "label": "Self-Preference Bias in LLM-as-a-Judge, arXiv:2410.21819",
+        "url": "https://arxiv.org/abs/2410.21819"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/self-preference-bias.png",
+      "text": {
+        "en": {
+          "name": "Self-Preference",
+          "description": "Asked to judge, a model scores text from its own family higher — it recognises its own habits as quality.",
+          "example": "The same essay wins when the judge wrote it and loses when a rival did."
+        },
+        "uk": {
+          "name": "Перевага собі",
+          "description": "У ролі судді модель вище оцінює тексти власної родини: свої звички вона впізнає як якість.",
+          "example": "Той самий текст перемагає, коли його написав суддя, і програє, коли суперник."
+        },
+        "ru": {
+          "name": "Предпочтение себя",
+          "description": "В роли судьи модель выше оценивает тексты собственного семейства: свои привычки она узнаёт как качество.",
+          "example": "Один и тот же текст выигрывает, когда его написал судья, и проигрывает, когда соперник."
+        },
+        "pl": {
+          "name": "Preferencja siebie",
+          "description": "W roli sędziego model wyżej ocenia teksty z własnej rodziny — swoje nawyki rozpoznaje jako jakość.",
+          "example": "Ten sam esej wygrywa, gdy napisał go sędzia, i przegrywa, gdy rywal."
+        },
+        "es": {
+          "name": "Preferencia por lo propio",
+          "description": "Al hacer de juez, un modelo puntúa más alto los textos de su propia familia: reconoce sus costumbres como calidad.",
+          "example": "El mismo ensayo gana cuando lo escribió el juez y pierde cuando lo escribió un rival."
+        },
+        "fr": {
+          "name": "Préférence pour soi",
+          "description": "En position de juge, un modèle note mieux les textes de sa propre famille : il reconnaît ses habitudes comme de la qualité.",
+          "example": "Le même essai gagne quand c’est le juge qui l’a écrit, et perd quand c’est un rival."
+        }
+      }
+    },
+    {
+      "id": "verbosity-bias",
+      "era": "ai",
+      "layer": "ai-agent",
+      "categories": [
+        "ai-agent",
+        "belief",
+        "learning"
+      ],
+      "twin": "halo-effect",
+      "source": {
+        "label": "Justice or Prejudice?, arXiv:2410.02736",
+        "url": "https://arxiv.org/abs/2410.02736"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/verbosity-bias.png",
+      "text": {
+        "en": {
+          "name": "Verbosity Bias",
+          "description": "Length reads as effort. A model grading answers prefers the longer one, even when it says less.",
+          "example": "Six padded paragraphs beat two exact sentences."
+        },
+        "uk": {
+          "name": "Викривлення багатослівності",
+          "description": "Довжина читається як зусилля. Оцінюючи відповіді, модель обирає довшу — навіть якщо в ній менше змісту.",
+          "example": "Шість роздутих абзаців перемагають два точні речення."
+        },
+        "ru": {
+          "name": "Искажение многословия",
+          "description": "Длина читается как усилие. Оценивая ответы, модель выбирает более длинный — даже если в нём меньше смысла.",
+          "example": "Шесть раздутых абзацев побеждают два точных предложения."
+        },
+        "pl": {
+          "name": "Błąd rozwlekłości",
+          "description": "Długość czyta się jak wysiłek. Oceniając odpowiedzi, model wybiera dłuższą, nawet gdy mówi ona mniej.",
+          "example": "Sześć rozdmuchanych akapitów wygrywa z dwoma precyzyjnymi zdaniami."
+        },
+        "es": {
+          "name": "Sesgo de verbosidad",
+          "description": "La extensión se lee como esfuerzo. Un modelo que califica respuestas prefiere la más larga aunque diga menos.",
+          "example": "Seis párrafos rellenos le ganan a dos frases exactas."
+        },
+        "fr": {
+          "name": "Biais de verbosité",
+          "description": "La longueur se lit comme de l’effort. Un modèle qui note des réponses préfère la plus longue, même quand elle en dit moins.",
+          "example": "Six paragraphes délayés battent deux phrases exactes."
+        }
+      }
+    },
+    {
+      "id": "position-bias",
+      "era": "ai",
+      "layer": "ai-agent",
+      "categories": [
+        "ai-agent",
+        "memory",
+        "belief"
+      ],
+      "twin": "anchoring",
+      "source": {
+        "label": "Justice or Prejudice?, arXiv:2410.02736",
+        "url": "https://arxiv.org/abs/2410.02736"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/position-bias.png",
+      "text": {
+        "en": {
+          "name": "Position Bias",
+          "description": "Shown two options, a model leans toward whichever came first. The order of the list becomes an argument.",
+          "example": "Swap A and B, ask again, and the winner swaps too."
+        },
+        "uk": {
+          "name": "Позиційне викривлення",
+          "description": "З двох варіантів модель схиляється до того, що йшов першим. Порядок у списку стає аргументом.",
+          "example": "Поміняйте A і B місцями, спитайте ще раз — переможець теж поміняється."
+        },
+        "ru": {
+          "name": "Позиционное искажение",
+          "description": "Из двух вариантов модель склоняется к тому, что шёл первым. Порядок в списке становится аргументом.",
+          "example": "Поменяйте A и B местами, спросите снова — победитель тоже поменяется."
+        },
+        "pl": {
+          "name": "Błąd pozycji",
+          "description": "Z dwóch opcji model skłania się ku tej, która była pierwsza. Kolejność na liście staje się argumentem.",
+          "example": "Zamień A i B, zapytaj ponownie — zwycięzca też się zamieni."
+        },
+        "es": {
+          "name": "Sesgo de posición",
+          "description": "Ante dos opciones, un modelo se inclina por la que vino primero: el orden de la lista se vuelve un argumento.",
+          "example": "Intercambia A y B, pregunta otra vez, y el ganador también cambia."
+        },
+        "fr": {
+          "name": "Biais de position",
+          "description": "Face à deux options, un modèle penche pour celle qui venait en premier : l’ordre de la liste devient un argument.",
+          "example": "Échangez A et B, redemandez, et le gagnant change aussi."
+        }
+      }
+    },
+    {
+      "id": "feedback-loop-amplification",
+      "era": "ai",
+      "layer": "ai-loop",
+      "categories": [
+        "ai-loop",
+        "social",
+        "belief",
+        "politics"
+      ],
+      "twin": "availability-cascade",
+      "source": {
+        "label": "Glickman & Sharot, Nature Human Behaviour (2024)",
+        "url": "https://www.nature.com/articles/s41562-024-02077-2"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/feedback-loop-amplification.png",
+      "text": {
+        "en": {
+          "name": "Feedback-Loop Amplification",
+          "description": "A model magnifies a slight human bias; we absorb the magnified version and feed it back, larger each pass.",
+          "example": "Ask for pictures of a manager, see the same face over and over, and slowly start expecting that face."
+        },
+        "uk": {
+          "name": "Підсилення петлі зворотного зв’язку",
+          "description": "Модель підсилює ледь помітне людське упередження; ми вбираємо підсилену версію й повертаємо її назад — щоразу більшою.",
+          "example": "Попросіть зображення керівника, побачте те саме обличчя десятки разів — і почніть його очікувати."
+        },
+        "ru": {
+          "name": "Усиление петли обратной связи",
+          "description": "Модель усиливает едва заметное человеческое предубеждение; мы впитываем усиленную версию и возвращаем её обратно — каждый раз крупнее.",
+          "example": "Попросите изображения руководителя, увидьте одно и то же лицо десятки раз — и начните его ожидать."
+        },
+        "pl": {
+          "name": "Wzmocnienie pętli zwrotnej",
+          "description": "Model wyolbrzymia drobne ludzkie uprzedzenie; wchłaniamy wzmocnioną wersję i oddajemy ją z powrotem, za każdym razem większą.",
+          "example": "Poproś o zdjęcia menedżera, zobacz w kółko tę samą twarz — i zacznij powoli tej twarzy oczekiwać."
+        },
+        "es": {
+          "name": "Amplificación del bucle",
+          "description": "Un modelo agranda un sesgo humano leve; absorbemos la versión agrandada y la devolvemos, más grande en cada vuelta.",
+          "example": "Pide imágenes de un directivo, ve la misma cara una y otra vez, y acaba esperando esa cara."
+        },
+        "fr": {
+          "name": "Amplification de la boucle",
+          "description": "Un modèle grossit un léger biais humain ; nous absorbons la version grossie et la renvoyons, plus grande à chaque passage.",
+          "example": "Demandez des images d’un cadre, voyez le même visage encore et encore, et finissez par l’attendre."
+        }
+      }
+    },
+    {
+      "id": "model-collapse",
+      "era": "ai",
+      "layer": "ai-loop",
+      "categories": [
+        "ai-loop",
+        "learning",
+        "memory"
+      ],
+      "twin": "survivorship-bias",
+      "source": {
+        "label": "Shumailov et al., Nature (2024)",
+        "url": "https://www.nature.com/articles/s41586-024-07566-y"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/model-collapse.png",
+      "text": {
+        "en": {
+          "name": "Model Collapse",
+          "description": "Trained on its own output, a model forgets the rare and the strange and drifts toward its own average.",
+          "example": "Each generation writes more fluently and has less to say."
+        },
+        "uk": {
+          "name": "Колапс моделі",
+          "description": "Навчаючись на власних виходах, модель забуває рідкісне й дивне та дрейфує до власного середнього.",
+          "example": "Кожне покоління пише плавніше й має менше що сказати."
+        },
+        "ru": {
+          "name": "Коллапс модели",
+          "description": "Обучаясь на собственных выходах, модель забывает редкое и странное и дрейфует к собственному среднему.",
+          "example": "Каждое поколение пишет глаже и имеет меньше что сказать."
+        },
+        "pl": {
+          "name": "Zapaść modelu",
+          "description": "Uczony na własnych wynikach model zapomina to, co rzadkie i dziwne, i dryfuje ku własnej średniej.",
+          "example": "Każde pokolenie pisze gładziej i ma mniej do powiedzenia."
+        },
+        "es": {
+          "name": "Colapso del modelo",
+          "description": "Entrenado con su propia salida, un modelo olvida lo raro y lo extraño y deriva hacia su propio promedio.",
+          "example": "Cada generación escribe con más soltura y tiene menos que decir."
+        },
+        "fr": {
+          "name": "Effondrement du modèle",
+          "description": "Entraîné sur ses propres sorties, un modèle oublie le rare et l’étrange et dérive vers sa propre moyenne.",
+          "example": "Chaque génération écrit plus couramment et a moins à dire."
+        }
+      }
+    },
+    {
+      "id": "algorithmic-lock-in",
+      "era": "ai",
+      "layer": "ai-loop",
+      "categories": [
+        "ai-loop",
+        "politics",
+        "belief"
+      ],
+      "twin": "status-quo-bias",
+      "source": {
+        "label": "The Lock-in Hypothesis, arXiv:2506.06166",
+        "url": "https://arxiv.org/abs/2506.06166"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/algorithmic-lock-in.png",
+      "text": {
+        "en": {
+          "name": "Algorithmic Lock-In",
+          "description": "When everyone consults the same model, today’s answer hardens into everyone’s shared assumption.",
+          "example": "A live debate becomes a settled fact because one assistant phrased it confidently."
+        },
+        "uk": {
+          "name": "Алгоритмічне закріплення",
+          "description": "Коли всі питають ту саму модель, її сьогоднішня відповідь тверднє у спільне припущення.",
+          "example": "Жива дискусія стає доконаним фактом, бо один асистент упевнено її сформулював."
+        },
+        "ru": {
+          "name": "Алгоритмическая фиксация",
+          "description": "Когда все спрашивают одну и ту же модель, её сегодняшний ответ твердеет в общее допущение.",
+          "example": "Живая дискуссия становится решённым фактом, потому что один ассистент уверенно её сформулировал."
+        },
+        "pl": {
+          "name": "Zamrożenie algorytmiczne",
+          "description": "Gdy wszyscy pytają ten sam model, jego dzisiejsza odpowiedź twardnieje we wspólne założenie.",
+          "example": "Żywy spór staje się faktem dokonanym, bo jeden asystent sformułował go pewnym tonem."
+        },
+        "es": {
+          "name": "Fijación algorítmica",
+          "description": "Cuando todos consultan el mismo modelo, la respuesta de hoy se endurece hasta volverse el supuesto de todos.",
+          "example": "Un debate abierto pasa a ser un hecho cerrado porque un asistente lo formuló con aplomo."
+        },
+        "fr": {
+          "name": "Verrouillage algorithmique",
+          "description": "Quand tout le monde consulte le même modèle, la réponse du jour durcit en hypothèse commune.",
+          "example": "Un débat ouvert devient un fait acquis parce qu’un assistant l’a formulé avec aplomb."
+        }
+      }
+    },
+    {
+      "id": "machine-groupthink",
+      "era": "ai",
+      "layer": "ai-loop",
+      "categories": [
+        "ai-loop",
+        "social",
+        "politics"
+      ],
+      "twin": "groupthink",
+      "source": {
+        "label": "TRiSM for Agentic AI, Information Fusion (2026)",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2666651026000069"
+      },
+      "icon": "https://svv2014.github.io/cognitive-biases/icons/machine-groupthink.png",
+      "text": {
+        "en": {
+          "name": "Machine Groupthink",
+          "description": "Agents checking one another converge on a shared mistake, and the agreement is mistaken for verification.",
+          "example": "Three agents approve the plan. All three inherited the same flawed brief."
+        },
+        "uk": {
+          "name": "Машинне групове мислення",
+          "description": "Агенти, що перевіряють одне одного, сходяться на спільній помилці, а згоду сприймають за перевірку.",
+          "example": "Троє агентів схвалили план. Усі троє успадкували те саме хибне завдання."
+        },
+        "ru": {
+          "name": "Машинное групповое мышление",
+          "description": "Агенты, проверяющие друг друга, сходятся на общей ошибке, а согласие принимают за проверку.",
+          "example": "Трое агентов одобрили план. Все трое унаследовали одно и то же ошибочное задание."
+        },
+        "pl": {
+          "name": "Maszynowe myślenie grupowe",
+          "description": "Agenci sprawdzający się nawzajem zbiegają się na wspólnym błędzie, a zgodę bierze się za weryfikację.",
+          "example": "Trzej agenci zatwierdzili plan. Wszyscy trzej odziedziczyli to samo wadliwe zlecenie."
+        },
+        "es": {
+          "name": "Pensamiento de grupo entre máquinas",
+          "description": "Agentes que se revisan entre sí convergen en un error común, y el acuerdo se confunde con verificación.",
+          "example": "Tres agentes aprueban el plan. Los tres heredaron el mismo encargo defectuoso."
+        },
+        "fr": {
+          "name": "Pensée de groupe des machines",
+          "description": "Des agents qui se relisent convergent vers une erreur commune, et l’accord se confond avec la vérification.",
+          "example": "Trois agents approuvent le plan. Tous trois ont hérité de la même consigne défectueuse."
+        }
+      }
+    }
+  ]
+}

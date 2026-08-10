@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Cognitive Biases — 50 ways the mind misleads itself</title>
+    <title>Cognitive Biases — 62 ways the mind, and the machine, mislead themselves</title>
     <meta
       name="description"
-      content="A searchable, multilingual reference of 50 cognitive biases, with a plain-language description and an everyday example for each. Available in English, Ukrainian, Russian, Polish, Spanish and French."
+      content="A searchable, multilingual reference of 62 cognitive biases: the 50 classic human ones plus 12 from the age of AI, split into biases a human holds about machines, biases a model holds on its own, and biases that exist only in the loop between them. Available in English, Ukrainian, Russian, Polish, Spanish and French."
     />
     <meta name="theme-color" content="#f4f6fb" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#12141c" media="(prefers-color-scheme: dark)" />
@@ -15,12 +15,36 @@
     <meta property="og:title" content="Cognitive Biases" />
     <meta
       property="og:description"
-      content="50 cognitive biases explained in plain language, with everyday examples. In six languages."
+      content="62 cognitive biases explained in plain language: 50 human, 12 from the age of AI. In six languages, with a self-test for people and one for agents."
     />
-    <meta property="og:url" content="https://tetyanaking.github.io/cognitive-biases/" />
+    <meta property="og:url" content="https://svv2014.github.io/cognitive-biases/" />
     <meta name="twitter:card" content="summary" />
 
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- Machine-readable siblings of this page, linked so an agent can find
+         them from the document rather than by guessing at paths. -->
+    <link rel="alternate" type="application/json" href="./biases.json" title="All 62 biases" />
+    <link rel="alternate" type="text/plain" href="./llms.txt" title="Plain-text guide" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "name": "Cognitive Biases",
+        "url": "https://svv2014.github.io/cognitive-biases/",
+        "description": "62 cognitive biases: 50 classic human biases and 12 from the age of language models, grouped by whether the human, the machine, or the loop between them is the one that errs.",
+        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "inLanguage": ["en", "uk", "ru", "pl", "es", "fr"],
+        "hasPart": {
+          "@type": "Dataset",
+          "name": "biases.json",
+          "description": "Every bias with its categories, layer, published source, and the classic bias it rhymes with, in all six languages.",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://svv2014.github.io/cognitive-biases/biases.json"
+        }
+      }
+    </script>
     <link
       rel="preload"
       as="style"

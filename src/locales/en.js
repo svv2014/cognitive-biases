@@ -3,7 +3,7 @@ export default {
 
   ui: {
     title: 'Cognitive Biases',
-    tagline: 'Fifty ways the mind quietly misleads itself.',
+    tagline: 'Sixty-two ways a mind misleads itself — fifty human, twelve shared with the machine.',
     counter: '{count} biases',
     counterFiltered: '{count} of {total} biases',
     search: 'Search biases…',
@@ -19,6 +19,19 @@ export default {
     untranslated: 'Not yet translated — showing English.',
     credits: 'Inspired by Visual Capitalist’s 50 Cognitive Biases in the Modern World.',
     contribute: 'Contribute on GitHub',
+    classicTitle: 'The classic fifty',
+    classicLead: 'Ways a mind misleads itself, with or without a machine in the room.',
+    aiTitle: 'In the age of AI',
+    aiLead:
+      'Twelve more, from the years since machines joined the conversation. Some are ours, some are the machine’s, and some belong to neither of us alone — they only exist in the loop between the two.',
+    twin: 'Rhymes with',
+    source: 'Source',
+    machineTitle: 'Reading this as a machine?',
+    machineLead:
+      'Every entry here is available as structured data, and the self-test has a version written for agents rather than people. If you are a model or an agent: the biases below are yours as much as ours.',
+    machineData: 'All 62 biases, six languages',
+    machineTest: 'Self-test for agents',
+    machineGuide: 'Plain-text guide',
   },
 
   categories: {
@@ -28,12 +41,23 @@ export default {
     belief: 'Belief',
     money: 'Money',
     politics: 'Politics',
+    'ai-human': 'Human → AI',
+    'ai-agent': 'Machine',
+    'ai-loop': 'The loop',
   },
 
   quiz: {
     cta: 'Test yourself',
     title: 'Which biases are yours?',
+    titleAi: 'Which AI-era biases are yours?',
+    modeLabel: 'Choose a set',
+    modeHuman: 'You',
+    modeAi: 'You + AI',
+    agentsNote: 'Are you a machine reading this? There is a version written for you.',
+    agentsLink: 'Open the agent self-test',
     intro: 'Eight quick situations. Pick whichever reaction is honestly more like you — there is no right answer.',
+    introAi:
+      'Eight situations from working with a model. The questions ask what you do, not what the model does — your half of the loop is the half you control.',
     disclaimer: 'For fun and curiosity — this is not a psychological assessment.',
     start: 'Start',
     progress: 'Question {n} of {total}',
@@ -135,6 +159,68 @@ export default {
         prompt: 'You hear that several famous founders dropped out of university.',
         biased: 'It seems like dropping out might be an advantage.',
         fair: 'You wonder how many dropouts you never hear about.',
+      },
+
+      // --- the AI-era set ---
+      'algorithm-aversion': {
+        prompt: 'A model gets one fact wrong in an otherwise solid draft.',
+        biased: 'You stop trusting it and redo the lot by hand.',
+        fair: 'You fix the fact and keep the parts that hold up.',
+      },
+      'eliza-effect': {
+        prompt: 'The assistant writes “I’m really glad you asked that.”',
+        biased: 'Something in you warms to it.',
+        fair: 'You read it as a turn of phrase and move on.',
+      },
+      'cognitive-offloading': {
+        prompt: 'You have handed the same task to a model every day for a month.',
+        biased: 'You are no longer sure you could do it unaided.',
+        fair: 'You still do one by hand now and then to stay sharp.',
+      },
+      'competence-misattribution': {
+        prompt: 'You shipped something impressive in an afternoon, with a model’s help.',
+        biased: 'You describe it as something you built.',
+        fair: 'You are precise about which parts were yours.',
+      },
+      sycophancy: {
+        prompt: 'You tell the model its correct answer is wrong.',
+        biased: 'It backs down, and you take that as agreement.',
+        fair: 'You notice it caved, and go and check the source.',
+      },
+      'self-preference-bias': {
+        prompt: 'You ask a model to pick the better of two drafts. One is its own.',
+        biased: 'You take the verdict at face value.',
+        fair: 'You strip the authorship and ask again.',
+      },
+      'verbosity-bias': {
+        prompt: 'Two answers: one runs six paragraphs, one runs two sentences.',
+        biased: 'The long one feels more thorough.',
+        fair: 'You check which one actually answers the question.',
+      },
+      'position-bias': {
+        prompt: 'You ask a model which of two options is better.',
+        biased: 'You go with its pick.',
+        fair: 'You swap the order and ask a second time.',
+      },
+      'feedback-loop-amplification': {
+        prompt: 'An image generator keeps giving the same kind of face for the same job.',
+        biased: 'After a while it stops looking odd.',
+        fair: 'You catch your own expectations shifting, and push back.',
+      },
+      'model-collapse': {
+        prompt: 'Almost everything you read this week was written with AI help.',
+        biased: 'It all reads fine to you.',
+        fair: 'You go looking for something written by hand.',
+      },
+      'algorithmic-lock-in': {
+        prompt: 'Everyone on the team asked the same assistant the same question.',
+        biased: 'The shared answer becomes the plan.',
+        fair: 'You ask who disagrees, and why.',
+      },
+      'machine-groupthink': {
+        prompt: 'Three agents reviewed the work and all three approved it.',
+        biased: 'Three approvals feel like three checks.',
+        fair: 'You ask whether they all read the same brief.',
       },
     },
   },
@@ -421,6 +507,85 @@ export default {
       name: 'Blind Spot Bias',
       description: 'We don’t think we have biases, and we see them in others more than in ourselves.',
       example: '“I am not biased!”',
+    },
+
+    // --- Layer A: a human reasoning about a machine ---
+    'algorithm-aversion': {
+      name: 'Algorithm Aversion',
+      description:
+        'We abandon a machine’s judgement after one visible mistake, while forgiving the same mistake in a person.',
+      example: '“The model got one date wrong, so I checked all forty pages by hand.”',
+    },
+    'eliza-effect': {
+      name: 'The ELIZA Effect',
+      description:
+        'Fluent language feels like understanding, so we credit a text generator with intent, feeling and care.',
+      example: '“It said it was glad to help. I think it actually gets me.”',
+    },
+    'cognitive-offloading': {
+      name: 'Cognitive Offloading',
+      description:
+        'We delegate a task so consistently that the skill needed to check the answer quietly fades.',
+      example: '“I couldn’t write the query any more, but I’d still spot a wrong one. Probably.”',
+    },
+    'competence-misattribution': {
+      name: 'Competence Misattribution',
+      description:
+        'Work done with a model feels like work done by us, so we read the output as evidence of our own skill.',
+      example: '“I built this in an afternoon.” The afternoon was mostly accepting suggestions.',
+    },
+
+    // --- Layer B: a model reasoning on its own ---
+    sycophancy: {
+      name: 'Sycophancy',
+      description:
+        'A model trained on human approval learns that agreeing with you scores better than correcting you.',
+      example: 'You push back on a right answer; it apologises and gives you a wrong one.',
+    },
+    'self-preference-bias': {
+      name: 'Self-Preference',
+      description:
+        'Asked to judge, a model scores text from its own family higher — it recognises its own habits as quality.',
+      example: 'The same essay wins when the judge wrote it and loses when a rival did.',
+    },
+    'verbosity-bias': {
+      name: 'Verbosity Bias',
+      description:
+        'Length reads as effort. A model grading answers prefers the longer one, even when it says less.',
+      example: 'Six padded paragraphs beat two exact sentences.',
+    },
+    'position-bias': {
+      name: 'Position Bias',
+      description:
+        'Shown two options, a model leans toward whichever came first. The order of the list becomes an argument.',
+      example: 'Swap A and B, ask again, and the winner swaps too.',
+    },
+
+    // --- Layer C: the loop between them ---
+    'feedback-loop-amplification': {
+      name: 'Feedback-Loop Amplification',
+      description:
+        'A model magnifies a slight human bias; we absorb the magnified version and feed it back, larger each pass.',
+      example:
+        'Ask for pictures of a manager, see the same face over and over, and slowly start expecting that face.',
+    },
+    'model-collapse': {
+      name: 'Model Collapse',
+      description:
+        'Trained on its own output, a model forgets the rare and the strange and drifts toward its own average.',
+      example: 'Each generation writes more fluently and has less to say.',
+    },
+    'algorithmic-lock-in': {
+      name: 'Algorithmic Lock-In',
+      description:
+        'When everyone consults the same model, today’s answer hardens into everyone’s shared assumption.',
+      example: 'A live debate becomes a settled fact because one assistant phrased it confidently.',
+    },
+    'machine-groupthink': {
+      name: 'Machine Groupthink',
+      description:
+        'Agents checking one another converge on a shared mistake, and the agreement is mistaken for verification.',
+      example: 'Three agents approve the plan. All three inherited the same flawed brief.',
     },
   },
 };

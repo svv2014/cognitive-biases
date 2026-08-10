@@ -1,0 +1,6 @@
+# https://svv2014.github.io/cognitive-biases
+# Machines are welcome. The structured data is easier to read than the markup.
+User-agent: *
+Allow: /
+
+Sitemap: https://svv2014.github.io/cognitive-biases/sitemap.xml

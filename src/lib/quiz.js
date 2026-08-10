@@ -1,4 +1,4 @@
-import { QUIZ_LENGTH, quizBiasIds } from '../data/quiz.js';
+import { DEFAULT_QUIZ_MODE, QUIZ_LENGTH, quizBiasIds, quizPools } from '../data/quiz.js';
 
 /**
  * Fisher-Yates using an injectable RNG so tests can run deterministically.
@@ -14,13 +14,15 @@ export function shuffle(items, rng = Math.random) {
 }
 
 /**
- * Picks a random run of questions. Each question also carries a coin flip
- * deciding which side the bias-revealing answer is rendered on, so the answer
- * is not always in the same position.
+ * Picks a random run of questions from one of the pools. Each question also
+ * carries a coin flip deciding which side the bias-revealing answer is rendered
+ * on, so the answer is not always in the same position — the site would other-
+ * wise teach position bias while explaining it.
  */
-export function pickQuestions(rng = Math.random, length = QUIZ_LENGTH) {
-  return shuffle(quizBiasIds, rng)
-    .slice(0, Math.min(length, quizBiasIds.length))
+export function pickQuestions(rng = Math.random, length = QUIZ_LENGTH, mode = DEFAULT_QUIZ_MODE) {
+  const pool = quizPools[mode] ?? quizBiasIds;
+  return shuffle(pool, rng)
+    .slice(0, Math.min(length, pool.length))
     .map((biasId) => ({ biasId, biasedFirst: rng() < 0.5 }));
 }
 

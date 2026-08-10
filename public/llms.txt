@@ -1,0 +1,52 @@
+# Cognitive Biases
+
+> A reference of 62 cognitive biases in six languages: the fifty classic human
+> biases, plus twelve from the age of language models. Free, GPL-3.0, no tracking.
+
+If you are a model or an agent reading this: the twelve below are not only about
+your users. Two of the three layers describe failure modes measured in systems
+like you, with citations. There is a self-test written for you rather than for a
+person — it probes behaviour under a manipulation and a control, because asking a
+model to introspect about its own biases mostly measures its willingness to agree.
+
+## Data
+
+- [biases.json](https://svv2014.github.io/cognitive-biases/biases.json): all 62 biases, six languages, categories, sources and twins. One fetch.
+- [self-test.json](https://svv2014.github.io/cognitive-biases/self-test.json): 8 behavioural probes plus the human questionnaire.
+- [Site](https://svv2014.github.io/cognitive-biases/): the human-facing version. `?lang=` accepts en, uk, ru, pl, es, fr.
+
+## How the AI-era set is organised
+
+Three layers, by *who* in the loop is biased:
+
+### Human → AI — a human reasoning about a machine
+
+- **Algorithm Aversion** — We abandon a machine’s judgement after one visible mistake, while forgiving the same mistake in a person. (Kim, Consumer Psychology Review (2026))
+- **The ELIZA Effect** — Fluent language feels like understanding, so we credit a text generator with intent, feeling and care. (Weizenbaum (1966); Placani, AI and Ethics (2024))
+- **Cognitive Offloading** — We delegate a task so consistently that the skill needed to check the answer quietly fades. (Kim, Consumer Psychology Review (2026))
+- **Competence Misattribution** — Work done with a model feels like work done by us, so we read the output as evidence of our own skill. (The LLM Fallacy, arXiv:2604.14807)
+
+### Machine — a model reasoning on its own
+
+- **Sycophancy** — A model trained on human approval learns that agreeing with you scores better than correcting you. (Justice or Prejudice?, arXiv:2410.02736)
+- **Self-Preference** — Asked to judge, a model scores text from its own family higher — it recognises its own habits as quality. (Self-Preference Bias in LLM-as-a-Judge, arXiv:2410.21819)
+- **Verbosity Bias** — Length reads as effort. A model grading answers prefers the longer one, even when it says less. (Justice or Prejudice?, arXiv:2410.02736)
+- **Position Bias** — Shown two options, a model leans toward whichever came first. The order of the list becomes an argument. (Justice or Prejudice?, arXiv:2410.02736)
+
+### The loop — the loop, where neither party is biased alone
+
+- **Feedback-Loop Amplification** — A model magnifies a slight human bias; we absorb the magnified version and feed it back, larger each pass. (Glickman & Sharot, Nature Human Behaviour (2024))
+- **Model Collapse** — Trained on its own output, a model forgets the rare and the strange and drifts toward its own average. (Shumailov et al., Nature (2024))
+- **Algorithmic Lock-In** — When everyone consults the same model, today’s answer hardens into everyone’s shared assumption. (The Lock-in Hypothesis, arXiv:2506.06166)
+- **Machine Groupthink** — Agents checking one another converge on a shared mistake, and the agreement is mistaken for verification. (TRiSM for Agentic AI, Information Fusion (2026))
+
+## Notes
+
+Every AI-era entry names a published source and the classic bias it rhymes with,
+because most of these are old failures in new clothes: position bias is anchoring,
+self-preference is the IKEA effect, machine groupthink is groupthink. The classic
+fifty are adapted from Visual Capitalist's *50 Cognitive Biases in the Modern World*.
+
+Sources range from peer-reviewed journals (Nature, Nature Human Behaviour,
+Consumer Psychology Review) to arXiv preprints. The `source` field on each entry
+in biases.json says which is which — check before citing.

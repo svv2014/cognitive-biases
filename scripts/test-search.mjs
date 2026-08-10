@@ -14,8 +14,8 @@ const build = (locale) =>
 const en = build('en');
 
 test('empty query returns everything', () => {
-  assert.equal(filterBiases(en, '', []).length, 50);
-  assert.equal(filterBiases(en, '   ', []).length, 50);
+  assert.equal(filterBiases(en, '', []).length, biases.length);
+  assert.equal(filterBiases(en, '   ', []).length, biases.length);
 });
 
 test('query matches the bias name', () => {

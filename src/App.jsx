@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { biases } from './data/biases.js';
+import { biases, isAiEra } from './data/biases.js';
 import { categories } from './data/categories.js';
 import { DEFAULT_LOCALE, getBias, localeOptions, resolveLocale, t } from './locales/index.js';
 import { useDebounced } from './hooks/useDebounced.js';
@@ -71,6 +71,18 @@ export default function App() {
     [entries, debouncedQuery, activeCategories]
   );
 
+  // Search and filters span both families; only the grouping is split.
+  const classic = useMemo(() => visible.filter((e) => !isAiEra(e)), [visible]);
+  const ai = useMemo(() => visible.filter(isAiEra), [visible]);
+
+  const openBias = (name) => {
+    setActiveCategories([]);
+    setQuery(name);
+    requestAnimationFrame(() =>
+      document.getElementById('biases')?.scrollIntoView({ behavior: 'smooth' })
+    );
+  };
+
   const toggleCategory = (id) =>
     setActiveCategories((current) =>
       current.includes(id) ? current.filter((c) => c !== id) : [...current, id]
@@ -114,11 +126,35 @@ export default function App() {
         />
 
         {visible.length > 0 ? (
-          <ul className="bias-grid" id="biases">
-            {visible.map((entry) => (
-              <BiasCard key={entry.id} entry={entry} locale={locale} />
-            ))}
-          </ul>
+          <div id="biases">
+            {classic.length > 0 && (
+              <section className="section" aria-labelledby="section-classic">
+                <h2 className="section__title" id="section-classic">
+                  {t(locale, 'classicTitle')}
+                </h2>
+                <p className="section__lead">{t(locale, 'classicLead')}</p>
+                <ul className="bias-grid">
+                  {classic.map((entry) => (
+                    <BiasCard key={entry.id} entry={entry} locale={locale} onOpenBias={openBias} />
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {ai.length > 0 && (
+              <section className="section section--ai" aria-labelledby="section-ai">
+                <h2 className="section__title" id="section-ai">
+                  {t(locale, 'aiTitle')}
+                </h2>
+                <p className="section__lead">{t(locale, 'aiLead')}</p>
+                <ul className="bias-grid">
+                  {ai.map((entry) => (
+                    <BiasCard key={entry.id} entry={entry} locale={locale} onOpenBias={openBias} />
+                  ))}
+                </ul>
+              </section>
+            )}
+          </div>
         ) : (
           <EmptyState locale={locale} onClear={clearFilters} />
         )}
@@ -132,11 +168,7 @@ export default function App() {
           onClose={() => setQuizOpen(false)}
           onOpenBias={(name) => {
             setQuizOpen(false);
-            setActiveCategories([]);
-            setQuery(name);
-            requestAnimationFrame(() =>
-              document.getElementById('biases')?.scrollIntoView({ behavior: 'smooth' })
-            );
+            openBias(name);
           }}
         />
       )}

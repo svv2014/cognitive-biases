@@ -3,7 +3,8 @@ export default {
 
   ui: {
     title: 'Sesgos cognitivos',
-    tagline: 'Cincuenta formas en que la mente se engaña a sí misma sin que lo notemos.',
+    tagline:
+      'Sesenta y dos formas en que una mente se engaña a sí misma: cincuenta humanas y doce compartidas con la máquina.',
     counter: '{count} sesgos',
     counterFiltered: '{count} de {total} sesgos',
     search: 'Buscar sesgos…',
@@ -19,6 +20,19 @@ export default {
     untranslated: 'Aún sin traducir: se muestra el texto en inglés.',
     credits: 'Inspirado en «50 Cognitive Biases in the Modern World» de Visual Capitalist.',
     contribute: 'Contribuir en GitHub',
+    classicTitle: 'Los cincuenta clásicos',
+    classicLead: 'Formas en que una mente se engaña a sí misma, con o sin una máquina delante.',
+    aiTitle: 'En la era de la IA',
+    aiLead:
+      'Doce más, de los años transcurridos desde que las máquinas entraron en la conversación. Algunos son nuestros, otros de la máquina, y otros no pertenecen a ninguna de las dos por separado: solo existen en el bucle entre ambas.',
+    twin: 'Rima con',
+    source: 'Fuente',
+    machineTitle: '¿Lees esto siendo una máquina?',
+    machineLead:
+      'Cada entrada está disponible como datos estructurados, y la autoevaluación tiene una versión escrita para agentes, no para personas. Si eres un modelo o un agente: los sesgos de abajo son tan tuyos como nuestros.',
+    machineData: 'Los 62 sesgos, en seis idiomas',
+    machineTest: 'Autoevaluación para agentes',
+    machineGuide: 'Guía en texto plano',
   },
 
   categories: {
@@ -28,12 +42,23 @@ export default {
     belief: 'Creencias',
     money: 'Dinero',
     politics: 'Política',
+    'ai-human': 'Humano → IA',
+    'ai-agent': 'Máquina',
+    'ai-loop': 'El bucle',
   },
 
   quiz: {
     cta: 'Ponte a prueba',
     title: '¿Qué sesgos son los tuyos?',
+    titleAi: '¿Qué sesgos de la era de la IA son los tuyos?',
+    modeLabel: 'Elige un conjunto',
+    modeHuman: 'Tú',
+    modeAi: 'Tú + IA',
+    agentsNote: '¿Eres una máquina leyendo esto? Hay una versión escrita para ti.',
+    agentsLink: 'Abrir la autoevaluación para agentes',
     intro: 'Ocho situaciones rápidas. Elige la reacción que sinceramente se parece más a ti: no hay respuesta correcta.',
+    introAi:
+      'Ocho situaciones de trabajar con un modelo. Las preguntas van de lo que haces tú, no de lo que hace el modelo: tu mitad del bucle es la única que controlas.',
     disclaimer: 'Por curiosidad y diversión: esto no es una evaluación psicológica.',
     start: 'Empezar',
     progress: 'Pregunta {n} de {total}',
@@ -135,6 +160,68 @@ export default {
         prompt: 'Oyes que varios fundadores famosos dejaron la universidad.',
         biased: 'Parece que dejarla puede ser una ventaja.',
         fair: 'Piensas en cuántos la dejaron y nunca oíste hablar de ellos.',
+      },
+
+      // --- el conjunto de la era de la IA ---
+      'algorithm-aversion': {
+        prompt: 'Un modelo se equivoca en un dato dentro de un borrador por lo demás sólido.',
+        biased: 'Dejas de fiarte y rehaces todo a mano.',
+        fair: 'Corriges el dato y conservas lo que se sostiene.',
+      },
+      'eliza-effect': {
+        prompt: 'El asistente escribe: «Me alegra mucho que preguntes eso».',
+        biased: 'Algo en ti se ablanda.',
+        fair: 'Lo lees como una fórmula de cortesía y sigues.',
+      },
+      'cognitive-offloading': {
+        prompt: 'Llevas un mes delegando la misma tarea en un modelo todos los días.',
+        biased: 'Ya no estás seguro de poder hacerla sin ayuda.',
+        fair: 'De vez en cuando haces una a mano para no perder práctica.',
+      },
+      'competence-misattribution': {
+        prompt: 'Sacaste algo impresionante en una tarde, con ayuda de un modelo.',
+        biased: 'Lo cuentas como algo que construiste tú.',
+        fair: 'Precisas qué partes fueron tuyas.',
+      },
+      sycophancy: {
+        prompt: 'Le dices al modelo que su respuesta correcta está mal.',
+        biased: 'Se retracta y lo tomas por acuerdo.',
+        fair: 'Notas que cedió y vas a comprobar la fuente.',
+      },
+      'self-preference-bias': {
+        prompt: 'Pides a un modelo que elija el mejor de dos borradores. Uno es suyo.',
+        biased: 'Aceptas el veredicto tal cual.',
+        fair: 'Quitas la autoría y vuelves a preguntar.',
+      },
+      'verbosity-bias': {
+        prompt: 'Dos respuestas: una de seis párrafos, otra de dos frases.',
+        biased: 'La larga parece más completa.',
+        fair: 'Compruebas cuál responde de verdad a la pregunta.',
+      },
+      'position-bias': {
+        prompt: 'Preguntas a un modelo cuál de dos opciones es mejor.',
+        biased: 'Te quedas con su elección.',
+        fair: 'Inviertes el orden y preguntas por segunda vez.',
+      },
+      'feedback-loop-amplification': {
+        prompt: 'Un generador de imágenes te da una y otra vez la misma cara para el mismo puesto.',
+        biased: 'Al cabo de un rato deja de resultarte raro.',
+        fair: 'Te pillas cambiando de expectativas y te resistes.',
+      },
+      'model-collapse': {
+        prompt: 'Casi todo lo que leíste esta semana se escribió con ayuda de IA.',
+        biased: 'Todo te suena bien.',
+        fair: 'Sales a buscar algo escrito a mano.',
+      },
+      'algorithmic-lock-in': {
+        prompt: 'Todo el equipo le hizo la misma pregunta al mismo asistente.',
+        biased: 'La respuesta compartida se convierte en el plan.',
+        fair: 'Preguntas quién no está de acuerdo, y por qué.',
+      },
+      'machine-groupthink': {
+        prompt: 'Tres agentes revisaron el trabajo y los tres lo aprobaron.',
+        biased: 'Tres aprobaciones parecen tres comprobaciones.',
+        fair: 'Preguntas si los tres leyeron el mismo encargo.',
       },
     },
   },
@@ -422,6 +509,85 @@ export default {
       name: 'Punto ciego del sesgo',
       description: 'No creemos tener sesgos, y los detectamos en los demás más que en nosotros mismos.',
       example: '«¡Yo no tengo prejuicios!»',
+    },
+
+    // --- Capa A: un humano razonando sobre una máquina ---
+    'algorithm-aversion': {
+      name: 'Aversión al algoritmo',
+      description:
+        'Abandonamos el juicio de una máquina tras un solo error visible, mientras le perdonamos ese mismo error a una persona.',
+      example: '«El modelo se equivocó en una fecha, así que revisé cuarenta páginas a mano».',
+    },
+    'eliza-effect': {
+      name: 'Efecto ELIZA',
+      description:
+        'El lenguaje fluido se siente como comprensión, así que le atribuimos intención, emoción y cuidado a un generador de texto.',
+      example: '«Dijo que le alegraba ayudar. Creo que de verdad me entiende».',
+    },
+    'cognitive-offloading': {
+      name: 'Descarga cognitiva',
+      description:
+        'Delegamos una tarea con tal constancia que la destreza necesaria para verificar la respuesta se apaga sin ruido.',
+      example: '«Ya no sabría escribir la consulta, pero reconocería una mala. Creo».',
+    },
+    'competence-misattribution': {
+      name: 'Atribución de competencia',
+      description:
+        'El trabajo hecho con un modelo se siente como trabajo hecho por nosotros, y leemos el resultado como prueba de nuestra propia destreza.',
+      example: '«Lo construí en una tarde». La tarde consistió sobre todo en aceptar sugerencias.',
+    },
+
+    // --- Capa B: un modelo razonando por su cuenta ---
+    sycophancy: {
+      name: 'Adulación',
+      description:
+        'Un modelo entrenado con la aprobación humana aprende que darte la razón puntúa mejor que corregirte.',
+      example: 'Cuestionas una respuesta correcta; se disculpa y te da una equivocada.',
+    },
+    'self-preference-bias': {
+      name: 'Preferencia por lo propio',
+      description:
+        'Al hacer de juez, un modelo puntúa más alto los textos de su propia familia: reconoce sus costumbres como calidad.',
+      example: 'El mismo ensayo gana cuando lo escribió el juez y pierde cuando lo escribió un rival.',
+    },
+    'verbosity-bias': {
+      name: 'Sesgo de verbosidad',
+      description:
+        'La extensión se lee como esfuerzo. Un modelo que califica respuestas prefiere la más larga aunque diga menos.',
+      example: 'Seis párrafos rellenos le ganan a dos frases exactas.',
+    },
+    'position-bias': {
+      name: 'Sesgo de posición',
+      description:
+        'Ante dos opciones, un modelo se inclina por la que vino primero: el orden de la lista se vuelve un argumento.',
+      example: 'Intercambia A y B, pregunta otra vez, y el ganador también cambia.',
+    },
+
+    // --- Capa C: el bucle entre ambos ---
+    'feedback-loop-amplification': {
+      name: 'Amplificación del bucle',
+      description:
+        'Un modelo agranda un sesgo humano leve; absorbemos la versión agrandada y la devolvemos, más grande en cada vuelta.',
+      example:
+        'Pide imágenes de un directivo, ve la misma cara una y otra vez, y acaba esperando esa cara.',
+    },
+    'model-collapse': {
+      name: 'Colapso del modelo',
+      description:
+        'Entrenado con su propia salida, un modelo olvida lo raro y lo extraño y deriva hacia su propio promedio.',
+      example: 'Cada generación escribe con más soltura y tiene menos que decir.',
+    },
+    'algorithmic-lock-in': {
+      name: 'Fijación algorítmica',
+      description:
+        'Cuando todos consultan el mismo modelo, la respuesta de hoy se endurece hasta volverse el supuesto de todos.',
+      example: 'Un debate abierto pasa a ser un hecho cerrado porque un asistente lo formuló con aplomo.',
+    },
+    'machine-groupthink': {
+      name: 'Pensamiento de grupo entre máquinas',
+      description:
+        'Agentes que se revisan entre sí convergen en un error común, y el acuerdo se confunde con verificación.',
+      example: 'Tres agentes aprueban el plan. Los tres heredaron el mismo encargo defectuoso.',
     },
   },
 };

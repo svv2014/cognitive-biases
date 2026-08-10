@@ -2,18 +2,21 @@
   "name": "cognitive-biases",
   "version": "2.0.0",
   "private": true,
-  "description": "A searchable, multilingual reference of 50 cognitive biases.",
+  "description": "A searchable, multilingual reference of 62 cognitive biases — 50 human, 12 from the age of AI.",
   "type": "module",
   "license": "GPL-3.0",
-  "homepage": "https://tetyanaking.github.io/cognitive-biases/",
+  "homepage": "https://svv2014.github.io/cognitive-biases/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tetyanaking/cognitive-biases.git"
+    "url": "https://github.com/svv2014/cognitive-biases.git"
   },
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run data",
     "build": "vite build",
     "preview": "vite preview",
+    "data": "node scripts/build-machine-data.mjs",
+    "icons": "node scripts/build-icons.mjs",
     "check": "node scripts/check-locales.mjs",
     "smoke": "node scripts/smoke.mjs",
     "test": "npm run check && node --test scripts/test-search.mjs scripts/test-quiz.mjs && npm run smoke"

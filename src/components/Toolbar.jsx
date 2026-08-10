@@ -1,5 +1,21 @@
 import { getCategoryName, t } from '../locales/index.js';
 
+function CategoryChip({ locale, cat, selected, onToggle }) {
+  return (
+    <button
+      type="button"
+      className="chip"
+      data-selected={selected || undefined}
+      aria-pressed={selected}
+      onClick={() => onToggle(cat.id)}
+      style={{ '--chip-color': cat.color, '--chip-ink': cat.ink }}
+    >
+      <span className="chip__dot" aria-hidden="true" />
+      {getCategoryName(locale, cat.id)}
+    </button>
+  );
+}
+
 export default function Toolbar({
   locale,
   query,
@@ -10,6 +26,11 @@ export default function Toolbar({
   onClear,
   canClear,
 }) {
+  // The two families answer different questions — why a mind errs, and who in
+  // the loop is erring — so they are grouped rather than run together.
+  const classic = categories.filter((c) => c.era === 'classic');
+  const ai = categories.filter((c) => c.era === 'ai');
+
   return (
     <div className="toolbar">
       <div className="search">
@@ -29,28 +50,28 @@ export default function Toolbar({
         />
       </div>
 
-      <div
-        className="chips"
-        role="group"
-        aria-label={t(locale, 'filterLabel')}
-      >
-        {categories.map((cat) => {
-          const selected = active.includes(cat.id);
-          return (
-            <button
-              key={cat.id}
-              type="button"
-              className="chip"
-              data-selected={selected || undefined}
-              aria-pressed={selected}
-              onClick={() => onToggleCategory(cat.id)}
-              style={{ '--chip-color': cat.color, '--chip-ink': cat.ink }}
-            >
-              <span className="chip__dot" aria-hidden="true" />
-              {getCategoryName(locale, cat.id)}
-            </button>
-          );
-        })}
+      <div className="chips" role="group" aria-label={t(locale, 'filterLabel')}>
+        {classic.map((cat) => (
+          <CategoryChip
+            key={cat.id}
+            locale={locale}
+            cat={cat}
+            selected={active.includes(cat.id)}
+            onToggle={onToggleCategory}
+          />
+        ))}
+
+        <span className="chips__divider" aria-hidden="true" />
+
+        {ai.map((cat) => (
+          <CategoryChip
+            key={cat.id}
+            locale={locale}
+            cat={cat}
+            selected={active.includes(cat.id)}
+            onToggle={onToggleCategory}
+          />
+        ))}
 
         {canClear && (
           <button type="button" className="chip chip--clear" onClick={onClear}>

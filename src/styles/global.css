@@ -8,6 +8,11 @@
   --cat-money: #27ae8d;
   --cat-politics: #f9b628;
 
+  /* The AI-era family — a separate axis, so a separate corner of the wheel. */
+  --cat-ai-human: #7d5ba6;
+  --cat-ai-agent: #a8497a;
+  --cat-ai-loop: #b0552e;
+
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -616,6 +621,153 @@ select {
   color: var(--accent);
 }
 
+/* -------------------------------------------------------------- sections */
+
+.section + .section {
+  margin-top: 52px;
+}
+
+.section__title {
+  margin: 0;
+  font-size: 1.32rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/*
+ * The AI section is marked with a gradient rule in its three category colours
+ * rather than a heavier heading: the split is a change of axis, not a change of
+ * importance.
+ */
+.section--ai .section__title {
+  padding-top: 22px;
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      var(--cat-ai-human),
+      var(--cat-ai-agent),
+      var(--cat-ai-loop)
+    )
+    1;
+}
+
+.section__lead {
+  max-width: 62ch;
+  margin: 6px 0 20px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.chips__divider {
+  align-self: center;
+  width: 1px;
+  height: 20px;
+  background: var(--border-strong);
+}
+
+/* ------------------------------------------------------- card provenance */
+
+.card__meta {
+  display: grid;
+  gap: 4px;
+  margin: 10px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.card__meta-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.card__meta-label {
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.66rem;
+  font-weight: 600;
+}
+
+.card__twin,
+.card__source {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--text-muted);
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color 0.16s var(--ease);
+}
+
+.card__twin:hover,
+.card__source:hover {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------- machine block */
+
+.footer__machine {
+  max-width: 68ch;
+  margin: 0 auto 22px;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.footer__machine-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.footer__machine-lead {
+  margin: 6px 0 14px;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+.footer__machine-links {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__machine-links a {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  align-items: baseline;
+  text-decoration: none;
+}
+
+.footer__machine-links code {
+  padding: 2px 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.8rem;
+}
+
+.footer__machine-links a:hover code {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ------------------------------------------------------------ responsive */
 
 @media (max-width: 560px) {
@@ -787,6 +939,53 @@ select {
   fill: none;
   stroke: var(--text-muted);
   stroke-width: 1.8;
+}
+
+.quiz__modes {
+  display: inline-flex;
+  gap: 4px;
+  margin-top: 14px;
+  padding: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+}
+
+.quiz__mode {
+  padding: 6px 16px;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.quiz__mode[data-selected] {
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.quiz__intro {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.quiz__agents {
+  margin: 10px 0 0;
+  color: var(--text-subtle);
+  font-size: 0.78rem;
+}
+
+.quiz__agents a {
+  color: var(--accent);
+  text-underline-offset: 2px;
 }
 
 .quiz__meter {
