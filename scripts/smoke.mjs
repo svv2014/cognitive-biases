@@ -23,12 +23,22 @@ define('localStorage', {
 });
 define('navigator', { language: 'en-US' });
 define('document', { documentElement: { dataset: {} } });
+// Routes are hash-based; each render below points this at the route under test.
+define('location', { hash: '', search: '' });
+
+const render = (App, hash) => {
+  globalThis.location.hash = hash;
+  return renderToStaticMarkup(React.createElement(App));
+};
 
 const vite = await createServer({ server: { middlewareMode: true }, appType: 'custom', logLevel: 'warn' });
 
 const { default: App } = await vite.ssrLoadModule('/src/App.jsx');
-const { locales, localeCodes } = await vite.ssrLoadModule('/src/locales/index.js');
-const { biasIds } = await vite.ssrLoadModule('/src/data/biases.js');
+const { locales, localeCodes, loadAllLocales } = await vite.ssrLoadModule('/src/locales/index.js');
+await loadAllLocales();
+const { biasIds, aiBiases } = await vite.ssrLoadModule('/src/data/biases.js');
+const { situations } = await vite.ssrLoadModule('/src/data/situations.js');
+const aiIds = aiBiases.map((b) => b.id);
 
 // Matches React's HTML escaping so string comparisons against markup line up.
 const escapeHtml = (s) =>
@@ -47,9 +57,11 @@ const fail = (msg) => {
 
 for (const code of localeCodes) {
   store.set('cb-lang', code);
-  let html;
+  let html, home, page;
   try {
-    html = renderToStaticMarkup(React.createElement(App));
+    html = render(App, '#/dictionary');
+    home = render(App, '');
+    page = render(App, '#/bias/anchoring');
   } catch (err) {
     fail(`${code}: render threw — ${err.message}`);
     continue;
@@ -89,7 +101,36 @@ for (const code of localeCodes) {
     if (!html.includes(escapeHtml(cat))) fail(`${code}: category "${cat}" missing`);
   }
 
-  if (failures === before) console.log(`  ✓ ${code.padEnd(2)} — ${cards} cards, ${imgs} icons`);
+  // Home: every hero, door and section string, and a twin row per AI-era bias.
+  const homeKeys = ['homeTitle', 'homeLead', 'situationsTitle', 'dailyTitle', 'twinsTitle', 'quizBlockTitle'];
+  for (const key of homeKeys) {
+    if (!home.includes(escapeHtml(loc.ui[key]))) fail(`${code}: home is missing ui.${key}`);
+  }
+  for (const s of situations) {
+    if (!home.includes(escapeHtml(loc.ui[`sit${s.key}`]))) fail(`${code}: home is missing door "${s.id}"`);
+  }
+  const twinRows = (home.match(/class="twins__row"/g) || []).length;
+  if (twinRows !== aiIds.length) fail(`${code}: home rendered ${twinRows} twin rows, expected ${aiIds.length}`);
+  if (/\{(count|total)\}/.test(home)) fail(`${code}: home has an unresolved placeholder`);
+
+  // A bias page: its own name as the heading, and its AI-era echo linked.
+  if (!page.includes(`<h1 class="bias-page__name">${escapeHtml(loc.biases.anchoring.name)}</h1>`)) {
+    fail(`${code}: bias page heading missing`);
+  }
+  if (!page.includes('href="#/bias/position-bias"')) fail(`${code}: bias page does not link its echo`);
+  if (!page.includes(escapeHtml(loc.biases.anchoring.counter))) fail(`${code}: bias page is missing its counter-move`);
+  const play = render(App, '#/play');
+  if (!play.includes(escapeHtml(loc.game.title)) || !play.includes(escapeHtml(loc.game.start))) {
+    fail(`${code}: game intro is missing its title or start button`);
+  }
+  const aiPage = render(App, '#/bias/sycophancy');
+  if (!aiPage.includes(escapeHtml(loc.biases.sycophancy.prompt))) fail(`${code}: AI-era bias page is missing its prompt`);
+  if (page.includes('class="prompt"')) fail(`${code}: a classic bias page shows a prompt`);
+  if ((home.match(/class="prompt /g) || []).length !== 3) fail(`${code}: home should feature three prompts`);
+  const counters = (html.match(/class="card__counter"/g) || []).length;
+  if (counters !== biasIds.length) fail(`${code}: ${counters} counter-moves on cards, expected ${biasIds.length}`);
+
+  if (failures === before) console.log(`  ✓ ${code.padEnd(2)} — ${cards} cards, ${imgs} icons, home, bias page`);
 }
 
 await vite.close();

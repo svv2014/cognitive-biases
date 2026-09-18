@@ -1,7 +1,8 @@
 import { categoryById } from '../data/categories.js';
 import { getBias, getCategoryName, t } from '../locales/index.js';
+import { hrefBias } from '../lib/router.js';
 
-export default function BiasCard({ entry, locale, onOpenBias }) {
+export default function BiasCard({ entry, locale }) {
   // Only the AI-era entries carry a twin and a source; the classic fifty
   // predate both fields, so the footer simply does not render for them.
   const twin = entry.twin ? getBias(locale, entry.twin) : null;
@@ -15,7 +16,9 @@ export default function BiasCard({ entry, locale, onOpenBias }) {
       </div>
 
       <div className="card__body">
-        <h3 className="card__name">{entry.name}</h3>
+        <h3 className="card__name">
+          <a href={hrefBias(entry.id)}>{entry.name}</a>
+        </h3>
 
         <ul className="card__tags">
           {entry.categories.map((id) => (
@@ -35,6 +38,11 @@ export default function BiasCard({ entry, locale, onOpenBias }) {
           <img src={`${import.meta.env.BASE_URL}icons/${entry.id}.png`} alt="" loading="lazy" decoding="async" />
         </div>
 
+        <p className="card__counter">
+          <span className="card__example-label">{t(locale, 'counterLabel')}</span>
+          {entry.counter}
+        </p>
+
         <p className="card__example">
           <span className="card__example-label">{t(locale, 'example')}</span>
           {entry.example}
@@ -45,13 +53,9 @@ export default function BiasCard({ entry, locale, onOpenBias }) {
             {twin && (
               <span className="card__meta-item">
                 <span className="card__meta-label">{t(locale, 'twin')}</span>
-                <button
-                  type="button"
-                  className="card__twin"
-                  onClick={() => onOpenBias?.(twin.name)}
-                >
+                <a className="card__twin" href={hrefBias(entry.twin)}>
                   {twin.name}
-                </button>
+                </a>
               </span>
             )}
             {entry.source && (

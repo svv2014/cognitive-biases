@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { DEFAULT_QUIZ_MODE, QUIZ_LENGTH, quizModes } from '../data/quiz.js';
 import { pickQuestions, scoreQuiz } from '../lib/quiz.js';
-import { getBias, tq } from '../locales/index.js';
+import { getBias, t, tq } from '../locales/index.js';
+import { resultHash } from '../lib/share.js';
+import ShareBar from './ShareBar.jsx';
 
 /** Where an agent can fetch the same self-test in a form it can execute. */
 const AGENT_TEST = `${import.meta.env.BASE_URL}self-test.json`;
@@ -21,7 +23,7 @@ function ResultRow({ locale, biasId, onOpen }) {
       <div className="quiz__result-text">
         <p className="quiz__result-name">{bias.name}</p>
         <p className="quiz__result-desc">{bias.description}</p>
-        <button type="button" className="quiz__link" onClick={() => onOpen(bias.name)}>
+        <button type="button" className="quiz__link" onClick={() => onOpen(biasId)}>
           {tq(locale, 'seeCard')}
         </button>
       </div>
@@ -29,8 +31,8 @@ function ResultRow({ locale, biasId, onOpen }) {
   );
 }
 
-export default function Quiz({ locale, onClose, onOpenBias }) {
-  const [mode, setMode] = useState(DEFAULT_QUIZ_MODE);
+export default function Quiz({ locale, onClose, onOpenBias, initialMode = DEFAULT_QUIZ_MODE }) {
+  const [mode, setMode] = useState(initialMode);
   const [questions, setQuestions] = useState(() => pickQuestions(Math.random, QUIZ_LENGTH, mode));
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -181,6 +183,23 @@ export default function Quiz({ locale, onClose, onOpenBias }) {
                 </ul>
               </>
             )}
+
+            <ShareBar
+              locale={locale}
+              hash={resultHash({ kind: 'quiz', mode, total: result.total, ids: result.matched })}
+              text={
+                result.count
+                  ? t(locale, 'shareQuizText', {
+                      names: result.matched.map((id) => getBias(locale, id).name).join(', '),
+                    })
+                  : t(locale, 'shareQuizNone', { total: result.total })
+              }
+              card={{
+                eyebrow: tq(locale, mode === 'ai' ? 'titleAi' : 'title'),
+                big: `${result.count}/${result.total}`,
+                items: result.matched.map((id) => getBias(locale, id).name),
+              }}
+            />
 
             {/* Kept above the buttons so it stays in view without scrolling. */}
             <p className="quiz__disclaimer quiz__disclaimer--result">{tq(locale, 'disclaimer')}</p>

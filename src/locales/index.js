@@ -1,21 +1,48 @@
 import en from './en.js';
-import ru from './ru.js';
-import uk from './uk.js';
-import pl from './pl.js';
-import es from './es.js';
-import fr from './fr.js';
 
 export const DEFAULT_LOCALE = 'en';
 
-// Order here is the order of the language switcher.
-export const locales = { en, uk, ru, pl, es, fr };
+/**
+ * English ships in the main bundle — it is the fallback for every string — and
+ * each other language is its own chunk, fetched by `loadLocale` before it is
+ * shown. `locales` fills in as languages load; the helpers below read from it.
+ * Node scripts that need every language at once import `./all.js` instead.
+ */
+const loaders = {
+  uk: () => import('./uk.js'),
+  ru: () => import('./ru.js'),
+  pl: () => import('./pl.js'),
+  es: () => import('./es.js'),
+  fr: () => import('./fr.js'),
+};
 
-export const localeCodes = Object.keys(locales);
+export const locales = { en };
 
-export const localeOptions = localeCodes.map((code) => ({
-  code,
-  name: locales[code].meta.name,
-}));
+// Order here is the order of the language switcher. Names are repeated from
+// each file's `meta.name` so the switcher can list languages before loading
+// them; `npm run check` keeps the two in step.
+export const localeNames = {
+  en: 'English',
+  uk: 'Українська',
+  ru: 'Русский',
+  pl: 'Polski',
+  es: 'Español',
+  fr: 'Français',
+};
+
+export const localeCodes = Object.keys(localeNames);
+
+export const localeOptions = localeCodes.map((code) => ({ code, name: localeNames[code] }));
+
+export const isLoaded = (code) => Boolean(locales[code]);
+
+/** Fetches a language once; resolves when its strings are available. */
+export async function loadLocale(code) {
+  if (!locales[code] && loaders[code]) locales[code] = (await loaders[code]()).default;
+  return locales[code];
+}
+
+export const loadAllLocales = () => Promise.all(localeCodes.map(loadLocale));
 
 /**
  * Resolves a browser language tag ("uk-UA", "ru") to a supported locale,
@@ -23,10 +50,11 @@ export const localeOptions = localeCodes.map((code) => ({
  */
 export function resolveLocale(candidate) {
   if (!candidate) return DEFAULT_LOCALE;
+  // Checked against the languages that exist, not the ones loaded so far.
   const lower = String(candidate).toLowerCase();
-  if (locales[lower]) return lower;
+  if (localeNames[lower]) return lower;
   const base = lower.split(/[-_]/)[0];
-  return locales[base] ? base : DEFAULT_LOCALE;
+  return localeNames[base] ? base : DEFAULT_LOCALE;
 }
 
 /**
@@ -64,3 +92,17 @@ export function tq(code, path, vars) {
   if (!vars || typeof raw !== 'string') return raw;
   return raw.replace(/\{(\w+)\}/g, (m, name) => (name in vars ? String(vars[name]) : m));
 }
+
+/** A reader for one nested locale section, by dotted path, with English fallback. */
+const sectionReader = (section) => (code, path, vars) => {
+  const raw =
+    dig(locales[code]?.[section], path) ?? dig(locales[DEFAULT_LOCALE][section], path) ?? path;
+  if (!vars || typeof raw !== 'string') return raw;
+  return raw.replace(/\{(\w+)\}/g, (m, name) => (name in vars ? String(vars[name]) : m));
+};
+
+/** Demo and scene strings, e.g. `td(code, 'anchoring.q1')`. */
+export const td = sectionReader('demos');
+
+/** Spot-the-bias strings, e.g. `tg(code, 'start')`. */
+export const tg = sectionReader('game');

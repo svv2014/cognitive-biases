@@ -1,16 +1,25 @@
 import { useEffect, useMemo, useState } from 'react';
-import { biases, isAiEra } from './data/biases.js';
-import { categories } from './data/categories.js';
-import { DEFAULT_LOCALE, getBias, localeOptions, resolveLocale, t } from './locales/index.js';
-import { useDebounced } from './hooks/useDebounced.js';
+import { biases } from './data/biases.js';
+import {
+  DEFAULT_LOCALE,
+  getBias,
+  isLoaded,
+  loadLocale,
+  localeOptions,
+  resolveLocale,
+  t,
+} from './locales/index.js';
 import { usePersistentState } from './hooks/usePersistentState.js';
+import { normalize } from './lib/search.js';
+import { hrefBias, useRoute } from './lib/router.js';
 import Header from './components/Header.jsx';
-import Toolbar from './components/Toolbar.jsx';
-import BiasCard from './components/BiasCard.jsx';
-import EmptyState from './components/EmptyState.jsx';
 import Footer from './components/Footer.jsx';
-import { filterBiases, normalize } from './lib/search.js';
 import Quiz from './components/Quiz.jsx';
+import Home from './pages/Home.jsx';
+import Dictionary from './pages/Dictionary.jsx';
+import BiasPage from './pages/BiasPage.jsx';
+import Game from './pages/Game.jsx';
+import SharedResult from './pages/SharedResult.jsx';
 
 /**
  * `?lang=uk` makes a language link shareable and takes precedence over both the
@@ -23,17 +32,23 @@ function initialLocale() {
 }
 
 export default function App() {
-  const [storedLocale, setLocale] = usePersistentState('cb-lang', initialLocale);
-  // Guards against a stale or hand-edited value in localStorage.
-  const locale = resolveLocale(storedLocale);
+  const route = useRoute();
+  const [storedLocale, setStoredLocale] = usePersistentState('cb-lang', initialLocale);
+  // Guards against a stale or hand-edited value in localStorage, and against a
+  // language whose chunk has not arrived (it falls back to English until then).
+  const wanted = resolveLocale(storedLocale);
+  const locale = isLoaded(wanted) ? wanted : DEFAULT_LOCALE;
+  // Languages load on demand; switch only once the strings are here.
+  const setLocale = (code) => {
+    loadLocale(code)
+      .then(() => setStoredLocale(code))
+      .catch(() => {});
+  };
   const [theme, setTheme] = usePersistentState('cb-theme', () =>
     typeof document !== 'undefined' ? document.documentElement.dataset.theme || 'light' : 'light'
   );
-  const [query, setQuery] = useState('');
-  const [activeCategories, setActiveCategories] = useState([]);
-  const [quizOpen, setQuizOpen] = useState(false);
-
-  const debouncedQuery = useDebounced(query, 200);
+  // null when closed, otherwise the mode the quiz opens in.
+  const [quizMode, setQuizMode] = useState(null);
 
   // An explicit ?lang= overrides whatever was stored on a previous visit.
   useEffect(() => {
@@ -47,10 +62,11 @@ export default function App() {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
+  // The bias page sets its own title; every other route uses the site's.
   useEffect(() => {
     document.documentElement.lang = locale;
-    document.title = `${t(locale, 'title')} — ${t(locale, 'tagline')}`;
-  }, [locale]);
+    if (route.name !== 'bias') document.title = `${t(locale, 'title')} — ${t(locale, 'tagline')}`;
+  }, [locale, route.name]);
 
   // Localised text is resolved once per language rather than per keystroke.
   const entries = useMemo(
@@ -66,38 +82,33 @@ export default function App() {
     [locale]
   );
 
-  const visible = useMemo(
-    () => filterBiases(entries, debouncedQuery, activeCategories),
-    [entries, debouncedQuery, activeCategories]
-  );
+  const startQuiz = (mode) => setQuizMode(mode ?? 'human');
 
-  // Search and filters span both families; only the grouping is split.
-  const classic = useMemo(() => visible.filter((e) => !isAiEra(e)), [visible]);
-  const ai = useMemo(() => visible.filter(isAiEra), [visible]);
-
-  const openBias = (name) => {
-    setActiveCategories([]);
-    setQuery(name);
-    requestAnimationFrame(() =>
-      document.getElementById('biases')?.scrollIntoView({ behavior: 'smooth' })
+  let page;
+  if (route.name === 'dictionary') {
+    page = (
+      <Dictionary
+        // Remount when the route's filters change, so a new door starts fresh.
+        key={JSON.stringify(route.params)}
+        locale={locale}
+        entries={entries}
+        params={route.params}
+        onStartQuiz={startQuiz}
+      />
     );
-  };
-
-  const toggleCategory = (id) =>
-    setActiveCategories((current) =>
-      current.includes(id) ? current.filter((c) => c !== id) : [...current, id]
-    );
-
-  const isFiltered = activeCategories.length > 0 || debouncedQuery.trim().length > 0;
-
-  const clearFilters = () => {
-    setActiveCategories([]);
-    setQuery('');
-  };
+  } else if (route.name === 'result') {
+    page = <SharedResult locale={locale} params={route.params} onStartQuiz={startQuiz} />;
+  } else if (route.name === 'play') {
+    page = <Game locale={locale} />;
+  } else if (route.name === 'bias') {
+    page = <BiasPage key={route.id} locale={locale} id={route.id} />;
+  } else {
+    page = <Home locale={locale} onStartQuiz={startQuiz} />;
+  }
 
   return (
     <div className="app">
-      <a className="skip-link" href="#biases">
+      <a className="skip-link" href="#content">
         {t(locale, 'skip')}
       </a>
 
@@ -107,68 +118,23 @@ export default function App() {
         onLocaleChange={setLocale}
         theme={theme}
         onThemeToggle={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        count={visible.length}
-        total={entries.length}
-        isFiltered={isFiltered}
-        onStartQuiz={() => setQuizOpen(true)}
+        route={route}
       />
 
-      <main className="app__main">
-        <Toolbar
-          locale={locale}
-          query={query}
-          onQueryChange={setQuery}
-          categories={categories}
-          active={activeCategories}
-          onToggleCategory={toggleCategory}
-          onClear={clearFilters}
-          canClear={isFiltered}
-        />
-
-        {visible.length > 0 ? (
-          <div id="biases">
-            {classic.length > 0 && (
-              <section className="section" aria-labelledby="section-classic">
-                <h2 className="section__title" id="section-classic">
-                  {t(locale, 'classicTitle')}
-                </h2>
-                <p className="section__lead">{t(locale, 'classicLead')}</p>
-                <ul className="bias-grid">
-                  {classic.map((entry) => (
-                    <BiasCard key={entry.id} entry={entry} locale={locale} onOpenBias={openBias} />
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {ai.length > 0 && (
-              <section className="section section--ai" aria-labelledby="section-ai">
-                <h2 className="section__title" id="section-ai">
-                  {t(locale, 'aiTitle')}
-                </h2>
-                <p className="section__lead">{t(locale, 'aiLead')}</p>
-                <ul className="bias-grid">
-                  {ai.map((entry) => (
-                    <BiasCard key={entry.id} entry={entry} locale={locale} onOpenBias={openBias} />
-                  ))}
-                </ul>
-              </section>
-            )}
-          </div>
-        ) : (
-          <EmptyState locale={locale} onClear={clearFilters} />
-        )}
+      <main className="app__main" id="content" tabIndex={-1}>
+        {page}
       </main>
 
       <Footer locale={locale} />
 
-      {quizOpen && (
+      {quizMode && (
         <Quiz
           locale={locale}
-          onClose={() => setQuizOpen(false)}
-          onOpenBias={(name) => {
-            setQuizOpen(false);
-            openBias(name);
+          initialMode={quizMode}
+          onClose={() => setQuizMode(null)}
+          onOpenBias={(id) => {
+            setQuizMode(null);
+            location.hash = hrefBias(id);
           }}
         />
       )}

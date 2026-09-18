@@ -38,6 +38,15 @@ validator enforces both fields.
 - A **machine-readable surface** so an agent can use the site without scraping
   it: `biases.json`, `self-test.json` and `llms.txt` (see below)
 - Filter by any combination of the nine categories
+- A home page that starts from situations rather than names, with a bias of the
+  day, live demos (anchoring, framing, the Forer effect) and a 3D map of how
+  each AI-era bias echoes a human one
+- A page per bias with a **what to do** line, and for the AI-era twelve a prompt
+  to paste into a chat; four of them have a short animated simulation
+- **Spot the bias**, a ten-round game, and shareable results for it and the
+  self-test (the result travels in the link; nothing is stored)
+- A static, indexable page per bias per language (`/bias/<id>/`,
+  `/<lang>/bias/<id>/`), generated after the build by `scripts/prerender.mjs`
 - Light and dark themes, remembered between visits
 - Language auto-detected from the browser, overridable and remembered
 - Responsive from 320 px up; keyboard accessible; all category colours meet
