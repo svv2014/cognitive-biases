@@ -2,6 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { biases } from '../src/data/biases.js';
+import '../src/locales/all.js';
 import { getBias, localeCodes } from '../src/locales/index.js';
 import { filterBiases, normalize } from '../src/lib/search.js';
 

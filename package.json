@@ -13,17 +13,18 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "npm run data",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "data": "node scripts/build-machine-data.mjs",
     "icons": "node scripts/build-icons.mjs",
     "check": "node scripts/check-locales.mjs",
     "smoke": "node scripts/smoke.mjs",
-    "test": "npm run check && node --test scripts/test-search.mjs scripts/test-quiz.mjs && npm run smoke"
+    "test": "npm run check && node --test scripts/test-locales-lazy.mjs && node --test scripts/test-search.mjs scripts/test-quiz.mjs scripts/test-router.mjs scripts/test-game.mjs && npm run smoke"
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "three": "^0.186.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",

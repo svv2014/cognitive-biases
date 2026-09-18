@@ -1,8 +1,9 @@
 // Validates that every locale covers every bias id, every UI key and every
 // category, and that no entry has an empty string. Run via `npm run check`.
 import { biases, biasIds, isAiEra } from '../src/data/biases.js';
-import { locales, DEFAULT_LOCALE } from '../src/locales/index.js';
+import { locales, localeCodes, localeNames, DEFAULT_LOCALE } from '../src/locales/all.js';
 import { quizPools, QUIZ_LENGTH } from '../src/data/quiz.js';
+import { situations } from '../src/data/situations.js';
 import { readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -18,8 +19,13 @@ const uiKeys = Object.keys(base.ui);
 const catKeys = Object.keys(base.categories);
 const quizUiKeys = Object.keys(base.quiz).filter((k) => k !== 'questions');
 
+if (localeCodes.join() !== Object.keys(locales).join()) {
+  problems.push(`[locales] switcher order ${localeCodes} does not match loaded ${Object.keys(locales)}`);
+}
+
 for (const [code, loc] of Object.entries(locales)) {
   const where = (msg) => problems.push(`[${code}] ${msg}`);
+  if (localeNames[code] !== loc.meta?.name) where(`localeNames says "${localeNames[code]}", meta.name says "${loc.meta?.name}"`);
 
   if (loc.meta?.code !== code) where(`meta.code is "${loc.meta?.code}", expected "${code}"`);
 
@@ -35,9 +41,15 @@ for (const [code, loc] of Object.entries(locales)) {
       where(`missing bias "${id}"`);
       continue;
     }
-    for (const f of ['name', 'description', 'example']) {
+    for (const f of ['name', 'description', 'example', 'counter']) {
       if (!b[f]?.trim()) where(`bias "${id}" is missing ${f}`);
     }
+  }
+  // A prompt to paste into a chat belongs to the AI-era twelve, and only them.
+  for (const b of biases) {
+    const has = Boolean(loc.biases?.[b.id]?.prompt?.trim());
+    if (isAiEra(b) && !has) where(`bias "${b.id}" is missing prompt`);
+    if (!isAiEra(b) && loc.biases?.[b.id]?.prompt !== undefined) where(`classic bias "${b.id}" has a prompt`);
   }
   for (const id of Object.keys(loc.biases ?? {})) {
     if (!biasIds.includes(id)) where(`unknown bias id "${id}"`);
@@ -89,6 +101,38 @@ for (const [mode, pool] of Object.entries(quizPools)) {
 // A bias may only be pooled once overall, so a result never lands twice.
 if (new Set(quizBiasIds).size !== quizBiasIds.length) {
   problems.push('[quiz] the same bias appears in more than one pool');
+}
+
+// Demo copy is nested; every leaf in English must exist, non-empty and of the
+// same shape, in every other locale — and nothing extra.
+const leaves = (node, path = '') =>
+  typeof node === 'string'
+    ? [[path, node]]
+    : Object.entries(node ?? {}).flatMap(([k, v]) => leaves(v, path ? `${path}.${k}` : k));
+for (const section of ['demos', 'game']) {
+  const expected = new Map(leaves(base[section]));
+  for (const [code, loc] of Object.entries(locales)) {
+    const mine = new Map(leaves(loc[section]));
+    for (const path of expected.keys()) {
+      if (!mine.get(path)?.trim()) problems.push(`[${code}] missing ${section}.${path}`);
+    }
+    for (const path of mine.keys()) {
+      if (!expected.has(path)) problems.push(`[${code}] unknown ${section}.${path}`);
+    }
+  }
+}
+
+// Home-page doors must point at real biases and real categories.
+for (const s of situations) {
+  for (const id of s.biasIds) {
+    if (!biasIds.includes(id)) problems.push(`[situations:${s.id}] unknown bias "${id}"`);
+  }
+  for (const c of [...s.cats, s.color]) {
+    if (!catKeys.includes(c)) problems.push(`[situations:${s.id}] unknown category "${c}"`);
+  }
+  for (const k of [`sit${s.key}`, `sit${s.key}Hint`]) {
+    if (!uiKeys.includes(k)) problems.push(`[situations:${s.id}] no ui.${k} in ${DEFAULT_LOCALE}`);
+  }
 }
 
 // Categories referenced by the manifest must exist in the locale files.

@@ -1,4 +1,5 @@
-import { t, tq } from '../locales/index.js';
+import { t } from '../locales/index.js';
+import { hrefDictionary, hrefHome, hrefPlay } from '../lib/router.js';
 
 function SunIcon() {
   return (
@@ -19,32 +20,37 @@ function MoonIcon() {
   );
 }
 
-export default function Header({
-  locale,
-  locales,
-  onLocaleChange,
-  theme,
-  onThemeToggle,
-  count,
-  total,
-  isFiltered,
-  onStartQuiz,
-}) {
-  const counter = isFiltered
-    ? t(locale, 'counterFiltered', { count, total })
-    : t(locale, 'counter', { count: total });
-
+/**
+ * The bar that sits on every route: brand (back home), the two top-level
+ * destinations, language and theme. Each page brings its own hero.
+ */
+export default function Header({ locale, locales, onLocaleChange, theme, onThemeToggle, route }) {
   return (
     <header className="header">
       <div className="header__bar">
-        <div className="header__brand">
+        <a className="header__brand" href={hrefHome()}>
           <span className="header__mark" aria-hidden="true">
             <span style={{ background: 'var(--cat-belief)' }} />
             <span style={{ background: 'var(--cat-memory)' }} />
             <span style={{ background: 'var(--cat-politics)' }} />
           </span>
           <span className="header__wordmark">{t(locale, 'title')}</span>
-        </div>
+        </a>
+
+        <nav className="header__nav" aria-label={t(locale, 'navLabel')}>
+          <a href={hrefHome()} aria-current={route.name === 'home' ? 'page' : undefined}>
+            {t(locale, 'navHome')}
+          </a>
+          <a
+            href={hrefDictionary()}
+            aria-current={route.name === 'dictionary' || route.name === 'bias' ? 'page' : undefined}
+          >
+            {t(locale, 'navDictionary')}
+          </a>
+          <a href={hrefPlay()} aria-current={route.name === 'play' ? 'page' : undefined}>
+            {t(locale, 'navPlay')}
+          </a>
+        </nav>
 
         <div className="header__controls">
           <label className="lang-select">
@@ -73,22 +79,15 @@ export default function Header({
           </button>
         </div>
       </div>
-
-      <div className="header__hero">
-        <h1 className="header__title">{t(locale, 'title')}</h1>
-        <p className="header__tagline">{t(locale, 'tagline')}</p>
-        <p className="header__count" aria-live="polite">
-          {counter}
-        </p>
-
-        <button type="button" className="header__quiz" onClick={onStartQuiz}>
-          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-            <path d="M7.3 7.3a2.8 2.8 0 1 1 3.6 3.4c-.6.2-.9.8-.9 1.4v.4" strokeLinecap="round" />
-            <circle cx="10" cy="15.6" r="0.4" />
-          </svg>
-          {tq(locale, 'cta')}
-        </button>
-      </div>
     </header>
+  );
+}
+
+export function QuizIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+      <path d="M7.3 7.3a2.8 2.8 0 1 1 3.6 3.4c-.6.2-.9.8-.9 1.4v.4" strokeLinecap="round" />
+      <circle cx="10" cy="15.6" r="0.4" />
+    </svg>
   );
 }

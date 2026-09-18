@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 
 import { biases, isAiEra, layerOf } from '../src/data/biases.js';
 import { categories } from '../src/data/categories.js';
-import { locales, localeCodes, DEFAULT_LOCALE } from '../src/locales/index.js';
+import { locales, localeCodes, DEFAULT_LOCALE } from '../src/locales/all.js';
 import { quizPools } from '../src/data/quiz.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -74,7 +74,17 @@ const dataset = {
     text: Object.fromEntries(
       localeCodes.map((code) => {
         const t = text(code, b.id);
-        return [code, { name: t.name, description: t.description, example: t.example }];
+        return [
+          code,
+          {
+            name: t.name,
+            description: t.description,
+            example: t.example,
+            counter: t.counter,
+            // Only the AI-era twelve carry one: text to paste into a chat.
+            prompt: t.prompt ?? null,
+          },
+        ];
       })
     ),
   })),
@@ -232,7 +242,7 @@ const layerNames = { 'ai-human': 'Human → AI', 'ai-agent': 'Machine', 'ai-loop
 const byLayer = (layer) =>
   biases
     .filter((b) => layerOf(b) === layer)
-    .map((b) => `- **${en.biases[b.id].name}** — ${en.biases[b.id].description} (${b.source.label})`)
+    .map((b) => `- **${en.biases[b.id].name}** — ${en.biases[b.id].description} What to do: ${en.biases[b.id].counter} (${b.source.label})`)
     .join('\n');
 
 const llms = `# Cognitive Biases
@@ -292,6 +302,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${localeCodes
   .map((code) => `  <url><loc>${SITE}/?lang=${code}</loc></url>`)
+  .join('\n')}
+${localeCodes
+  .flatMap((code) =>
+    // The static page per bias written by scripts/prerender.mjs.
+    biases.map((b) => `  <url><loc>${SITE}/${code === DEFAULT_LOCALE ? '' : `${code}/`}bias/${b.id}/</loc></url>`)
+  )
   .join('\n')}
 </urlset>
 `;
