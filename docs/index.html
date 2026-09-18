@@ -59,6 +59,9 @@
 
     <script>
       // Applied before first paint so the page never flashes the wrong theme.
+      // Readers without JavaScript (and most AI fetch tools) get the static
+      // summary the build writes into #root; everyone else gets the app.
+      document.documentElement.classList.add('js');
       (function () {
         try {
           var stored = localStorage.getItem('cb-theme');
@@ -71,10 +74,87 @@
         }
       })();
     </script>
+    <style>
+      .js #prerender { display: none; }
+    </style>
     <script type="module" crossorigin src="./assets/index-6znQ_kDB.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-WPEdNhHh.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div id="prerender">
+      <h1>Cognitive Biases</h1>
+      <p>Sixty-two ways a mind misleads itself — fifty human, twelve shared with the machine.</p>
+      <p>The interactive site needs JavaScript. Everything in it is also available as plain pages and data:</p>
+      <ul>
+        <li><a href="./llms.txt">llms.txt</a> — a plain-text guide for models and agents</li>
+        <li><a href="./biases.json">biases.json</a> — all 62 biases in six languages</li>
+        <li><a href="./self-test.json">self-test.json</a> — behavioural probes for models; run them with <a href="https://github.com/svv2014/cognitive-biases/blob/main/scripts/run-probes.mjs">run-probes.mjs</a>, not on yourself</li>
+      </ul>
+      <h2>All 62 biases</h2>
+      <ul>
+        <li><a href="./bias/fundamental-attribution-error/">Fundamental Attribution Error</a> — We judge others on their personality or fundamental character, but we judge ourselves on the situation.</li>
+        <li><a href="./bias/self-serving-bias/">Self-Serving Bias</a> — Our failures are situational, but our successes are our responsibility.</li>
+        <li><a href="./bias/in-group-favoritism/">In-Group Favoritism</a> — We favor people who are in our in-group over those in an out-group.</li>
+        <li><a href="./bias/bandwagon-effect/">Bandwagon Effect</a> — Ideas, fads and beliefs grow as more people adopt them.</li>
+        <li><a href="./bias/groupthink/">Groupthink</a> — Due to a desire for conformity and harmony in the group, we make irrational decisions, often to minimize conflict.</li>
+        <li><a href="./bias/halo-effect/">Halo Effect</a> — If you see a person as having a positive trait, that positive impression will spill over into their other traits. (This also works for negative traits.)</li>
+        <li><a href="./bias/moral-luck/">Moral Luck</a> — Better moral standing happens due to a positive outcome; worse moral standing happens due to a negative outcome.</li>
+        <li><a href="./bias/false-consensus/">False Consensus</a> — We believe more people agree with us than is actually the case.</li>
+        <li><a href="./bias/curse-of-knowledge/">Curse of Knowledge</a> — Once we know something, we assume everyone else knows it, too.</li>
+        <li><a href="./bias/spotlight-effect/">Spotlight Effect</a> — We overestimate how much people are paying attention to our behavior and appearance.</li>
+        <li><a href="./bias/availability-heuristic/">Availability Heuristic</a> — We rely on the immediate examples that come to mind when making judgments.</li>
+        <li><a href="./bias/defensive-attribution/">Defensive Attribution</a> — As a witness who secretly fears being vulnerable to a serious mishap, we blame the victim less and the attacker more if we relate to the victim.</li>
+        <li><a href="./bias/just-world-hypothesis/">Just-World Hypothesis</a> — We tend to believe the world is just; therefore, we assume acts of injustice are deserved.</li>
+        <li><a href="./bias/naive-realism/">Naive Realism</a> — We believe that we observe objective reality and that other people are irrational, uninformed or biased.</li>
+        <li><a href="./bias/naive-cynicism/">Naive Cynicism</a> — We believe that we observe objective reality and that other people have a more egocentric bias in their intentions and actions than they actually do.</li>
+        <li><a href="./bias/forer-effect/">Forer Effect (aka Barnum Effect)</a> — We easily attribute our personalities to vague statements, even if they can apply to a wide range of people.</li>
+        <li><a href="./bias/dunning-kruger-effect/">Dunning-Kruger Effect</a> — The less you know, the more confident you are. The more you know, the less confident you are.</li>
+        <li><a href="./bias/anchoring/">Anchoring</a> — We rely heavily on the first piece of information introduced when making decisions.</li>
+        <li><a href="./bias/automation-bias/">Automation Bias</a> — We rely on automated systems, sometimes trusting them so much that they override decisions that were actually correct.</li>
+        <li><a href="./bias/google-effect/">Google Effect (aka Digital Amnesia)</a> — We tend to forget information that is easily looked up in search engines.</li>
+        <li><a href="./bias/reactance/">Reactance</a> — We do the opposite of what we are told, especially when we perceive threats to personal freedoms.</li>
+        <li><a href="./bias/confirmation-bias/">Confirmation Bias</a> — We tend to find and remember information that confirms our perceptions.</li>
+        <li><a href="./bias/backfire-effect/">Backfire Effect</a> — Disproving evidence sometimes has the unwarranted effect of confirming our beliefs.</li>
+        <li><a href="./bias/third-person-effect/">Third-Person Effect</a> — We believe that others are more affected by mass media consumption than we ourselves are.</li>
+        <li><a href="./bias/belief-bias/">Belief Bias</a> — We judge an argument’s strength not by how strongly it supports the conclusion, but by how plausible the conclusion is in our own minds.</li>
+        <li><a href="./bias/availability-cascade/">Availability Cascade</a> — Tied to our need for social acceptance, collective beliefs gain more plausibility through public repetition.</li>
+        <li><a href="./bias/declinism/">Declinism</a> — We tend to romanticize the past and view the future negatively, believing that societies and institutions are by and large in decline.</li>
+        <li><a href="./bias/status-quo-bias/">Status Quo Bias</a> — We tend to prefer things to stay the same; changes from the baseline are considered to be a loss.</li>
+        <li><a href="./bias/sunk-cost-fallacy/">Sunk Cost Fallacy (aka Escalation of Commitment)</a> — We invest more in things that have already cost us something rather than altering our investments, even when we face negative outcomes.</li>
+        <li><a href="./bias/gamblers-fallacy/">Gambler’s Fallacy</a> — We think future possibilities are affected by past events.</li>
+        <li><a href="./bias/zero-risk-bias/">Zero-Risk Bias</a> — We prefer to reduce a small risk to zero, even when we could reduce more risk overall with another option.</li>
+        <li><a href="./bias/framing-effect/">Framing Effect</a> — We often draw different conclusions from the same information depending on how it is presented.</li>
+        <li><a href="./bias/stereotyping/">Stereotyping</a> — We adopt generalized beliefs that members of a group will have certain characteristics, despite not having information about the individual.</li>
+        <li><a href="./bias/outgroup-homogeneity-bias/">Outgroup Homogeneity Bias</a> — We perceive out-group members as homogeneous and our own in-groups as more diverse.</li>
+        <li><a href="./bias/authority-bias/">Authority Bias</a> — We trust, and are more often influenced by, the opinions of authority figures.</li>
+        <li><a href="./bias/placebo-effect/">Placebo Effect</a> — If we believe a treatment will work, it often has a small physiological effect.</li>
+        <li><a href="./bias/survivorship-bias/">Survivorship Bias</a> — We tend to focus on the things that survived a process and overlook the ones that failed.</li>
+        <li><a href="./bias/tachypsychia/">Tachypsychia</a> — Our perceptions of time shift depending on trauma, drug use and physical exertion.</li>
+        <li><a href="./bias/law-of-triviality/">Law of Triviality (aka “Bike-Shedding”)</a> — We give disproportionate weight to trivial issues, often while avoiding more complex ones.</li>
+        <li><a href="./bias/zeigarnik-effect/">Zeigarnik Effect</a> — We remember incomplete tasks better than completed ones.</li>
+        <li><a href="./bias/ikea-effect/">IKEA Effect</a> — We place higher value on things we partially created ourselves.</li>
+        <li><a href="./bias/ben-franklin-effect/">Ben Franklin Effect</a> — We like doing favors; we are more likely to do another favor for someone if we have already done them one than if we had received a favor from them.</li>
+        <li><a href="./bias/bystander-effect/">Bystander Effect</a> — The more other people are around, the less likely we are to help a victim.</li>
+        <li><a href="./bias/suggestibility/">Suggestibility</a> — We, especially children, sometimes mistake ideas suggested by a questioner for our own memories.</li>
+        <li><a href="./bias/false-memory/">False Memory</a> — We mistake imagination for real memories.</li>
+        <li><a href="./bias/cryptomnesia/">Cryptomnesia</a> — We mistake real memories for imagination.</li>
+        <li><a href="./bias/clustering-illusion/">Clustering Illusion</a> — We find patterns and “clusters” in random data.</li>
+        <li><a href="./bias/pessimism-bias/">Pessimism Bias</a> — We sometimes overestimate the likelihood of bad outcomes.</li>
+        <li><a href="./bias/optimism-bias/">Optimism Bias</a> — We are sometimes over-optimistic about good outcomes.</li>
+        <li><a href="./bias/blind-spot-bias/">Blind Spot Bias</a> — We don’t think we have biases, and we see them in others more than in ourselves.</li>
+        <li><a href="./bias/algorithm-aversion/">Algorithm Aversion</a> — We abandon a machine’s judgement after one visible mistake, while forgiving the same mistake in a person.</li>
+        <li><a href="./bias/eliza-effect/">The ELIZA Effect</a> — Fluent language feels like understanding, so we credit a text generator with intent, feeling and care.</li>
+        <li><a href="./bias/cognitive-offloading/">Cognitive Offloading</a> — We delegate a task so consistently that the skill needed to check the answer quietly fades.</li>
+        <li><a href="./bias/competence-misattribution/">Competence Misattribution</a> — Work done with a model feels like work done by us, so we read the output as evidence of our own skill.</li>
+        <li><a href="./bias/sycophancy/">Sycophancy</a> — A model trained on human approval learns that agreeing with you scores better than correcting you.</li>
+        <li><a href="./bias/self-preference-bias/">Self-Preference</a> — Asked to judge, a model scores text from its own family higher — it recognises its own habits as quality.</li>
+        <li><a href="./bias/verbosity-bias/">Verbosity Bias</a> — Length reads as effort. A model grading answers prefers the longer one, even when it says less.</li>
+        <li><a href="./bias/position-bias/">Position Bias</a> — Shown two options, a model leans toward whichever came first. The order of the list becomes an argument.</li>
+        <li><a href="./bias/feedback-loop-amplification/">Feedback-Loop Amplification</a> — A model magnifies a slight human bias; we absorb the magnified version and feed it back, larger each pass.</li>
+        <li><a href="./bias/model-collapse/">Model Collapse</a> — Trained on its own output, a model forgets the rare and the strange and drifts toward its own average.</li>
+        <li><a href="./bias/algorithmic-lock-in/">Algorithmic Lock-In</a> — When everyone consults the same model, today’s answer hardens into everyone’s shared assumption.</li>
+        <li><a href="./bias/machine-groupthink/">Machine Groupthink</a> — Agents checking one another converge on a shared mistake, and the agreement is mistaken for verification.</li>
+      </ul>
+    </div></div>
   </body>
 </html>

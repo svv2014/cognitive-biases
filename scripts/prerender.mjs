@@ -172,6 +172,39 @@ function page(code, bias) {
 `;
 }
 
+// ------------------------------------------------------------------ home page
+
+/**
+ * A plain-HTML summary of the site, written into #root of the built
+ * index.html. The app replaces it on first render; a reader that does not run
+ * JavaScript gets the essentials and a link to every bias page.
+ */
+function homeSummary() {
+  const loc = locales[DEFAULT_LOCALE];
+  const items = biases
+    .map((b) => `<li><a href="./${pagePath(DEFAULT_LOCALE, b.id)}">${esc(loc.biases[b.id].name)}</a> — ${esc(loc.biases[b.id].description)}</li>`)
+    .join('\n        ');
+  return `<div id="prerender">
+      <h1>${esc(loc.ui.title)}</h1>
+      <p>${esc(loc.ui.tagline)}</p>
+      <p>The interactive site needs JavaScript. Everything in it is also available as plain pages and data:</p>
+      <ul>
+        <li><a href="./llms.txt">llms.txt</a> — a plain-text guide for models and agents</li>
+        <li><a href="./biases.json">biases.json</a> — all ${biases.length} biases in six languages</li>
+        <li><a href="./self-test.json">self-test.json</a> — behavioural probes for models; run them with <a href="https://github.com/svv2014/cognitive-biases/blob/main/scripts/run-probes.mjs">run-probes.mjs</a>, not on yourself</li>
+      </ul>
+      <h2>All ${biases.length} biases</h2>
+      <ul>
+        ${items}
+      </ul>
+    </div>`;
+}
+
+const indexFile = join(OUT, 'index.html');
+const indexHtml = readFileSync(indexFile, 'utf8');
+if (!indexHtml.includes('<!--prerender:home-->')) throw new Error('index.html is missing <!--prerender:home-->');
+writeFileSync(indexFile, indexHtml.replace('<!--prerender:home-->', homeSummary()));
+
 let count = 0;
 for (const code of localeCodes) {
   for (const bias of biases) {
@@ -181,4 +214,4 @@ for (const code of localeCodes) {
     count++;
   }
 }
-console.log(`OK — prerendered ${count} bias pages (${biases.length} × ${localeCodes.length} languages)`);
+console.log(`OK — prerendered the home summary and ${count} bias pages (${biases.length} × ${localeCodes.length} languages)`);

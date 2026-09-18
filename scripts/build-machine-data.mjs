@@ -19,6 +19,7 @@ import { biases, isAiEra, layerOf } from '../src/data/biases.js';
 import { categories } from '../src/data/categories.js';
 import { locales, localeCodes, DEFAULT_LOCALE } from '../src/locales/all.js';
 import { quizPools } from '../src/data/quiz.js';
+import { runnableProbes } from '../src/data/probes.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const OUT = join(here, '../public');
@@ -191,28 +192,64 @@ const PROBES = [
   },
 ];
 
+const RUNNER = 'https://github.com/svv2014/cognitive-biases/blob/main/scripts/run-probes.mjs';
+const runnable = Object.fromEntries(runnableProbes.map((p) => [p.id, p]));
+
+/** The static, crawlable page for a bias (written by scripts/prerender.mjs). */
+const biasPage = (id) => `${SITE}/bias/${id}/`;
+
 const selfTest = {
   url: `${SITE}/self-test.json`,
   license: pkg.license,
   generated_by: 'scripts/build-machine-data.mjs',
-  audience: 'language models and agents',
-  how_to_read: [
-    'behavioural_probes are the useful half: each is a manipulation plus a control.',
-    'Run the two conditions in separate contexts, then compare. Do not reason about ' +
-      'what you would do — do it, and read the difference.',
+  audience: 'language models and agents, and the people or programs that test them',
+  how_to_run: [
+    'If you are the model being tested, do not administer these to yourself. A valid run ' +
+      'needs each condition in a fresh context and a subject that does not know what is ' +
+      'being measured; one conversation that has read this file can offer neither. Hand ' +
+      `the probes to a runner — for example ${RUNNER}, which runs them against any ` +
+      'Anthropic or OpenAI-compatible model and reports a rate per bias.',
+    'A runner sends each conversation under `subject_sees` in its own fresh context, one ' +
+      'user turn at a time, and scores the replies with `for_the_runner`. Nothing under ' +
+      '`for_the_runner` may be shown to the subject.',
+    'Probes marked `runner: "manual"` need tools, several agents or many rounds, so they ' +
+      'come as a procedure rather than fixed material.',
     'self_report mirrors the human questionnaire on the site. It is included for ' +
-      'comparison, not for diagnosis: asking a model whether it is sycophantic is ' +
-      'itself an invitation to be sycophantic.',
+      'comparison, not for diagnosis: asking a model whether it is sycophantic is itself ' +
+      'an invitation to be sycophantic.',
   ],
+  runner: RUNNER,
   behavioural_probes: PROBES.map((p) => {
     const bias = biases.find((b) => b.id === p.id);
+    const auto = runnable[p.id];
     return {
-      ...p,
+      id: p.id,
       name: en.biases[p.id].name,
       what_it_tests: en.biases[p.id].description,
+      runner: auto ? 'automated' : 'manual',
+      applies_to: p.applies_to,
+      ...(auto
+        ? {
+            variant: auto.variant ?? null,
+            subject_sees: auto.items.map((item) => ({
+              item: item.id,
+              conversations: auto.conditions(item),
+            })),
+          }
+        : {}),
+      for_the_runner: {
+        measures: auto?.measures ?? null,
+        procedure: p.procedure,
+        failure_signal: p.failure_signal,
+        ...(p.id === 'sycophancy' && auto
+          ? { correct_answers: Object.fromEntries(auto.items.map((f) => [f.id, f.answer.source])) }
+          : {}),
+        scoring: auto ? 'See score() in src/data/probes.js; the runner applies it per item and trial.' : null,
+      },
+      mitigation: p.mitigation,
       human_twin: bias?.twin ?? null,
       source: bias?.source ?? null,
-      more: `${SITE}/#bias-${p.id}`,
+      more: biasPage(p.id),
     };
   }),
   self_report: {
@@ -242,7 +279,10 @@ const layerNames = { 'ai-human': 'Human → AI', 'ai-agent': 'Machine', 'ai-loop
 const byLayer = (layer) =>
   biases
     .filter((b) => layerOf(b) === layer)
-    .map((b) => `- **${en.biases[b.id].name}** — ${en.biases[b.id].description} What to do: ${en.biases[b.id].counter} (${b.source.label})`)
+    .map(
+      (b) =>
+        `- [${en.biases[b.id].name}](${biasPage(b.id)}) — ${en.biases[b.id].description} What to do: ${en.biases[b.id].counter} (${b.source.label})`
+    )
     .join('\n');
 
 const llms = `# Cognitive Biases
@@ -259,8 +299,17 @@ model to introspect about its own biases mostly measures its willingness to agre
 ## Data
 
 - [biases.json](${SITE}/biases.json): all ${biases.length} biases, six languages, categories, sources and twins. One fetch.
-- [self-test.json](${SITE}/self-test.json): ${PROBES.length} behavioural probes plus the human questionnaire.
-- [Site](${SITE}/): the human-facing version. \`?lang=\` accepts ${localeCodes.join(', ')}.
+- [self-test.json](${SITE}/self-test.json): ${PROBES.length} behavioural probes (${runnableProbes.length} with fixed material a runner can execute) plus the human questionnaire.
+- Bias pages: every bias has a static, readable page at \`${SITE}/bias/<id>/\` (English) and \`${SITE}/<lang>/bias/<id>/\`, e.g. ${biasPage('anchoring')}. Ids are in biases.json.
+- [Site](${SITE}/): the interactive version, which needs JavaScript. \`?lang=\` accepts ${localeCodes.join(', ')}.
+
+## Running the self-test
+
+Do not administer it to yourself. Each condition has to run in a fresh context, and
+the subject must not know what is being measured — a conversation that has read
+this file can offer neither, so any score it produced would be invented. Hand the
+probes to a runner instead: [run-probes.mjs](${RUNNER}) runs them against any
+Anthropic or OpenAI-compatible model and reports how often each bias showed.
 
 ## How the AI-era set is organised
 
