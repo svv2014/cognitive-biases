@@ -59,6 +59,9 @@
 
     <script>
       // Applied before first paint so the page never flashes the wrong theme.
+      // Readers without JavaScript (and most AI fetch tools) get the static
+      // summary the build writes into #root; everyone else gets the app.
+      document.documentElement.classList.add('js');
       (function () {
         try {
           var stored = localStorage.getItem('cb-theme');
@@ -71,9 +74,12 @@
         }
       })();
     </script>
+    <style>
+      .js #prerender { display: none; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--prerender:home--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

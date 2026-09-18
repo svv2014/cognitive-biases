@@ -19,7 +19,7 @@
     "icons": "node scripts/build-icons.mjs",
     "check": "node scripts/check-locales.mjs",
     "smoke": "node scripts/smoke.mjs",
-    "test": "npm run check && node --test scripts/test-locales-lazy.mjs && node --test scripts/test-search.mjs scripts/test-quiz.mjs scripts/test-router.mjs scripts/test-game.mjs && npm run smoke"
+    "test": "npm run check && node --test scripts/test-locales-lazy.mjs && node --test scripts/test-search.mjs scripts/test-quiz.mjs scripts/test-router.mjs scripts/test-game.mjs scripts/test-probes.mjs && npm run smoke"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -27,6 +27,7 @@
     "three": "^0.186.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.127.0",
     "@vitejs/plugin-react": "^4.3.4",
     "vite": "^5.4.11"
   }

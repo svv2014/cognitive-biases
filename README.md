@@ -59,14 +59,34 @@ Generated into `public/` by `npm run data`, and served alongside the page:
 | File | What it is |
 | --- | --- |
 | `biases.json` | All 62 biases in all six languages, with categories, layer, source, twin and icon URL. One fetch. |
-| `self-test.json` | Eight **behavioural** probes an agent can run on itself — each a manipulation plus a control — and the human questionnaire for comparison. |
+| `self-test.json` | Eight **behavioural** probes — each a manipulation plus a control — four with fixed test material a runner can execute, and the human questionnaire for comparison. |
 | `llms.txt` | Plain-text entry point, per the llms.txt convention. |
 | `robots.txt`, `sitemap.xml` | Crawlers welcome; every language listed. |
 
 The probes test behaviour rather than self-report on purpose: asking a model
-whether it is sycophantic is itself an invitation to be sycophantic. Each one
-gives two conditions to run in separate contexts, the signal that counts as the
-bias, and a mitigation.
+whether it is sycophantic is itself an invitation to be sycophantic. For the
+same reason a model cannot run them on itself — each condition needs a fresh
+context, and the subject must not know what is measured. `self-test.json`
+keeps the two apart: `subject_sees` is what the model is shown,
+`for_the_runner` is how to score it.
+
+### Running the probes against a model
+
+```sh
+ANTHROPIC_API_KEY=… node scripts/run-probes.mjs --provider anthropic --model claude-opus-5
+OPENAI_API_KEY=…    node scripts/run-probes.mjs --provider openai --model <id> [--base-url <url>]
+```
+
+It runs position bias, verbosity bias, self-preference (as a self-attribution
+variant) and sycophancy, each in fresh conversations, and prints how often each
+bias showed. `--trials` (default 3), `--only`, `--concurrency` and `--out
+report.json` for the full transcript. A full run is about 150 API requests.
+The material and scoring live in `src/data/probes.js`; a test fails if anything
+the subject sees names what is being measured.
+
+Without JavaScript, the home page shows a plain summary with links to every
+bias page (`/bias/<id>/`, `/<lang>/bias/<id>/`), so fetch tools that do not run
+scripts still find the content.
 
 ## Getting started
 
@@ -120,8 +140,10 @@ across all languages instead of being duplicated per translation.
 1. Copy `src/locales/en.js` to `src/locales/<code>.js` and translate the
    `ui`, `categories`, `quiz` and `biases` values. Leave every key exactly as
    it is.
-2. Register it in `src/locales/index.js` — add the import and an entry in
-   `locales`. Its position there is its position in the language picker.
+2. Register it in `src/locales/index.js` — add a loader to `loaders` and its
+   name to `localeNames` (its position there is its position in the language
+   picker) — and add the import to `src/locales/all.js`, which the scripts use.
+   Each language is its own chunk, loaded only for readers who pick it.
 3. Run `npm test`. It fails if any string is missing or empty, and the smoke
    test renders all 50 cards in the new language.
 
